@@ -26,6 +26,8 @@ Import the JiraKit module in any file where you want to use JiraKit.
 import JiraKit
 ```
 
+Click the disclosure triangle next to JiraKit in Xcode's project navigator to access the Sources folder and view the data types and paths for Jira's REST API. There are lots of entities and paths, too many to explain here.
+
 ## Limitation
 
 The `NotificationEvent` entity is a class instead of a struct. When I ran the Create API app, I got the following warning:

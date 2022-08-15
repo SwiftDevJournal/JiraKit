@@ -2,7 +2,7 @@
 
 Swift data structures for Jira's REST API v3.
 
-I ran the [Create API command line app](https://github.com/CreateAPI/CreateAPI), supplying a JSON file for Jira's REST API. JiraKit is the Swift Package that CreateAPI generated. I created this package so you don't have to install and run Create API yourself.
+I ran the [Create API command line app](https://github.com/CreateAPI/CreateAPI), supplying a JSON file for Jira's REST API. JiraKit is the Swift package that CreateAPI generated. I created this package so you don't have to install and run Create API yourself.
 
 ## Requirements
 

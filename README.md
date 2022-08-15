@@ -2,7 +2,7 @@
 
 Swift data structures for Jira's REST API v3.
 
-I ran the [create-api command line app](https://github.com/CreateAPI/CreateAPI), supplying a JSON file for Jira's REST API. JiraKit is the Swift Package that create-api generated. I created this package so you don't have to install and run create-api yourself.
+I ran the [Create API command line app](https://github.com/CreateAPI/CreateAPI), supplying a JSON file for Jira's REST API. JiraKit is the Swift Package that CreateAPI generated. I created this package so you don't have to install and run CreateAPI yourself.
 
 ## Requirements
 
@@ -28,7 +28,7 @@ import JiraKit
 
 ## Limitation
 
-The `NotificationEvent` entity is a class instead of a struct. When I ran the `create-api` app, I got the following warning:
+The `NotificationEvent` entity is a class instead of a struct. When I ran the Create API app, I got the following warning:
 
 > WARNING: Entity 'NotificationEvent' cannot be generated as a struct because it has a stored property that recursively contains itself. Explicitly define an override using 'entities.typeOverrides' or ignore the entity/property using 'entities.ignore' to fix this issue.
 

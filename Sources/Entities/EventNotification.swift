@@ -9,7 +9,7 @@ public struct EventNotification: Codable {
     /// Expand options that include additional event notification details in the response.
     public var expand: String?
     /// The ID of the notification.
-    public var id: Int?
+    public var id: Int64?
     /// Identifies the recipients of the notification.
     public var notificationType: NotificationType?
     /// As a group's name can change, use of `recipient` is recommended. The identifier associated with the `notificationType` value that defines the receiver of the notification, where the receiver isn't implied by `notificationType` value. So, when `notificationType` is:
@@ -55,7 +55,7 @@ public struct EventNotification: Codable {
         case groupCustomField = "GroupCustomField"
     }
 
-    public init(expand: String? = nil, id: Int? = nil, notificationType: NotificationType? = nil, parameter: String? = nil, recipient: String? = nil, group: GroupName? = nil, field: FieldDetails? = nil, emailAddress: String? = nil, projectRole: ProjectRole? = nil, user: UserDetails? = nil) {
+    public init(expand: String? = nil, id: Int64? = nil, notificationType: NotificationType? = nil, parameter: String? = nil, recipient: String? = nil, group: GroupName? = nil, field: FieldDetails? = nil, emailAddress: String? = nil, projectRole: ProjectRole? = nil, user: UserDetails? = nil) {
         self.expand = expand
         self.id = id
         self.notificationType = notificationType
@@ -71,7 +71,7 @@ public struct EventNotification: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.expand = try values.decodeIfPresent(String.self, forKey: "expand")
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.notificationType = try values.decodeIfPresent(NotificationType.self, forKey: "notificationType")
         self.parameter = try values.decodeIfPresent(String.self, forKey: "parameter")
         self.recipient = try values.decodeIfPresent(String.self, forKey: "recipient")

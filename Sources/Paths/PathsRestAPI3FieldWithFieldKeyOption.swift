@@ -21,11 +21,11 @@ extension Paths.API.__3.Field.WithFieldKey {
         /// Note that this operation **only works for issue field select list options added by Connect apps**, it cannot be used with issue field select list options created in Jira or using operations from the [Issue custom field options](#api-group-Issue-custom-field-options) resource.
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). Jira permissions are not required for the app providing the field.
-        public func get(startAt: Int? = nil, maxResults: Int? = nil) -> Request<JiraKit.PageBeanIssueFieldOption> {
+        public func get(startAt: Int64? = nil, maxResults: Int32? = nil) -> Request<JiraKit.PageBeanIssueFieldOption> {
             Request(method: "GET", url: path, query: makeGetQuery(startAt, maxResults), id: "getAllIssueFieldOptions")
         }
 
-        private func makeGetQuery(_ startAt: Int?, _ maxResults: Int?) -> [(String, String?)] {
+        private func makeGetQuery(_ startAt: Int64?, _ maxResults: Int32?) -> [(String, String?)] {
             let encoder = URLQueryEncoder()
             encoder.encode(startAt, forKey: "startAt")
             encoder.encode(maxResults, forKey: "maxResults")

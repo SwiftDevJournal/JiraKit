@@ -35,10 +35,10 @@ extension Paths.API.__3.User.Assignable {
             public var username: String?
             public var accountID: String?
             public var projectKeys: String
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int32?
+            public var maxResults: Int32?
 
-            public init(query: String? = nil, username: String? = nil, accountID: String? = nil, projectKeys: String, startAt: Int? = nil, maxResults: Int? = nil) {
+            public init(query: String? = nil, username: String? = nil, accountID: String? = nil, projectKeys: String, startAt: Int32? = nil, maxResults: Int32? = nil) {
                 self.query = query
                 self.username = username
                 self.accountID = accountID

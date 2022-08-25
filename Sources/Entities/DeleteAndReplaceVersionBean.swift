@@ -6,13 +6,13 @@ import NaiveDate
 
 public struct DeleteAndReplaceVersionBean: Codable {
     /// The ID of the version to update `fixVersion` to when the field contains the deleted version.
-    public var moveFixIssuesTo: Int?
+    public var moveFixIssuesTo: Int64?
     /// The ID of the version to update `affectedVersion` to when the field contains the deleted version.
-    public var moveAffectedIssuesTo: Int?
+    public var moveAffectedIssuesTo: Int64?
     /// An array of custom field IDs (`customFieldId`) and version IDs (`moveTo`) to update when the fields contain the deleted version.
     public var customFieldReplacementList: [CustomFieldReplacement]?
 
-    public init(moveFixIssuesTo: Int? = nil, moveAffectedIssuesTo: Int? = nil, customFieldReplacementList: [CustomFieldReplacement]? = nil) {
+    public init(moveFixIssuesTo: Int64? = nil, moveAffectedIssuesTo: Int64? = nil, customFieldReplacementList: [CustomFieldReplacement]? = nil) {
         self.moveFixIssuesTo = moveFixIssuesTo
         self.moveAffectedIssuesTo = moveAffectedIssuesTo
         self.customFieldReplacementList = customFieldReplacementList
@@ -20,8 +20,8 @@ public struct DeleteAndReplaceVersionBean: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.moveFixIssuesTo = try values.decodeIfPresent(Int.self, forKey: "moveFixIssuesTo")
-        self.moveAffectedIssuesTo = try values.decodeIfPresent(Int.self, forKey: "moveAffectedIssuesTo")
+        self.moveFixIssuesTo = try values.decodeIfPresent(Int64.self, forKey: "moveFixIssuesTo")
+        self.moveAffectedIssuesTo = try values.decodeIfPresent(Int64.self, forKey: "moveAffectedIssuesTo")
         self.customFieldReplacementList = try values.decodeIfPresent([CustomFieldReplacement].self, forKey: "customFieldReplacementList")
     }
 

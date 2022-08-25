@@ -12,13 +12,13 @@ public struct JiraExpressionEvalContextBean: Codable {
     /// The project that is available under the `project` variable when evaluating the expression.
     public var project: IDOrKeyBean?
     /// The ID of the sprint that is available under the `sprint` variable when evaluating the expression.
-    public var sprint: Int?
+    public var sprint: Int64?
     /// The ID of the board that is available under the `board` variable when evaluating the expression.
-    public var board: Int?
+    public var board: Int64?
     /// The ID of the service desk that is available under the `serviceDesk` variable when evaluating the expression.
-    public var serviceDesk: Int?
+    public var serviceDesk: Int64?
     /// The ID of the customer request that is available under the `customerRequest` variable when evaluating the expression. This is the same as the ID of the underlying Jira issue, but the customer request context variable will have a different type.
-    public var customerRequest: Int?
+    public var customerRequest: Int64?
     /// Custom context variables and their types. These variable types are available for use in a custom context:
     /// 
     ///  *  `user`: A [user](https://developer.atlassian.com/cloud/jira/platform/jira-expressions-type-reference#user) specified as an Atlassian account ID.
@@ -27,7 +27,7 @@ public struct JiraExpressionEvalContextBean: Codable {
     ///  *  `list`: A JSON list of `user`, `issue`, or `json` variable types.
     public var custom: [CustomContextVariable]?
 
-    public init(issue: IDOrKeyBean? = nil, issues: JexpIssues? = nil, project: IDOrKeyBean? = nil, sprint: Int? = nil, board: Int? = nil, serviceDesk: Int? = nil, customerRequest: Int? = nil, custom: [CustomContextVariable]? = nil) {
+    public init(issue: IDOrKeyBean? = nil, issues: JexpIssues? = nil, project: IDOrKeyBean? = nil, sprint: Int64? = nil, board: Int64? = nil, serviceDesk: Int64? = nil, customerRequest: Int64? = nil, custom: [CustomContextVariable]? = nil) {
         self.issue = issue
         self.issues = issues
         self.project = project
@@ -43,10 +43,10 @@ public struct JiraExpressionEvalContextBean: Codable {
         self.issue = try values.decodeIfPresent(IDOrKeyBean.self, forKey: "issue")
         self.issues = try values.decodeIfPresent(JexpIssues.self, forKey: "issues")
         self.project = try values.decodeIfPresent(IDOrKeyBean.self, forKey: "project")
-        self.sprint = try values.decodeIfPresent(Int.self, forKey: "sprint")
-        self.board = try values.decodeIfPresent(Int.self, forKey: "board")
-        self.serviceDesk = try values.decodeIfPresent(Int.self, forKey: "serviceDesk")
-        self.customerRequest = try values.decodeIfPresent(Int.self, forKey: "customerRequest")
+        self.sprint = try values.decodeIfPresent(Int64.self, forKey: "sprint")
+        self.board = try values.decodeIfPresent(Int64.self, forKey: "board")
+        self.serviceDesk = try values.decodeIfPresent(Int64.self, forKey: "serviceDesk")
+        self.customerRequest = try values.decodeIfPresent(Int64.self, forKey: "customerRequest")
         self.custom = try values.decodeIfPresent([CustomContextVariable].self, forKey: "custom")
     }
 

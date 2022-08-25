@@ -11,11 +11,11 @@ public struct ServerInformation: Codable {
     /// The version of Jira.
     public var version: String?
     /// The major, minor, and revision version numbers of the Jira version.
-    public var versionNumbers: [Int]?
+    public var versionNumbers: [Int32]?
     /// The type of server deployment. This is always returned as *Cloud*.
     public var deploymentType: String?
     /// The build number of the Jira version.
-    public var buildNumber: Int?
+    public var buildNumber: Int32?
     /// The timestamp when the Jira version was built.
     public var buildDate: Date?
     /// The time in Jira when this request was responded to.
@@ -27,7 +27,7 @@ public struct ServerInformation: Codable {
     /// Jira instance health check results. Deprecated and no longer returned.
     public var healthChecks: [HealthCheckResult]?
 
-    public init(baseURL: String? = nil, version: String? = nil, versionNumbers: [Int]? = nil, deploymentType: String? = nil, buildNumber: Int? = nil, buildDate: Date? = nil, serverTime: Date? = nil, scmInfo: String? = nil, serverTitle: String? = nil, healthChecks: [HealthCheckResult]? = nil) {
+    public init(baseURL: String? = nil, version: String? = nil, versionNumbers: [Int32]? = nil, deploymentType: String? = nil, buildNumber: Int32? = nil, buildDate: Date? = nil, serverTime: Date? = nil, scmInfo: String? = nil, serverTitle: String? = nil, healthChecks: [HealthCheckResult]? = nil) {
         self.baseURL = baseURL
         self.version = version
         self.versionNumbers = versionNumbers
@@ -44,9 +44,9 @@ public struct ServerInformation: Codable {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.baseURL = try values.decodeIfPresent(String.self, forKey: "baseUrl")
         self.version = try values.decodeIfPresent(String.self, forKey: "version")
-        self.versionNumbers = try values.decodeIfPresent([Int].self, forKey: "versionNumbers")
+        self.versionNumbers = try values.decodeIfPresent([Int32].self, forKey: "versionNumbers")
         self.deploymentType = try values.decodeIfPresent(String.self, forKey: "deploymentType")
-        self.buildNumber = try values.decodeIfPresent(Int.self, forKey: "buildNumber")
+        self.buildNumber = try values.decodeIfPresent(Int32.self, forKey: "buildNumber")
         self.buildDate = try values.decodeIfPresent(Date.self, forKey: "buildDate")
         self.serverTime = try values.decodeIfPresent(Date.self, forKey: "serverTime")
         self.scmInfo = try values.decodeIfPresent(String.self, forKey: "scmInfo")

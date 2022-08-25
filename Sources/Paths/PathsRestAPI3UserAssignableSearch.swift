@@ -41,12 +41,12 @@ extension Paths.API.__3.User.Assignable {
             public var accountID: String?
             public var project: String?
             public var issueKey: String?
-            public var startAt: Int?
-            public var maxResults: Int?
-            public var actionDescriptorID: Int?
+            public var startAt: Int32?
+            public var maxResults: Int32?
+            public var actionDescriptorID: Int32?
             public var isRecommend: Bool?
 
-            public init(query: String? = nil, sessionID: String? = nil, username: String? = nil, accountID: String? = nil, project: String? = nil, issueKey: String? = nil, startAt: Int? = nil, maxResults: Int? = nil, actionDescriptorID: Int? = nil, isRecommend: Bool? = nil) {
+            public init(query: String? = nil, sessionID: String? = nil, username: String? = nil, accountID: String? = nil, project: String? = nil, issueKey: String? = nil, startAt: Int32? = nil, maxResults: Int32? = nil, actionDescriptorID: Int32? = nil, isRecommend: Bool? = nil) {
                 self.query = query
                 self.sessionID = sessionID
                 self.username = username

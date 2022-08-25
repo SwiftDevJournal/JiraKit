@@ -7,13 +7,13 @@ import NaiveDate
 /// Bulk operation filter details.
 public struct IssueFilterForBulkPropertySet: Codable {
     /// List of issues to perform the bulk operation on.
-    public var entityIDs: [Int]?
+    public var entityIDs: [Int64]?
     /// The value of properties to perform the bulk operation on.
     public var currentValue: AnyJSON?
     /// Whether the bulk operation occurs only when the property is present on or absent from an issue.
     public var hasProperty: Bool?
 
-    public init(entityIDs: [Int]? = nil, currentValue: AnyJSON? = nil, hasProperty: Bool? = nil) {
+    public init(entityIDs: [Int64]? = nil, currentValue: AnyJSON? = nil, hasProperty: Bool? = nil) {
         self.entityIDs = entityIDs
         self.currentValue = currentValue
         self.hasProperty = hasProperty
@@ -21,7 +21,7 @@ public struct IssueFilterForBulkPropertySet: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.entityIDs = try values.decodeIfPresent([Int].self, forKey: "entityIds")
+        self.entityIDs = try values.decodeIfPresent([Int64].self, forKey: "entityIds")
         self.currentValue = try values.decodeIfPresent(AnyJSON.self, forKey: "currentValue")
         self.hasProperty = try values.decodeIfPresent(Bool.self, forKey: "hasProperty")
     }

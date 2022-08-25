@@ -7,13 +7,13 @@ import NaiveDate
 /// Details of a changed worklog.
 public struct ChangedWorklog: Codable {
     /// The ID of the worklog.
-    public var worklogID: Int?
+    public var worklogID: Int64?
     /// The datetime of the change.
-    public var updatedTime: Int?
+    public var updatedTime: Int64?
     /// Details of properties associated with the change.
     public var properties: [EntityProperty]?
 
-    public init(worklogID: Int? = nil, updatedTime: Int? = nil, properties: [EntityProperty]? = nil) {
+    public init(worklogID: Int64? = nil, updatedTime: Int64? = nil, properties: [EntityProperty]? = nil) {
         self.worklogID = worklogID
         self.updatedTime = updatedTime
         self.properties = properties
@@ -21,8 +21,8 @@ public struct ChangedWorklog: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.worklogID = try values.decodeIfPresent(Int.self, forKey: "worklogId")
-        self.updatedTime = try values.decodeIfPresent(Int.self, forKey: "updatedTime")
+        self.worklogID = try values.decodeIfPresent(Int64.self, forKey: "worklogId")
+        self.updatedTime = try values.decodeIfPresent(Int64.self, forKey: "updatedTime")
         self.properties = try values.decodeIfPresent([EntityProperty].self, forKey: "properties")
     }
 

@@ -21,11 +21,11 @@ extension Paths.API.__3 {
         /// Privacy controls are applied to the response based on the users' preferences. This could mean, for example, that the user's email address is hidden. See the [Profile visibility overview](https://developer.atlassian.com/cloud/jira/platform/profile-visibility/) for more details.
         /// 
         /// **[Permissions](#permissions) required:** *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg).
-        public func get(startAt: Int? = nil, maxResults: Int? = nil) -> Request<[JiraKit.User]> {
+        public func get(startAt: Int32? = nil, maxResults: Int32? = nil) -> Request<[JiraKit.User]> {
             Request(method: "GET", url: path, query: makeGetQuery(startAt, maxResults), id: "getAllUsersDefault")
         }
 
-        private func makeGetQuery(_ startAt: Int?, _ maxResults: Int?) -> [(String, String?)] {
+        private func makeGetQuery(_ startAt: Int32?, _ maxResults: Int32?) -> [(String, String?)] {
             let encoder = URLQueryEncoder()
             encoder.encode(startAt, forKey: "startAt")
             encoder.encode(maxResults, forKey: "maxResults")

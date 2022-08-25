@@ -13,9 +13,9 @@ public struct FailedWebhook: Codable {
     /// The original webhook destination.
     public var url: String
     /// The time the webhook was added to the list of failed webhooks (that is, the time of the last failed retry).
-    public var failureTime: Int
+    public var failureTime: Int64
 
-    public init(id: String, body: String? = nil, url: String, failureTime: Int) {
+    public init(id: String, body: String? = nil, url: String, failureTime: Int64) {
         self.id = id
         self.body = body
         self.url = url
@@ -27,7 +27,7 @@ public struct FailedWebhook: Codable {
         self.id = try values.decode(String.self, forKey: "id")
         self.body = try values.decodeIfPresent(String.self, forKey: "body")
         self.url = try values.decode(String.self, forKey: "url")
-        self.failureTime = try values.decode(Int.self, forKey: "failureTime")
+        self.failureTime = try values.decode(Int64.self, forKey: "failureTime")
     }
 
     public func encode(to encoder: Encoder) throws {

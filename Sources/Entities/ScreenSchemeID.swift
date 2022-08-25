@@ -7,15 +7,15 @@ import NaiveDate
 /// The ID of a screen scheme.
 public struct ScreenSchemeID: Codable {
     /// The ID of the screen scheme.
-    public var id: Int
+    public var id: Int64
 
-    public init(id: Int) {
+    public init(id: Int64) {
         self.id = id
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decode(Int.self, forKey: "id")
+        self.id = try values.decode(Int64.self, forKey: "id")
     }
 
     public func encode(to encoder: Encoder) throws {

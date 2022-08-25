@@ -7,7 +7,7 @@ import NaiveDate
 /// Details of a project feature.
 public struct ProjectFeature: Codable {
     /// The ID of the project.
-    public var projectID: Int?
+    public var projectID: Int64?
     /// The state of the feature. When updating the state of a feature, only ENABLED and DISABLED are supported. Responses can contain all values
     public var state: State?
     /// Whether the state of the feature can be updated.
@@ -30,7 +30,7 @@ public struct ProjectFeature: Codable {
         case comingSoon = "COMING_SOON"
     }
 
-    public init(projectID: Int? = nil, state: State? = nil, isToggleLocked: Bool? = nil, feature: String? = nil, prerequisites: [String]? = nil, localisedName: String? = nil, localisedDescription: String? = nil, imageUri: String? = nil) {
+    public init(projectID: Int64? = nil, state: State? = nil, isToggleLocked: Bool? = nil, feature: String? = nil, prerequisites: [String]? = nil, localisedName: String? = nil, localisedDescription: String? = nil, imageUri: String? = nil) {
         self.projectID = projectID
         self.state = state
         self.isToggleLocked = isToggleLocked
@@ -43,7 +43,7 @@ public struct ProjectFeature: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.projectID = try values.decodeIfPresent(Int.self, forKey: "projectId")
+        self.projectID = try values.decodeIfPresent(Int64.self, forKey: "projectId")
         self.state = try values.decodeIfPresent(State.self, forKey: "state")
         self.isToggleLocked = try values.decodeIfPresent(Bool.self, forKey: "toggleLocked")
         self.feature = try values.decodeIfPresent(String.self, forKey: "feature")

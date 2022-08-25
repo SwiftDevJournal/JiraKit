@@ -7,18 +7,18 @@ import NaiveDate
 /// ID of a registered webhook or error messages explaining why a webhook wasn't registered.
 public struct RegisteredWebhook: Codable {
     /// The ID of the webhook. Returned if the webhook is created.
-    public var createdWebhookID: Int?
+    public var createdWebhookID: Int64?
     /// Error messages specifying why the webhook creation failed.
     public var errors: [String]?
 
-    public init(createdWebhookID: Int? = nil, errors: [String]? = nil) {
+    public init(createdWebhookID: Int64? = nil, errors: [String]? = nil) {
         self.createdWebhookID = createdWebhookID
         self.errors = errors
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.createdWebhookID = try values.decodeIfPresent(Int.self, forKey: "createdWebhookId")
+        self.createdWebhookID = try values.decodeIfPresent(Int64.self, forKey: "createdWebhookId")
         self.errors = try values.decodeIfPresent([String].self, forKey: "errors")
     }
 

@@ -11,7 +11,7 @@ public struct ProjectRole: Codable {
     /// The name of the project role.
     public var name: String?
     /// The ID of the project role.
-    public var id: Int?
+    public var id: Int64?
     /// The description of the project role.
     public var description: String?
     /// The list of users who act in this role.
@@ -29,7 +29,7 @@ public struct ProjectRole: Codable {
     /// Whether this role is the default role for the project
     public var isDefault: Bool?
 
-    public init(this: URL? = nil, name: String? = nil, id: Int? = nil, description: String? = nil, actors: [RoleActor]? = nil, scope: Scope? = nil, translatedName: String? = nil, isCurrentUserRole: Bool? = nil, isAdmin: Bool? = nil, isRoleConfigurable: Bool? = nil, isDefault: Bool? = nil) {
+    public init(this: URL? = nil, name: String? = nil, id: Int64? = nil, description: String? = nil, actors: [RoleActor]? = nil, scope: Scope? = nil, translatedName: String? = nil, isCurrentUserRole: Bool? = nil, isAdmin: Bool? = nil, isRoleConfigurable: Bool? = nil, isDefault: Bool? = nil) {
         self.this = this
         self.name = name
         self.id = id
@@ -47,7 +47,7 @@ public struct ProjectRole: Codable {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.this = try values.decodeIfPresent(URL.self, forKey: "self")
         self.name = try values.decodeIfPresent(String.self, forKey: "name")
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.description = try values.decodeIfPresent(String.self, forKey: "description")
         self.actors = try values.decodeIfPresent([RoleActor].self, forKey: "actors")
         self.scope = try values.decodeIfPresent(Scope.self, forKey: "scope")

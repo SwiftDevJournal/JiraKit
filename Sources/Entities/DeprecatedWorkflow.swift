@@ -17,12 +17,12 @@ public struct DeprecatedWorkflow: Codable {
     /// The account ID of the user that last modified the workflow.
     public var lastModifiedUserAccountID: String?
     /// The number of steps included in the workflow.
-    public var steps: Int?
+    public var steps: Int32?
     /// The scope where this workflow applies
     public var scope: Scope?
     public var isDefault: Bool?
 
-    public init(name: String? = nil, description: String? = nil, lastModifiedDate: String? = nil, lastModifiedUser: String? = nil, lastModifiedUserAccountID: String? = nil, steps: Int? = nil, scope: Scope? = nil, isDefault: Bool? = nil) {
+    public init(name: String? = nil, description: String? = nil, lastModifiedDate: String? = nil, lastModifiedUser: String? = nil, lastModifiedUserAccountID: String? = nil, steps: Int32? = nil, scope: Scope? = nil, isDefault: Bool? = nil) {
         self.name = name
         self.description = description
         self.lastModifiedDate = lastModifiedDate
@@ -40,7 +40,7 @@ public struct DeprecatedWorkflow: Codable {
         self.lastModifiedDate = try values.decodeIfPresent(String.self, forKey: "lastModifiedDate")
         self.lastModifiedUser = try values.decodeIfPresent(String.self, forKey: "lastModifiedUser")
         self.lastModifiedUserAccountID = try values.decodeIfPresent(String.self, forKey: "lastModifiedUserAccountId")
-        self.steps = try values.decodeIfPresent(Int.self, forKey: "steps")
+        self.steps = try values.decodeIfPresent(Int32.self, forKey: "steps")
         self.scope = try values.decodeIfPresent(Scope.self, forKey: "scope")
         self.isDefault = try values.decodeIfPresent(Bool.self, forKey: "default")
     }

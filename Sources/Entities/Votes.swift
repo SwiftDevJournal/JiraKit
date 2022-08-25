@@ -9,13 +9,13 @@ public struct Votes: Codable {
     /// The URL of these issue vote details.
     public var this: URL?
     /// The number of votes on the issue.
-    public var votes: Int?
+    public var votes: Int64?
     /// Whether the user making this request has voted on the issue.
     public var hasVoted: Bool?
     /// List of the users who have voted on this issue. An empty list is returned when the calling user doesn't have the *View voters and watchers* project permission.
     public var voters: [User]?
 
-    public init(this: URL? = nil, votes: Int? = nil, hasVoted: Bool? = nil, voters: [User]? = nil) {
+    public init(this: URL? = nil, votes: Int64? = nil, hasVoted: Bool? = nil, voters: [User]? = nil) {
         self.this = this
         self.votes = votes
         self.hasVoted = hasVoted
@@ -25,7 +25,7 @@ public struct Votes: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.this = try values.decodeIfPresent(URL.self, forKey: "self")
-        self.votes = try values.decodeIfPresent(Int.self, forKey: "votes")
+        self.votes = try values.decodeIfPresent(Int64.self, forKey: "votes")
         self.hasVoted = try values.decodeIfPresent(Bool.self, forKey: "hasVoted")
         self.voters = try values.decodeIfPresent([User].self, forKey: "voters")
     }

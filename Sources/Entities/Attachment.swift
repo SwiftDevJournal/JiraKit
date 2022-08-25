@@ -17,7 +17,7 @@ public struct Attachment: Codable {
     /// The datetime the attachment was created.
     public var created: Date?
     /// The size of the attachment.
-    public var size: Int?
+    public var size: Int64?
     /// The MIME type of the attachment.
     public var mimeType: String?
     /// The content of the attachment.
@@ -25,7 +25,7 @@ public struct Attachment: Codable {
     /// The URL of a thumbnail representing the attachment.
     public var thumbnail: String?
 
-    public init(this: String? = nil, id: String? = nil, filename: String? = nil, author: UserDetails? = nil, created: Date? = nil, size: Int? = nil, mimeType: String? = nil, content: String? = nil, thumbnail: String? = nil) {
+    public init(this: String? = nil, id: String? = nil, filename: String? = nil, author: UserDetails? = nil, created: Date? = nil, size: Int64? = nil, mimeType: String? = nil, content: String? = nil, thumbnail: String? = nil) {
         self.this = this
         self.id = id
         self.filename = filename
@@ -44,7 +44,7 @@ public struct Attachment: Codable {
         self.filename = try values.decodeIfPresent(String.self, forKey: "filename")
         self.author = try values.decodeIfPresent(UserDetails.self, forKey: "author")
         self.created = try values.decodeIfPresent(Date.self, forKey: "created")
-        self.size = try values.decodeIfPresent(Int.self, forKey: "size")
+        self.size = try values.decodeIfPresent(Int64.self, forKey: "size")
         self.mimeType = try values.decodeIfPresent(String.self, forKey: "mimeType")
         self.content = try values.decodeIfPresent(String.self, forKey: "content")
         self.thumbnail = try values.decodeIfPresent(String.self, forKey: "thumbnail")

@@ -26,11 +26,11 @@ extension Paths.API.__3.Issuetypescreenscheme {
         }
 
         public struct GetParameters {
-            public var startAt: Int?
-            public var maxResults: Int?
-            public var projectID: [Int]
+            public var startAt: Int64?
+            public var maxResults: Int32?
+            public var projectID: [Int64]
 
-            public init(startAt: Int? = nil, maxResults: Int? = nil, projectID: [Int]) {
+            public init(startAt: Int64? = nil, maxResults: Int32? = nil, projectID: [Int64]) {
                 self.startAt = startAt
                 self.maxResults = maxResults
                 self.projectID = projectID

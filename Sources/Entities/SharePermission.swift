@@ -7,7 +7,7 @@ import NaiveDate
 /// Details of a share permission for the filter.
 public struct SharePermission: Codable {
     /// The unique identifier of the share permission.
-    public var id: Int?
+    public var id: Int64?
     /// The type of share permission:
     /// 
     ///  *  `user` Shared with a user.
@@ -49,7 +49,7 @@ public struct SharePermission: Codable {
         case projectUnknown = "project-unknown"
     }
 
-    public init(id: Int? = nil, type: `Type`, project: Project? = nil, role: ProjectRole? = nil, group: GroupName? = nil, user: UserBean? = nil) {
+    public init(id: Int64? = nil, type: `Type`, project: Project? = nil, role: ProjectRole? = nil, group: GroupName? = nil, user: UserBean? = nil) {
         self.id = id
         self.type = type
         self.project = project
@@ -60,7 +60,7 @@ public struct SharePermission: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.type = try values.decode(`Type`.self, forKey: "type")
         self.project = try values.decodeIfPresent(Project.self, forKey: "project")
         self.role = try values.decodeIfPresent(ProjectRole.self, forKey: "role")

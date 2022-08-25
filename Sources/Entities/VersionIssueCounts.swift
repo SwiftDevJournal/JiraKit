@@ -9,15 +9,15 @@ public struct VersionIssueCounts: Codable {
     /// The URL of these count details.
     public var this: URL?
     /// Count of issues where the `fixVersion` is set to the version.
-    public var issuesFixedCount: Int?
+    public var issuesFixedCount: Int64?
     /// Count of issues where the `affectedVersion` is set to the version.
-    public var issuesAffectedCount: Int?
+    public var issuesAffectedCount: Int64?
     /// Count of issues where a version custom field is set to the version.
-    public var issueCountWithCustomFieldsShowingVersion: Int?
+    public var issueCountWithCustomFieldsShowingVersion: Int64?
     /// List of custom fields using the version.
     public var customFieldUsage: [VersionUsageInCustomField]?
 
-    public init(this: URL? = nil, issuesFixedCount: Int? = nil, issuesAffectedCount: Int? = nil, issueCountWithCustomFieldsShowingVersion: Int? = nil, customFieldUsage: [VersionUsageInCustomField]? = nil) {
+    public init(this: URL? = nil, issuesFixedCount: Int64? = nil, issuesAffectedCount: Int64? = nil, issueCountWithCustomFieldsShowingVersion: Int64? = nil, customFieldUsage: [VersionUsageInCustomField]? = nil) {
         self.this = this
         self.issuesFixedCount = issuesFixedCount
         self.issuesAffectedCount = issuesAffectedCount
@@ -28,9 +28,9 @@ public struct VersionIssueCounts: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.this = try values.decodeIfPresent(URL.self, forKey: "self")
-        self.issuesFixedCount = try values.decodeIfPresent(Int.self, forKey: "issuesFixedCount")
-        self.issuesAffectedCount = try values.decodeIfPresent(Int.self, forKey: "issuesAffectedCount")
-        self.issueCountWithCustomFieldsShowingVersion = try values.decodeIfPresent(Int.self, forKey: "issueCountWithCustomFieldsShowingVersion")
+        self.issuesFixedCount = try values.decodeIfPresent(Int64.self, forKey: "issuesFixedCount")
+        self.issuesAffectedCount = try values.decodeIfPresent(Int64.self, forKey: "issuesAffectedCount")
+        self.issueCountWithCustomFieldsShowingVersion = try values.decodeIfPresent(Int64.self, forKey: "issueCountWithCustomFieldsShowingVersion")
         self.customFieldUsage = try values.decodeIfPresent([VersionUsageInCustomField].self, forKey: "customFieldUsage")
     }
 

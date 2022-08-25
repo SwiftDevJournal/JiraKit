@@ -9,7 +9,7 @@ public struct PermissionScheme: Codable {
     /// The expand options available for the permission scheme.
     public var expand: String?
     /// The ID of the permission scheme.
-    public var id: Int?
+    public var id: Int64?
     /// The URL of the permission scheme.
     public var this: URL?
     /// The name of the permission scheme. Must be unique.
@@ -21,7 +21,7 @@ public struct PermissionScheme: Codable {
     /// The permission scheme to create or update. See [About permission schemes and grants](../api-group-permission-schemes/#about-permission-schemes-and-grants) for more information.
     public var permissions: [PermissionGrant]?
 
-    public init(expand: String? = nil, id: Int? = nil, this: URL? = nil, name: String, description: String? = nil, scope: Scope? = nil, permissions: [PermissionGrant]? = nil) {
+    public init(expand: String? = nil, id: Int64? = nil, this: URL? = nil, name: String, description: String? = nil, scope: Scope? = nil, permissions: [PermissionGrant]? = nil) {
         self.expand = expand
         self.id = id
         self.this = this
@@ -34,7 +34,7 @@ public struct PermissionScheme: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.expand = try values.decodeIfPresent(String.self, forKey: "expand")
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.this = try values.decodeIfPresent(URL.self, forKey: "self")
         self.name = try values.decode(String.self, forKey: "name")
         self.description = try values.decodeIfPresent(String.self, forKey: "description")

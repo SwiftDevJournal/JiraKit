@@ -44,10 +44,10 @@ extension Paths.API.__3.User.Viewissue {
             public var accountID: String?
             public var issueKey: String?
             public var projectKey: String?
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int32?
+            public var maxResults: Int32?
 
-            public init(query: String? = nil, username: String? = nil, accountID: String? = nil, issueKey: String? = nil, projectKey: String? = nil, startAt: Int? = nil, maxResults: Int? = nil) {
+            public init(query: String? = nil, username: String? = nil, accountID: String? = nil, issueKey: String? = nil, projectKey: String? = nil, startAt: Int32? = nil, maxResults: Int32? = nil) {
                 self.query = query
                 self.username = username
                 self.accountID = accountID

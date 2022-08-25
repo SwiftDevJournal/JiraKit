@@ -31,11 +31,11 @@ extension Paths.API.__3.Field.WithFieldID {
         public struct GetParameters {
             public var isAnyIssueType: Bool?
             public var isGlobalContext: Bool?
-            public var contextID: [Int]?
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var contextID: [Int64]?
+            public var startAt: Int64?
+            public var maxResults: Int32?
 
-            public init(isAnyIssueType: Bool? = nil, isGlobalContext: Bool? = nil, contextID: [Int]? = nil, startAt: Int? = nil, maxResults: Int? = nil) {
+            public init(isAnyIssueType: Bool? = nil, isGlobalContext: Bool? = nil, contextID: [Int64]? = nil, startAt: Int64? = nil, maxResults: Int32? = nil) {
                 self.isAnyIssueType = isAnyIssueType
                 self.isGlobalContext = isGlobalContext
                 self.contextID = contextID

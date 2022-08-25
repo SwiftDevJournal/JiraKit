@@ -6,7 +6,7 @@ import NaiveDate
 
 public struct ProjectRoleActorsUpdateBean: Codable {
     /// The ID of the project role. Use [Get all project roles](#api-rest-api-3-role-get) to get a list of project role IDs.
-    public var id: Int?
+    public var id: Int64?
     /// The actors to add to the project role.
     /// 
     /// Add groups using:
@@ -19,14 +19,14 @@ public struct ProjectRoleActorsUpdateBean: Codable {
     /// Add users using `atlassian-user-role-actor` and a list of account IDs. For example, `"atlassian-user-role-actor":["12345678-9abc-def1-2345-6789abcdef12", "abcdef12-3456-789a-bcde-f123456789ab"]`.
     public var categorisedActors: [String: [String]]?
 
-    public init(id: Int? = nil, categorisedActors: [String: [String]]? = nil) {
+    public init(id: Int64? = nil, categorisedActors: [String: [String]]? = nil) {
         self.id = id
         self.categorisedActors = categorisedActors
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.categorisedActors = try values.decodeIfPresent([String: [String]].self, forKey: "categorisedActors")
     }
 

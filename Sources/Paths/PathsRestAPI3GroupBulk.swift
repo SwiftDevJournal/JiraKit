@@ -24,13 +24,13 @@ extension Paths.API.__3.Group {
         }
 
         public struct GetParameters {
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int64?
+            public var maxResults: Int32?
             /// Example: "3571b9a7-348f-414a-9087-8e1ea03a7df8"
             public var groupID: [String]?
             public var groupName: [String]?
 
-            public init(startAt: Int? = nil, maxResults: Int? = nil, groupID: [String]? = nil, groupName: [String]? = nil) {
+            public init(startAt: Int64? = nil, maxResults: Int32? = nil, groupID: [String]? = nil, groupName: [String]? = nil) {
                 self.startAt = startAt
                 self.maxResults = maxResults
                 self.groupID = groupID

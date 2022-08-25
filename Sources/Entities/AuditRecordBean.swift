@@ -7,7 +7,7 @@ import NaiveDate
 /// An audit record.
 public struct AuditRecordBean: Codable {
     /// The ID of the audit record.
-    public var id: Int?
+    public var id: Int64?
     /// The summary of the audit record.
     public var summary: String?
     /// The URL of the computer where the creation of the audit record was initiated.
@@ -29,7 +29,7 @@ public struct AuditRecordBean: Codable {
     /// The list of items associated with the changed record.
     public var associatedItems: [AssociatedItemBean]?
 
-    public init(id: Int? = nil, summary: String? = nil, remoteAddress: String? = nil, authorKey: String? = nil, created: Date? = nil, category: String? = nil, eventSource: String? = nil, description: String? = nil, objectItem: AssociatedItemBean? = nil, changedValues: [ChangedValueBean]? = nil, associatedItems: [AssociatedItemBean]? = nil) {
+    public init(id: Int64? = nil, summary: String? = nil, remoteAddress: String? = nil, authorKey: String? = nil, created: Date? = nil, category: String? = nil, eventSource: String? = nil, description: String? = nil, objectItem: AssociatedItemBean? = nil, changedValues: [ChangedValueBean]? = nil, associatedItems: [AssociatedItemBean]? = nil) {
         self.id = id
         self.summary = summary
         self.remoteAddress = remoteAddress
@@ -45,7 +45,7 @@ public struct AuditRecordBean: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.summary = try values.decodeIfPresent(String.self, forKey: "summary")
         self.remoteAddress = try values.decodeIfPresent(String.self, forKey: "remoteAddress")
         self.authorKey = try values.decodeIfPresent(String.self, forKey: "authorKey")

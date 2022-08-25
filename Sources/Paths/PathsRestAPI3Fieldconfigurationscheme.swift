@@ -26,11 +26,11 @@ extension Paths.API.__3 {
         }
 
         public struct GetParameters {
-            public var startAt: Int?
-            public var maxResults: Int?
-            public var id: [Int]?
+            public var startAt: Int64?
+            public var maxResults: Int32?
+            public var id: [Int64]?
 
-            public init(startAt: Int? = nil, maxResults: Int? = nil, id: [Int]? = nil) {
+            public init(startAt: Int64? = nil, maxResults: Int32? = nil, id: [Int64]? = nil) {
                 self.startAt = startAt
                 self.maxResults = maxResults
                 self.id = id

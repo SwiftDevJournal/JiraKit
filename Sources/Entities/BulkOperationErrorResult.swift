@@ -5,12 +5,12 @@ import Foundation
 import NaiveDate
 
 public struct BulkOperationErrorResult: Codable {
-    public var status: Int?
+    public var status: Int32?
     /// Error messages from an operation.
     public var elementErrors: ErrorCollection?
-    public var failedElementNumber: Int?
+    public var failedElementNumber: Int32?
 
-    public init(status: Int? = nil, elementErrors: ErrorCollection? = nil, failedElementNumber: Int? = nil) {
+    public init(status: Int32? = nil, elementErrors: ErrorCollection? = nil, failedElementNumber: Int32? = nil) {
         self.status = status
         self.elementErrors = elementErrors
         self.failedElementNumber = failedElementNumber
@@ -18,9 +18,9 @@ public struct BulkOperationErrorResult: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.status = try values.decodeIfPresent(Int.self, forKey: "status")
+        self.status = try values.decodeIfPresent(Int32.self, forKey: "status")
         self.elementErrors = try values.decodeIfPresent(ErrorCollection.self, forKey: "elementErrors")
-        self.failedElementNumber = try values.decodeIfPresent(Int.self, forKey: "failedElementNumber")
+        self.failedElementNumber = try values.decodeIfPresent(Int32.self, forKey: "failedElementNumber")
     }
 
     public func encode(to encoder: Encoder) throws {

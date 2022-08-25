@@ -9,11 +9,11 @@ public struct ProjectIdentifiers: Codable {
     /// The URL of the created project.
     public var this: URL
     /// The ID of the created project.
-    public var id: Int
+    public var id: Int64
     /// The key of the created project.
     public var key: String
 
-    public init(this: URL, id: Int, key: String) {
+    public init(this: URL, id: Int64, key: String) {
         self.this = this
         self.id = id
         self.key = key
@@ -22,7 +22,7 @@ public struct ProjectIdentifiers: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.this = try values.decode(URL.self, forKey: "self")
-        self.id = try values.decode(Int.self, forKey: "id")
+        self.id = try values.decode(Int64.self, forKey: "id")
         self.key = try values.decode(String.self, forKey: "key")
     }
 

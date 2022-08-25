@@ -25,7 +25,7 @@ public struct Worklog: Codable {
     /// The time spent working on the issue as days (\#d), hours (\#h), or minutes (\#m or \#). Required when creating a worklog if `timeSpentSeconds` isn't provided. Optional when updating a worklog. Cannot be provided if `timeSpentSecond` is provided.
     public var timeSpent: String?
     /// The time in seconds spent working on the issue. Required when creating a worklog if `timeSpent` isn't provided. Optional when updating a worklog. Cannot be provided if `timeSpent` is provided.
-    public var timeSpentSeconds: Int?
+    public var timeSpentSeconds: Int64?
     /// The ID of the worklog record.
     public var id: String?
     /// The ID of the issue this worklog is for.
@@ -33,7 +33,7 @@ public struct Worklog: Codable {
     /// Details of properties for the worklog. Optional when creating or updating a worklog.
     public var properties: [EntityProperty]?
 
-    public init(this: URL? = nil, author: UserDetails? = nil, updateAuthor: UserDetails? = nil, comment: AnyJSON? = nil, created: Date? = nil, updated: Date? = nil, visibility: Visibility? = nil, started: Date? = nil, timeSpent: String? = nil, timeSpentSeconds: Int? = nil, id: String? = nil, issueID: String? = nil, properties: [EntityProperty]? = nil) {
+    public init(this: URL? = nil, author: UserDetails? = nil, updateAuthor: UserDetails? = nil, comment: AnyJSON? = nil, created: Date? = nil, updated: Date? = nil, visibility: Visibility? = nil, started: Date? = nil, timeSpent: String? = nil, timeSpentSeconds: Int64? = nil, id: String? = nil, issueID: String? = nil, properties: [EntityProperty]? = nil) {
         self.this = this
         self.author = author
         self.updateAuthor = updateAuthor
@@ -60,7 +60,7 @@ public struct Worklog: Codable {
         self.visibility = try values.decodeIfPresent(Visibility.self, forKey: "visibility")
         self.started = try values.decodeIfPresent(Date.self, forKey: "started")
         self.timeSpent = try values.decodeIfPresent(String.self, forKey: "timeSpent")
-        self.timeSpentSeconds = try values.decodeIfPresent(Int.self, forKey: "timeSpentSeconds")
+        self.timeSpentSeconds = try values.decodeIfPresent(Int64.self, forKey: "timeSpentSeconds")
         self.id = try values.decodeIfPresent(String.self, forKey: "id")
         self.issueID = try values.decodeIfPresent(String.self, forKey: "issueId")
         self.properties = try values.decodeIfPresent([EntityProperty].self, forKey: "properties")

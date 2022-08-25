@@ -10,9 +10,9 @@ import NaiveDate
 ///  *  `expression`
 public struct JiraExpressionValidationError: Codable {
     /// The text line in which the error occurred.
-    public var line: Int?
+    public var line: Int32?
     /// The text column in which the error occurred.
-    public var column: Int?
+    public var column: Int32?
     /// The part of the expression in which the error occurred.
     public var expression: String?
     /// Details about the error.
@@ -29,7 +29,7 @@ public struct JiraExpressionValidationError: Codable {
         case other
     }
 
-    public init(line: Int? = nil, column: Int? = nil, expression: String? = nil, message: String, type: `Type`) {
+    public init(line: Int32? = nil, column: Int32? = nil, expression: String? = nil, message: String, type: `Type`) {
         self.line = line
         self.column = column
         self.expression = expression
@@ -39,8 +39,8 @@ public struct JiraExpressionValidationError: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.line = try values.decodeIfPresent(Int.self, forKey: "line")
-        self.column = try values.decodeIfPresent(Int.self, forKey: "column")
+        self.line = try values.decodeIfPresent(Int32.self, forKey: "line")
+        self.column = try values.decodeIfPresent(Int32.self, forKey: "column")
         self.expression = try values.decodeIfPresent(String.self, forKey: "expression")
         self.message = try values.decode(String.self, forKey: "message")
         self.type = try values.decode(`Type`.self, forKey: "type")

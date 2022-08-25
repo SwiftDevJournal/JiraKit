@@ -7,7 +7,7 @@ import NaiveDate
 /// Details about a user assigned to a project role.
 public struct RoleActor: Codable {
     /// The ID of the role actor.
-    public var id: Int?
+    public var id: Int64?
     /// The display name of the role actor. For users, depending on the user’s privacy setting, this may return an alternative value for the user's name.
     public var displayName: String?
     /// The type of role actor.
@@ -25,7 +25,7 @@ public struct RoleActor: Codable {
         case atlassianUserRoleActor = "atlassian-user-role-actor"
     }
 
-    public init(id: Int? = nil, displayName: String? = nil, type: `Type`? = nil, name: String? = nil, avatarURL: URL? = nil, actorUser: ProjectRoleUser? = nil, actorGroup: ProjectRoleGroup? = nil) {
+    public init(id: Int64? = nil, displayName: String? = nil, type: `Type`? = nil, name: String? = nil, avatarURL: URL? = nil, actorUser: ProjectRoleUser? = nil, actorGroup: ProjectRoleGroup? = nil) {
         self.id = id
         self.displayName = displayName
         self.type = type
@@ -37,7 +37,7 @@ public struct RoleActor: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.displayName = try values.decodeIfPresent(String.self, forKey: "displayName")
         self.type = try values.decodeIfPresent(`Type`.self, forKey: "type")
         self.name = try values.decodeIfPresent(String.self, forKey: "name")

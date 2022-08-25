@@ -9,11 +9,11 @@ public struct VersionUsageInCustomField: Codable {
     /// The name of the custom field.
     public var fieldName: String?
     /// The ID of the custom field.
-    public var customFieldID: Int?
+    public var customFieldID: Int64?
     /// Count of the issues where the custom field contains the version.
-    public var issueCountWithVersionInCustomField: Int?
+    public var issueCountWithVersionInCustomField: Int64?
 
-    public init(fieldName: String? = nil, customFieldID: Int? = nil, issueCountWithVersionInCustomField: Int? = nil) {
+    public init(fieldName: String? = nil, customFieldID: Int64? = nil, issueCountWithVersionInCustomField: Int64? = nil) {
         self.fieldName = fieldName
         self.customFieldID = customFieldID
         self.issueCountWithVersionInCustomField = issueCountWithVersionInCustomField
@@ -22,8 +22,8 @@ public struct VersionUsageInCustomField: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.fieldName = try values.decodeIfPresent(String.self, forKey: "fieldName")
-        self.customFieldID = try values.decodeIfPresent(Int.self, forKey: "customFieldId")
-        self.issueCountWithVersionInCustomField = try values.decodeIfPresent(Int.self, forKey: "issueCountWithVersionInCustomField")
+        self.customFieldID = try values.decodeIfPresent(Int64.self, forKey: "customFieldId")
+        self.issueCountWithVersionInCustomField = try values.decodeIfPresent(Int64.self, forKey: "issueCountWithVersionInCustomField")
     }
 
     public func encode(to encoder: Encoder) throws {

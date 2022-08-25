@@ -7,13 +7,13 @@ import NaiveDate
 /// Details of an issue type.
 public struct IssueTypeInfo: Codable {
     /// The ID of the issue type.
-    public var id: Int?
+    public var id: Int64?
     /// The name of the issue type.
     public var name: String?
     /// The avatar of the issue type.
-    public var avatarID: Int?
+    public var avatarID: Int64?
 
-    public init(id: Int? = nil, name: String? = nil, avatarID: Int? = nil) {
+    public init(id: Int64? = nil, name: String? = nil, avatarID: Int64? = nil) {
         self.id = id
         self.name = name
         self.avatarID = avatarID
@@ -21,9 +21,9 @@ public struct IssueTypeInfo: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.name = try values.decodeIfPresent(String.self, forKey: "name")
-        self.avatarID = try values.decodeIfPresent(Int.self, forKey: "avatarId")
+        self.avatarID = try values.decodeIfPresent(Int64.self, forKey: "avatarId")
     }
 
     public func encode(to encoder: Encoder) throws {

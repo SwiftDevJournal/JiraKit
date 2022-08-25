@@ -7,18 +7,18 @@ import NaiveDate
 /// Details about an issue event.
 public struct IssueEvent: Codable {
     /// The ID of the event.
-    public var id: Int?
+    public var id: Int64?
     /// The name of the event.
     public var name: String?
 
-    public init(id: Int? = nil, name: String? = nil) {
+    public init(id: Int64? = nil, name: String? = nil) {
         self.id = id
         self.name = name
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.name = try values.decodeIfPresent(String.self, forKey: "name")
     }
 

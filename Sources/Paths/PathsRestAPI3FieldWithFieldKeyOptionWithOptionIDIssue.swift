@@ -30,12 +30,12 @@ extension Paths.API.__3.Field.WithFieldKey.Option.WithOptionID {
         }
 
         public struct DeleteParameters {
-            public var replaceWith: Int?
+            public var replaceWith: Int64?
             public var jql: String?
             public var isOverrideScreenSecurity: Bool?
             public var isOverrideEditableFlag: Bool?
 
-            public init(replaceWith: Int? = nil, jql: String? = nil, isOverrideScreenSecurity: Bool? = nil, isOverrideEditableFlag: Bool? = nil) {
+            public init(replaceWith: Int64? = nil, jql: String? = nil, isOverrideScreenSecurity: Bool? = nil, isOverrideEditableFlag: Bool? = nil) {
                 self.replaceWith = replaceWith
                 self.jql = jql
                 self.isOverrideScreenSecurity = isOverrideScreenSecurity

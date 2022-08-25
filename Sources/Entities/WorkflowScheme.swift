@@ -7,7 +7,7 @@ import NaiveDate
 /// Details about a workflow scheme.
 public struct WorkflowScheme: Codable {
     /// The ID of the workflow scheme.
-    public var id: Int?
+    public var id: Int64?
     /// The name of the workflow scheme. The name must be unique. The maximum length is 255 characters. Required when creating a workflow scheme.
     public var name: String?
     /// The description of the workflow scheme.
@@ -38,7 +38,7 @@ public struct WorkflowScheme: Codable {
     /// The issue types available in Jira.
     public var issueTypes: [String: IssueTypeDetails]?
 
-    public init(id: Int? = nil, name: String? = nil, description: String? = nil, defaultWorkflow: String? = nil, issueTypeMappings: [String: String]? = nil, originalDefaultWorkflow: String? = nil, originalIssueTypeMappings: [String: String]? = nil, isDraft: Bool? = nil, lastModifiedUser: User? = nil, lastModified: String? = nil, this: URL? = nil, isUpdateDraftIfNeeded: Bool? = nil, issueTypes: [String: IssueTypeDetails]? = nil) {
+    public init(id: Int64? = nil, name: String? = nil, description: String? = nil, defaultWorkflow: String? = nil, issueTypeMappings: [String: String]? = nil, originalDefaultWorkflow: String? = nil, originalIssueTypeMappings: [String: String]? = nil, isDraft: Bool? = nil, lastModifiedUser: User? = nil, lastModified: String? = nil, this: URL? = nil, isUpdateDraftIfNeeded: Bool? = nil, issueTypes: [String: IssueTypeDetails]? = nil) {
         self.id = id
         self.name = name
         self.description = description
@@ -56,7 +56,7 @@ public struct WorkflowScheme: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.name = try values.decodeIfPresent(String.self, forKey: "name")
         self.description = try values.decodeIfPresent(String.self, forKey: "description")
         self.defaultWorkflow = try values.decodeIfPresent(String.self, forKey: "defaultWorkflow")

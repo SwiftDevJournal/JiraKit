@@ -19,15 +19,15 @@ public struct IssueTypeDetails: Codable {
     /// Whether this issue type is used to create subtasks.
     public var isSubtask: Bool?
     /// The ID of the issue type's avatar.
-    public var avatarID: Int?
+    public var avatarID: Int64?
     /// Unique ID for next-gen projects.
     public var entityID: UUID?
     /// Hierarchy level of the issue type.
-    public var hierarchyLevel: Int?
+    public var hierarchyLevel: Int32?
     /// Details of the next-gen projects the issue type is available in.
     public var scope: Scope?
 
-    public init(this: String? = nil, id: String? = nil, description: String? = nil, iconURL: String? = nil, name: String? = nil, isSubtask: Bool? = nil, avatarID: Int? = nil, entityID: UUID? = nil, hierarchyLevel: Int? = nil, scope: Scope? = nil) {
+    public init(this: String? = nil, id: String? = nil, description: String? = nil, iconURL: String? = nil, name: String? = nil, isSubtask: Bool? = nil, avatarID: Int64? = nil, entityID: UUID? = nil, hierarchyLevel: Int32? = nil, scope: Scope? = nil) {
         self.this = this
         self.id = id
         self.description = description
@@ -48,9 +48,9 @@ public struct IssueTypeDetails: Codable {
         self.iconURL = try values.decodeIfPresent(String.self, forKey: "iconUrl")
         self.name = try values.decodeIfPresent(String.self, forKey: "name")
         self.isSubtask = try values.decodeIfPresent(Bool.self, forKey: "subtask")
-        self.avatarID = try values.decodeIfPresent(Int.self, forKey: "avatarId")
+        self.avatarID = try values.decodeIfPresent(Int64.self, forKey: "avatarId")
         self.entityID = try values.decodeIfPresent(UUID.self, forKey: "entityId")
-        self.hierarchyLevel = try values.decodeIfPresent(Int.self, forKey: "hierarchyLevel")
+        self.hierarchyLevel = try values.decodeIfPresent(Int32.self, forKey: "hierarchyLevel")
         self.scope = try values.decodeIfPresent(Scope.self, forKey: "scope")
     }
 

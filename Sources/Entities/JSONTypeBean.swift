@@ -15,11 +15,11 @@ public struct JSONTypeBean: Codable {
     /// If the field is a custom field, the URI of the field.
     public var custom: String?
     /// If the field is a custom field, the custom ID of the field.
-    public var customID: Int?
+    public var customID: Int64?
     /// If the field is a custom field, the configuration of the field.
     public var configuration: [String: AnyJSON]?
 
-    public init(type: String, items: String? = nil, system: String? = nil, custom: String? = nil, customID: Int? = nil, configuration: [String: AnyJSON]? = nil) {
+    public init(type: String, items: String? = nil, system: String? = nil, custom: String? = nil, customID: Int64? = nil, configuration: [String: AnyJSON]? = nil) {
         self.type = type
         self.items = items
         self.system = system
@@ -34,7 +34,7 @@ public struct JSONTypeBean: Codable {
         self.items = try values.decodeIfPresent(String.self, forKey: "items")
         self.system = try values.decodeIfPresent(String.self, forKey: "system")
         self.custom = try values.decodeIfPresent(String.self, forKey: "custom")
-        self.customID = try values.decodeIfPresent(Int.self, forKey: "customId")
+        self.customID = try values.decodeIfPresent(Int64.self, forKey: "customId")
         self.configuration = try values.decodeIfPresent([String: AnyJSON].self, forKey: "configuration")
     }
 

@@ -7,13 +7,13 @@ import NaiveDate
 /// A context.
 public struct Context: Codable {
     /// The ID of the context.
-    public var id: Int?
+    public var id: Int64?
     /// The name of the context.
     public var name: String?
     /// The scope of the context.
     public var scope: Scope?
 
-    public init(id: Int? = nil, name: String? = nil, scope: Scope? = nil) {
+    public init(id: Int64? = nil, name: String? = nil, scope: Scope? = nil) {
         self.id = id
         self.name = name
         self.scope = scope
@@ -21,7 +21,7 @@ public struct Context: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.name = try values.decodeIfPresent(String.self, forKey: "name")
         self.scope = try values.decodeIfPresent(Scope.self, forKey: "scope")
     }

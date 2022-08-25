@@ -25,11 +25,11 @@ extension Paths.API.__3.Webhook {
         /// This method uses a cursor-based pagination. To request the next page use the failure time of the last webhook on the list as the `failedAfter` value or use the URL provided in `next`.
         /// 
         /// **[Permissions](#permissions) required:** Only [Connect apps](https://developer.atlassian.com/cloud/jira/platform/index/#connect-apps) can use this operation.
-        public func get(maxResults: Int? = nil, after: Int? = nil) -> Request<JiraKit.FailedWebhooks> {
+        public func get(maxResults: Int32? = nil, after: Int64? = nil) -> Request<JiraKit.FailedWebhooks> {
             Request(method: "GET", url: path, query: makeGetQuery(maxResults, after), id: "getFailedWebhooks")
         }
 
-        private func makeGetQuery(_ maxResults: Int?, _ after: Int?) -> [(String, String?)] {
+        private func makeGetQuery(_ maxResults: Int32?, _ after: Int64?) -> [(String, String?)] {
             let encoder = URLQueryEncoder()
             encoder.encode(maxResults, forKey: "maxResults")
             encoder.encode(after, forKey: "after")

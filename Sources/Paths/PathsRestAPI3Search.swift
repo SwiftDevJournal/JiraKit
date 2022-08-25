@@ -33,8 +33,8 @@ extension Paths.API.__3 {
         public struct GetParameters {
             /// Example: "project = HSP"
             public var jql: String?
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int32?
+            public var maxResults: Int32?
             public var validateQuery: ValidateQuery?
             public var fields: [String]?
             public var expand: String?
@@ -49,7 +49,7 @@ extension Paths.API.__3 {
                 case `false`
             }
 
-            public init(jql: String? = nil, startAt: Int? = nil, maxResults: Int? = nil, validateQuery: ValidateQuery? = nil, fields: [String]? = nil, expand: String? = nil, properties: [String]? = nil, isFieldsByKeys: Bool? = nil) {
+            public init(jql: String? = nil, startAt: Int32? = nil, maxResults: Int32? = nil, validateQuery: ValidateQuery? = nil, fields: [String]? = nil, expand: String? = nil, properties: [String]? = nil, isFieldsByKeys: Bool? = nil) {
                 self.jql = jql
                 self.startAt = startAt
                 self.maxResults = maxResults

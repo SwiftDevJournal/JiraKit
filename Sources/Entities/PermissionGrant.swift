@@ -7,7 +7,7 @@ import NaiveDate
 /// Details about a permission granted to a user or group.
 public struct PermissionGrant: Codable {
     /// The ID of the permission granted details.
-    public var id: Int?
+    public var id: Int64?
     /// The URL of the permission granted details.
     public var this: URL?
     /// The user or group being granted the permission. It consists of a `type`, a type-dependent `parameter` and a type-dependent `value`. See [Holder object](../api-group-permission-schemes/#holder-object) in *Get all permission schemes* for more information.
@@ -15,7 +15,7 @@ public struct PermissionGrant: Codable {
     /// The permission to grant. This permission can be one of the built-in permissions or a custom permission added by an app. See [Built-in permissions](../api-group-permission-schemes/#built-in-permissions) in *Get all permission schemes* for more information about the built-in permissions. See the [project permission](https://developer.atlassian.com/cloud/jira/platform/modules/project-permission/) and [global permission](https://developer.atlassian.com/cloud/jira/platform/modules/global-permission/) module documentation for more information about custom permissions.
     public var permission: String?
 
-    public init(id: Int? = nil, this: URL? = nil, holder: PermissionHolder? = nil, permission: String? = nil) {
+    public init(id: Int64? = nil, this: URL? = nil, holder: PermissionHolder? = nil, permission: String? = nil) {
         self.id = id
         self.this = this
         self.holder = holder
@@ -24,7 +24,7 @@ public struct PermissionGrant: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.this = try values.decodeIfPresent(URL.self, forKey: "self")
         self.holder = try values.decodeIfPresent(PermissionHolder.self, forKey: "holder")
         self.permission = try values.decodeIfPresent(String.self, forKey: "permission")

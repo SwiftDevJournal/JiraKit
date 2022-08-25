@@ -7,7 +7,7 @@ import NaiveDate
 /// A screen scheme.
 public struct ScreenScheme: Codable {
     /// The ID of the screen scheme.
-    public var id: Int?
+    public var id: Int64?
     /// The name of the screen scheme.
     public var name: String?
     /// The description of the screen scheme.
@@ -17,7 +17,7 @@ public struct ScreenScheme: Codable {
     /// Details of the issue type screen schemes associated with the screen scheme.
     public var issueTypeScreenSchemes: PageBeanIssueTypeScreenScheme?
 
-    public init(id: Int? = nil, name: String? = nil, description: String? = nil, screens: ScreenTypes? = nil, issueTypeScreenSchemes: PageBeanIssueTypeScreenScheme? = nil) {
+    public init(id: Int64? = nil, name: String? = nil, description: String? = nil, screens: ScreenTypes? = nil, issueTypeScreenSchemes: PageBeanIssueTypeScreenScheme? = nil) {
         self.id = id
         self.name = name
         self.description = description
@@ -27,7 +27,7 @@ public struct ScreenScheme: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.name = try values.decodeIfPresent(String.self, forKey: "name")
         self.description = try values.decodeIfPresent(String.self, forKey: "description")
         self.screens = try values.decodeIfPresent(ScreenTypes.self, forKey: "screens")

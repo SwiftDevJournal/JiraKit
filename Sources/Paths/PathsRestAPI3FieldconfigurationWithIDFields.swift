@@ -21,11 +21,11 @@ extension Paths.API.__3.Fieldconfiguration.WithID {
         /// Only the fields from configurations used in company-managed (classic) projects are returned.
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
-        public func get(startAt: Int? = nil, maxResults: Int? = nil) -> Request<JiraKit.PageBeanFieldConfigurationItem> {
+        public func get(startAt: Int64? = nil, maxResults: Int32? = nil) -> Request<JiraKit.PageBeanFieldConfigurationItem> {
             Request(method: "GET", url: path, query: makeGetQuery(startAt, maxResults), id: "getFieldConfigurationItems")
         }
 
-        private func makeGetQuery(_ startAt: Int?, _ maxResults: Int?) -> [(String, String?)] {
+        private func makeGetQuery(_ startAt: Int64?, _ maxResults: Int32?) -> [(String, String?)] {
             let encoder = URLQueryEncoder()
             encoder.encode(startAt, forKey: "startAt")
             encoder.encode(maxResults, forKey: "maxResults")

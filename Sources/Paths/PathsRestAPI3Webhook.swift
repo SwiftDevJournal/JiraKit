@@ -19,11 +19,11 @@ extension Paths.API.__3 {
         /// Returns a [paginated](#pagination) list of the webhooks registered by the calling app.
         /// 
         /// **[Permissions](#permissions) required:** Only [Connect](https://developer.atlassian.com/cloud/jira/platform/#connect-apps) and [OAuth 2.0](https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps) apps can use this operation.
-        public func get(startAt: Int? = nil, maxResults: Int? = nil) -> Request<JiraKit.PageBeanWebhook> {
+        public func get(startAt: Int64? = nil, maxResults: Int32? = nil) -> Request<JiraKit.PageBeanWebhook> {
             Request(method: "GET", url: path, query: makeGetQuery(startAt, maxResults), id: "getDynamicWebhooksForApp")
         }
 
-        private func makeGetQuery(_ startAt: Int?, _ maxResults: Int?) -> [(String, String?)] {
+        private func makeGetQuery(_ startAt: Int64?, _ maxResults: Int32?) -> [(String, String?)] {
             let encoder = URLQueryEncoder()
             encoder.encode(startAt, forKey: "startAt")
             encoder.encode(maxResults, forKey: "maxResults")

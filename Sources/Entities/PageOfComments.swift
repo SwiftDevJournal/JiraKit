@@ -7,15 +7,15 @@ import NaiveDate
 /// A page of comments.
 public struct PageOfComments: Codable {
     /// The index of the first item returned.
-    public var startAt: Int?
+    public var startAt: Int64?
     /// The maximum number of items that could be returned.
-    public var maxResults: Int?
+    public var maxResults: Int32?
     /// The number of items returned.
-    public var total: Int?
+    public var total: Int64?
     /// The list of comments.
     public var comments: [Comment]?
 
-    public init(startAt: Int? = nil, maxResults: Int? = nil, total: Int? = nil, comments: [Comment]? = nil) {
+    public init(startAt: Int64? = nil, maxResults: Int32? = nil, total: Int64? = nil, comments: [Comment]? = nil) {
         self.startAt = startAt
         self.maxResults = maxResults
         self.total = total
@@ -24,9 +24,9 @@ public struct PageOfComments: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.startAt = try values.decodeIfPresent(Int.self, forKey: "startAt")
-        self.maxResults = try values.decodeIfPresent(Int.self, forKey: "maxResults")
-        self.total = try values.decodeIfPresent(Int.self, forKey: "total")
+        self.startAt = try values.decodeIfPresent(Int64.self, forKey: "startAt")
+        self.maxResults = try values.decodeIfPresent(Int32.self, forKey: "maxResults")
+        self.total = try values.decodeIfPresent(Int64.self, forKey: "total")
         self.comments = try values.decodeIfPresent([Comment].self, forKey: "comments")
     }
 

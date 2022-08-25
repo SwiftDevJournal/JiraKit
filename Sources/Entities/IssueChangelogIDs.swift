@@ -7,15 +7,15 @@ import NaiveDate
 /// A list of changelog IDs.
 public struct IssueChangelogIDs: Codable {
     /// The list of changelog IDs.
-    public var changelogIDs: [Int]
+    public var changelogIDs: [Int64]
 
-    public init(changelogIDs: [Int]) {
+    public init(changelogIDs: [Int64]) {
         self.changelogIDs = changelogIDs
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.changelogIDs = try values.decode([Int].self, forKey: "changelogIds")
+        self.changelogIDs = try values.decode([Int64].self, forKey: "changelogIds")
     }
 
     public func encode(to encoder: Encoder) throws {

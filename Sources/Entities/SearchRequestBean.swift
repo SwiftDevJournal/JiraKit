@@ -8,9 +8,9 @@ public struct SearchRequestBean: Codable {
     /// A [JQL](https://confluence.atlassian.com/x/egORLQ) expression.
     public var jql: String?
     /// The index of the first item to return in the page of results (page offset). The base index is `0`.
-    public var startAt: Int?
+    public var startAt: Int32?
     /// The maximum number of items to return per page.
-    public var maxResults: Int?
+    public var maxResults: Int32?
     /// A list of fields to return for each issue, use it to retrieve a subset of fields. This parameter accepts a comma-separated list. Expand options include:
     /// 
     ///  *  `*all` Returns all fields.
@@ -76,7 +76,7 @@ public struct SearchRequestBean: Codable {
         case `false`
     }
 
-    public init(jql: String? = nil, startAt: Int? = nil, maxResults: Int? = nil, fields: [String]? = nil, validateQuery: ValidateQuery? = nil, expand: [String]? = nil, properties: [String]? = nil, isFieldsByKeys: Bool? = nil) {
+    public init(jql: String? = nil, startAt: Int32? = nil, maxResults: Int32? = nil, fields: [String]? = nil, validateQuery: ValidateQuery? = nil, expand: [String]? = nil, properties: [String]? = nil, isFieldsByKeys: Bool? = nil) {
         self.jql = jql
         self.startAt = startAt
         self.maxResults = maxResults
@@ -90,8 +90,8 @@ public struct SearchRequestBean: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.jql = try values.decodeIfPresent(String.self, forKey: "jql")
-        self.startAt = try values.decodeIfPresent(Int.self, forKey: "startAt")
-        self.maxResults = try values.decodeIfPresent(Int.self, forKey: "maxResults")
+        self.startAt = try values.decodeIfPresent(Int32.self, forKey: "startAt")
+        self.maxResults = try values.decodeIfPresent(Int32.self, forKey: "maxResults")
         self.fields = try values.decodeIfPresent([String].self, forKey: "fields")
         self.validateQuery = try values.decodeIfPresent(ValidateQuery.self, forKey: "validateQuery")
         self.expand = try values.decodeIfPresent([String].self, forKey: "expand")

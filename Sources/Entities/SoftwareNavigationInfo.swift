@@ -5,11 +5,11 @@ import Foundation
 import NaiveDate
 
 public struct SoftwareNavigationInfo: Codable {
-    public var boardID: Int?
+    public var boardID: Int64?
     public var boardName: String?
     public var isSimpleBoard: Bool?
 
-    public init(boardID: Int? = nil, boardName: String? = nil, isSimpleBoard: Bool? = nil) {
+    public init(boardID: Int64? = nil, boardName: String? = nil, isSimpleBoard: Bool? = nil) {
         self.boardID = boardID
         self.boardName = boardName
         self.isSimpleBoard = isSimpleBoard
@@ -17,7 +17,7 @@ public struct SoftwareNavigationInfo: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.boardID = try values.decodeIfPresent(Int.self, forKey: "boardId")
+        self.boardID = try values.decodeIfPresent(Int64.self, forKey: "boardId")
         self.boardName = try values.decodeIfPresent(String.self, forKey: "boardName")
         self.isSimpleBoard = try values.decodeIfPresent(Bool.self, forKey: "simpleBoard")
     }

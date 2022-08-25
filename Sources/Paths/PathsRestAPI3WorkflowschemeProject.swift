@@ -21,11 +21,11 @@ extension Paths.API.__3.Workflowscheme {
         /// If the project is associated with the `Default Workflow Scheme` no ID is returned. This is because the way the `Default Workflow Scheme` is stored means it has no ID.
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
-        public func get(projectID: [Int]) -> Request<JiraKit.ContainerOfWorkflowSchemeAssociations> {
+        public func get(projectID: [Int64]) -> Request<JiraKit.ContainerOfWorkflowSchemeAssociations> {
             Request(method: "GET", url: path, query: makeGetQuery(projectID), id: "getWorkflowSchemeProjectAssociations")
         }
 
-        private func makeGetQuery(_ projectID: [Int]) -> [(String, String?)] {
+        private func makeGetQuery(_ projectID: [Int64]) -> [(String, String?)] {
             let encoder = URLQueryEncoder()
             encoder.encode(projectID, forKey: "projectId")
             return encoder.items

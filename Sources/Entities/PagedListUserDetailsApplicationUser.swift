@@ -7,17 +7,17 @@ import NaiveDate
 /// A paged list. To access additional details append `[start-index:end-index]` to the expand request. For example, `?expand=sharedUsers[10:40]` returns a list starting at item 10 and finishing at item 40.
 public struct PagedListUserDetailsApplicationUser: Codable {
     /// The number of items on the page.
-    public var size: Int?
+    public var size: Int32?
     /// The list of items.
     public var items: [UserDetails]?
     /// The maximum number of results that could be on the page.
-    public var maxResults: Int?
+    public var maxResults: Int32?
     /// The index of the first item returned on the page.
-    public var startIndex: Int?
+    public var startIndex: Int32?
     /// The index of the last item returned on the page.
-    public var endIndex: Int?
+    public var endIndex: Int32?
 
-    public init(size: Int? = nil, items: [UserDetails]? = nil, maxResults: Int? = nil, startIndex: Int? = nil, endIndex: Int? = nil) {
+    public init(size: Int32? = nil, items: [UserDetails]? = nil, maxResults: Int32? = nil, startIndex: Int32? = nil, endIndex: Int32? = nil) {
         self.size = size
         self.items = items
         self.maxResults = maxResults
@@ -27,11 +27,11 @@ public struct PagedListUserDetailsApplicationUser: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.size = try values.decodeIfPresent(Int.self, forKey: "size")
+        self.size = try values.decodeIfPresent(Int32.self, forKey: "size")
         self.items = try values.decodeIfPresent([UserDetails].self, forKey: "items")
-        self.maxResults = try values.decodeIfPresent(Int.self, forKey: "max-results")
-        self.startIndex = try values.decodeIfPresent(Int.self, forKey: "start-index")
-        self.endIndex = try values.decodeIfPresent(Int.self, forKey: "end-index")
+        self.maxResults = try values.decodeIfPresent(Int32.self, forKey: "max-results")
+        self.startIndex = try values.decodeIfPresent(Int32.self, forKey: "start-index")
+        self.endIndex = try values.decodeIfPresent(Int32.self, forKey: "end-index")
     }
 
     public func encode(to encoder: Encoder) throws {

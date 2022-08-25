@@ -6,13 +6,13 @@ import NaiveDate
 
 public struct PageOfStatuses: Codable {
     /// The index of the first item returned on the page.
-    public var startAt: Int?
+    public var startAt: Int64?
     /// Number of items that satisfy the search.
-    public var total: Int?
+    public var total: Int64?
     /// Whether this is the last page.
     public var isLast: Bool?
     /// The maximum number of items that could be returned.
-    public var maxResults: Int?
+    public var maxResults: Int32?
     /// The list of items.
     public var values: [JiraStatus]?
     /// The URL of this page.
@@ -20,7 +20,7 @@ public struct PageOfStatuses: Codable {
     /// The URL of the next page of results, if any.
     public var nextPage: String?
 
-    public init(startAt: Int? = nil, total: Int? = nil, isLast: Bool? = nil, maxResults: Int? = nil, values: [JiraStatus]? = nil, this: String? = nil, nextPage: String? = nil) {
+    public init(startAt: Int64? = nil, total: Int64? = nil, isLast: Bool? = nil, maxResults: Int32? = nil, values: [JiraStatus]? = nil, this: String? = nil, nextPage: String? = nil) {
         self.startAt = startAt
         self.total = total
         self.isLast = isLast
@@ -32,10 +32,10 @@ public struct PageOfStatuses: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.startAt = try values.decodeIfPresent(Int.self, forKey: "startAt")
-        self.total = try values.decodeIfPresent(Int.self, forKey: "total")
+        self.startAt = try values.decodeIfPresent(Int64.self, forKey: "startAt")
+        self.total = try values.decodeIfPresent(Int64.self, forKey: "total")
         self.isLast = try values.decodeIfPresent(Bool.self, forKey: "isLast")
-        self.maxResults = try values.decodeIfPresent(Int.self, forKey: "maxResults")
+        self.maxResults = try values.decodeIfPresent(Int32.self, forKey: "maxResults")
         self.values = try values.decodeIfPresent([JiraStatus].self, forKey: "values")
         self.this = try values.decodeIfPresent(String.self, forKey: "self")
         self.nextPage = try values.decodeIfPresent(String.self, forKey: "nextPage")

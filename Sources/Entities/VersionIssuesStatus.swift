@@ -7,15 +7,15 @@ import NaiveDate
 /// Counts of the number of issues in various statuses.
 public struct VersionIssuesStatus: Codable {
     /// Count of issues with a status other than *to do*, *in progress*, and *done*.
-    public var unmapped: Int?
+    public var unmapped: Int64?
     /// Count of issues with status *to do*.
-    public var toDo: Int?
+    public var toDo: Int64?
     /// Count of issues with status *in progress*.
-    public var inProgress: Int?
+    public var inProgress: Int64?
     /// Count of issues with status *done*.
-    public var done: Int?
+    public var done: Int64?
 
-    public init(unmapped: Int? = nil, toDo: Int? = nil, inProgress: Int? = nil, done: Int? = nil) {
+    public init(unmapped: Int64? = nil, toDo: Int64? = nil, inProgress: Int64? = nil, done: Int64? = nil) {
         self.unmapped = unmapped
         self.toDo = toDo
         self.inProgress = inProgress
@@ -24,10 +24,10 @@ public struct VersionIssuesStatus: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.unmapped = try values.decodeIfPresent(Int.self, forKey: "unmapped")
-        self.toDo = try values.decodeIfPresent(Int.self, forKey: "toDo")
-        self.inProgress = try values.decodeIfPresent(Int.self, forKey: "inProgress")
-        self.done = try values.decodeIfPresent(Int.self, forKey: "done")
+        self.unmapped = try values.decodeIfPresent(Int64.self, forKey: "unmapped")
+        self.toDo = try values.decodeIfPresent(Int64.self, forKey: "toDo")
+        self.inProgress = try values.decodeIfPresent(Int64.self, forKey: "inProgress")
+        self.done = try values.decodeIfPresent(Int64.self, forKey: "done")
     }
 
     public func encode(to encoder: Encoder) throws {

@@ -9,7 +9,7 @@ public struct NotificationScheme: Codable {
     /// Expand options that include additional notification scheme details in the response.
     public var expand: String?
     /// The ID of the notification scheme.
-    public var id: Int?
+    public var id: Int64?
     public var this: String?
     /// The name of the notification scheme.
     public var name: String?
@@ -20,7 +20,7 @@ public struct NotificationScheme: Codable {
     /// The scope of the notification scheme.
     public var scope: Scope?
 
-    public init(expand: String? = nil, id: Int? = nil, this: String? = nil, name: String? = nil, description: String? = nil, notificationSchemeEvents: [NotificationSchemeEvent]? = nil, scope: Scope? = nil) {
+    public init(expand: String? = nil, id: Int64? = nil, this: String? = nil, name: String? = nil, description: String? = nil, notificationSchemeEvents: [NotificationSchemeEvent]? = nil, scope: Scope? = nil) {
         self.expand = expand
         self.id = id
         self.this = this
@@ -33,7 +33,7 @@ public struct NotificationScheme: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.expand = try values.decodeIfPresent(String.self, forKey: "expand")
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.this = try values.decodeIfPresent(String.self, forKey: "self")
         self.name = try values.decodeIfPresent(String.self, forKey: "name")
         self.description = try values.decodeIfPresent(String.self, forKey: "description")

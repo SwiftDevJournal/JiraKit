@@ -26,8 +26,8 @@ extension Paths.API.__3.Workflow {
         }
 
         public struct GetParameters {
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int64?
+            public var maxResults: Int32?
             public var workflowName: [String]?
             public var expand: String?
             public var queryString: String?
@@ -46,7 +46,7 @@ extension Paths.API.__3.Workflow {
                 case minusupdated = "-updated"
             }
 
-            public init(startAt: Int? = nil, maxResults: Int? = nil, workflowName: [String]? = nil, expand: String? = nil, queryString: String? = nil, orderBy: OrderBy? = nil, isActive: Bool? = nil) {
+            public init(startAt: Int64? = nil, maxResults: Int32? = nil, workflowName: [String]? = nil, expand: String? = nil, queryString: String? = nil, orderBy: OrderBy? = nil, isActive: Bool? = nil) {
                 self.startAt = startAt
                 self.maxResults = maxResults
                 self.workflowName = workflowName

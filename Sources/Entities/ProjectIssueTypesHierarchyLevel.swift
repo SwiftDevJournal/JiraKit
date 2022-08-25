@@ -9,13 +9,13 @@ public struct ProjectIssueTypesHierarchyLevel: Codable {
     /// The ID of the issue type hierarchy level. This property is deprecated, see [Change notice: Removing hierarchy level IDs from next-gen APIs](https://developer.atlassian.com/cloud/jira/platform/change-notice-removing-hierarchy-level-ids-from-next-gen-apis/).
     public var entityID: UUID?
     /// The level of the issue type hierarchy level.
-    public var level: Int?
+    public var level: Int32?
     /// The name of the issue type hierarchy level.
     public var name: String?
     /// The list of issue types in the hierarchy level.
     public var issueTypes: [IssueTypeInfo]?
 
-    public init(entityID: UUID? = nil, level: Int? = nil, name: String? = nil, issueTypes: [IssueTypeInfo]? = nil) {
+    public init(entityID: UUID? = nil, level: Int32? = nil, name: String? = nil, issueTypes: [IssueTypeInfo]? = nil) {
         self.entityID = entityID
         self.level = level
         self.name = name
@@ -25,7 +25,7 @@ public struct ProjectIssueTypesHierarchyLevel: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.entityID = try values.decodeIfPresent(UUID.self, forKey: "entityId")
-        self.level = try values.decodeIfPresent(Int.self, forKey: "level")
+        self.level = try values.decodeIfPresent(Int32.self, forKey: "level")
         self.name = try values.decodeIfPresent(String.self, forKey: "name")
         self.issueTypes = try values.decodeIfPresent([IssueTypeInfo].self, forKey: "issueTypes")
     }

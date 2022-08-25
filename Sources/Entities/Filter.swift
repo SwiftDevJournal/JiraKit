@@ -25,7 +25,7 @@ public struct Filter: Codable {
     /// Whether the filter is selected as a favorite.
     public var isFavourite: Bool?
     /// The count of how many users have selected this filter as a favorite, including the filter owner.
-    public var favouritedCount: Int?
+    public var favouritedCount: Int64?
     /// The groups and projects that the filter is shared with.
     public var sharePermissions: [SharePermission]?
     /// The groups and projects that can edit the filter.
@@ -35,7 +35,7 @@ public struct Filter: Codable {
     /// A paginated list of the users that are subscribed to the filter.
     public var subscriptions: FilterSubscriptionsList?
 
-    public init(this: URL? = nil, id: String? = nil, name: String, description: String? = nil, owner: User? = nil, jql: String? = nil, viewURL: URL? = nil, searchURL: URL? = nil, isFavourite: Bool? = nil, favouritedCount: Int? = nil, sharePermissions: [SharePermission]? = nil, editPermissions: [SharePermission]? = nil, sharedUsers: UserList? = nil, subscriptions: FilterSubscriptionsList? = nil) {
+    public init(this: URL? = nil, id: String? = nil, name: String, description: String? = nil, owner: User? = nil, jql: String? = nil, viewURL: URL? = nil, searchURL: URL? = nil, isFavourite: Bool? = nil, favouritedCount: Int64? = nil, sharePermissions: [SharePermission]? = nil, editPermissions: [SharePermission]? = nil, sharedUsers: UserList? = nil, subscriptions: FilterSubscriptionsList? = nil) {
         self.this = this
         self.id = id
         self.name = name
@@ -63,7 +63,7 @@ public struct Filter: Codable {
         self.viewURL = try values.decodeIfPresent(URL.self, forKey: "viewUrl")
         self.searchURL = try values.decodeIfPresent(URL.self, forKey: "searchUrl")
         self.isFavourite = try values.decodeIfPresent(Bool.self, forKey: "favourite")
-        self.favouritedCount = try values.decodeIfPresent(Int.self, forKey: "favouritedCount")
+        self.favouritedCount = try values.decodeIfPresent(Int64.self, forKey: "favouritedCount")
         self.sharePermissions = try values.decodeIfPresent([SharePermission].self, forKey: "sharePermissions")
         self.editPermissions = try values.decodeIfPresent([SharePermission].self, forKey: "editPermissions")
         self.sharedUsers = try values.decodeIfPresent(UserList.self, forKey: "sharedUsers")

@@ -40,13 +40,13 @@ extension Paths.API.__3.Auditing {
         }
 
         public struct GetParameters {
-            public var offset: Int?
-            public var limit: Int?
+            public var offset: Int32?
+            public var limit: Int32?
             public var filter: String?
             public var from: Date?
             public var to: Date?
 
-            public init(offset: Int? = nil, limit: Int? = nil, filter: String? = nil, from: Date? = nil, to: Date? = nil) {
+            public init(offset: Int32? = nil, limit: Int32? = nil, filter: String? = nil, from: Date? = nil, to: Date? = nil) {
                 self.offset = offset
                 self.limit = limit
                 self.filter = filter

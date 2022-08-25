@@ -9,7 +9,7 @@ public struct MultipleCustomFieldValuesUpdate: Codable {
     /// The ID or key of the custom field. For example, `customfield_10010`.
     public var customField: String
     /// The list of issue IDs.
-    public var issueIDs: [Int]
+    public var issueIDs: [Int64]
     /// The value for the custom field. The value must be compatible with the [custom field type](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field/#data-types) as follows:
     /// 
     ///  *  `string` the value must be a string.
@@ -21,7 +21,7 @@ public struct MultipleCustomFieldValuesUpdate: Codable {
     /// A list of appropriate values must be provided if the field is of the `list` [collection type](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field/#collection-types).
     public var value: AnyJSON
 
-    public init(customField: String, issueIDs: [Int], value: AnyJSON) {
+    public init(customField: String, issueIDs: [Int64], value: AnyJSON) {
         self.customField = customField
         self.issueIDs = issueIDs
         self.value = value
@@ -30,7 +30,7 @@ public struct MultipleCustomFieldValuesUpdate: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.customField = try values.decode(String.self, forKey: "customField")
-        self.issueIDs = try values.decode([Int].self, forKey: "issueIds")
+        self.issueIDs = try values.decode([Int64].self, forKey: "issueIds")
         self.value = try values.decode(AnyJSON.self, forKey: "value")
     }
 

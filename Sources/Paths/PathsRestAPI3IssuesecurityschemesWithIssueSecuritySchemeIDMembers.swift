@@ -26,12 +26,12 @@ extension Paths.API.__3.Issuesecurityschemes.WithIssueSecuritySchemeID {
         }
 
         public struct GetParameters {
-            public var startAt: Int?
-            public var maxResults: Int?
-            public var issueSecurityLevelID: [Int]?
+            public var startAt: Int64?
+            public var maxResults: Int32?
+            public var issueSecurityLevelID: [Int64]?
             public var expand: String?
 
-            public init(startAt: Int? = nil, maxResults: Int? = nil, issueSecurityLevelID: [Int]? = nil, expand: String? = nil) {
+            public init(startAt: Int64? = nil, maxResults: Int32? = nil, issueSecurityLevelID: [Int64]? = nil, expand: String? = nil) {
                 self.startAt = startAt
                 self.maxResults = maxResults
                 self.issueSecurityLevelID = issueSecurityLevelID

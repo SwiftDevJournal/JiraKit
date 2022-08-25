@@ -8,11 +8,11 @@ import NaiveDate
 public struct FoundUsers: Codable {
     public var users: [UserPickerUser]?
     /// The total number of users found in the search.
-    public var total: Int?
+    public var total: Int32?
     /// Header text indicating the number of users in the response and the total number of users found in the search.
     public var header: String?
 
-    public init(users: [UserPickerUser]? = nil, total: Int? = nil, header: String? = nil) {
+    public init(users: [UserPickerUser]? = nil, total: Int32? = nil, header: String? = nil) {
         self.users = users
         self.total = total
         self.header = header
@@ -21,7 +21,7 @@ public struct FoundUsers: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.users = try values.decodeIfPresent([UserPickerUser].self, forKey: "users")
-        self.total = try values.decodeIfPresent(Int.self, forKey: "total")
+        self.total = try values.decodeIfPresent(Int32.self, forKey: "total")
         self.header = try values.decodeIfPresent(String.self, forKey: "header")
     }
 

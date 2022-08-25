@@ -9,16 +9,16 @@ public struct SecurityScheme: Codable {
     /// The URL of the issue security scheme.
     public var this: String?
     /// The ID of the issue security scheme.
-    public var id: Int?
+    public var id: Int64?
     /// The name of the issue security scheme.
     public var name: String?
     /// The description of the issue security scheme.
     public var description: String?
     /// The ID of the default security level.
-    public var defaultSecurityLevelID: Int?
+    public var defaultSecurityLevelID: Int64?
     public var levels: [SecurityLevel]?
 
-    public init(this: String? = nil, id: Int? = nil, name: String? = nil, description: String? = nil, defaultSecurityLevelID: Int? = nil, levels: [SecurityLevel]? = nil) {
+    public init(this: String? = nil, id: Int64? = nil, name: String? = nil, description: String? = nil, defaultSecurityLevelID: Int64? = nil, levels: [SecurityLevel]? = nil) {
         self.this = this
         self.id = id
         self.name = name
@@ -30,10 +30,10 @@ public struct SecurityScheme: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.this = try values.decodeIfPresent(String.self, forKey: "self")
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.name = try values.decodeIfPresent(String.self, forKey: "name")
         self.description = try values.decodeIfPresent(String.self, forKey: "description")
-        self.defaultSecurityLevelID = try values.decodeIfPresent(Int.self, forKey: "defaultSecurityLevelId")
+        self.defaultSecurityLevelID = try values.decodeIfPresent(Int64.self, forKey: "defaultSecurityLevelId")
         self.levels = try values.decodeIfPresent([SecurityLevel].self, forKey: "levels")
     }
 

@@ -11,11 +11,11 @@ public struct Watchers: Codable {
     /// Whether the calling user is watching this issue.
     public var isWatching: Bool?
     /// The number of users watching this issue.
-    public var watchCount: Int?
+    public var watchCount: Int32?
     /// Details of the users watching this issue.
     public var watchers: [UserDetails]?
 
-    public init(this: String? = nil, isWatching: Bool? = nil, watchCount: Int? = nil, watchers: [UserDetails]? = nil) {
+    public init(this: String? = nil, isWatching: Bool? = nil, watchCount: Int32? = nil, watchers: [UserDetails]? = nil) {
         self.this = this
         self.isWatching = isWatching
         self.watchCount = watchCount
@@ -26,7 +26,7 @@ public struct Watchers: Codable {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.this = try values.decodeIfPresent(String.self, forKey: "self")
         self.isWatching = try values.decodeIfPresent(Bool.self, forKey: "isWatching")
-        self.watchCount = try values.decodeIfPresent(Int.self, forKey: "watchCount")
+        self.watchCount = try values.decodeIfPresent(Int32.self, forKey: "watchCount")
         self.watchers = try values.decodeIfPresent([UserDetails].self, forKey: "watchers")
     }
 

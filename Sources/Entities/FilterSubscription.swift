@@ -7,13 +7,13 @@ import NaiveDate
 /// Details of a user or group subscribing to a filter.
 public struct FilterSubscription: Codable {
     /// The ID of the filter subscription.
-    public var id: Int?
+    public var id: Int64?
     /// The user subscribing to filter.
     public var user: User?
     /// The group subscribing to filter.
     public var group: GroupName?
 
-    public init(id: Int? = nil, user: User? = nil, group: GroupName? = nil) {
+    public init(id: Int64? = nil, user: User? = nil, group: GroupName? = nil) {
         self.id = id
         self.user = user
         self.group = group
@@ -21,7 +21,7 @@ public struct FilterSubscription: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.user = try values.decodeIfPresent(User.self, forKey: "user")
         self.group = try values.decodeIfPresent(GroupName.self, forKey: "group")
     }

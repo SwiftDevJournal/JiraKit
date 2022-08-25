@@ -7,17 +7,17 @@ import NaiveDate
 /// Metadata for an archive (for example a zip) and its contents.
 public struct AttachmentArchiveMetadataReadable: Codable {
     /// The ID of the attachment.
-    public var id: Int?
+    public var id: Int64?
     /// The name of the archive file.
     public var name: String?
     /// The list of the items included in the archive.
     public var entries: [AttachmentArchiveItemReadable]?
     /// The number of items included in the archive.
-    public var totalEntryCount: Int?
+    public var totalEntryCount: Int64?
     /// The MIME type of the attachment.
     public var mediaType: String?
 
-    public init(id: Int? = nil, name: String? = nil, entries: [AttachmentArchiveItemReadable]? = nil, totalEntryCount: Int? = nil, mediaType: String? = nil) {
+    public init(id: Int64? = nil, name: String? = nil, entries: [AttachmentArchiveItemReadable]? = nil, totalEntryCount: Int64? = nil, mediaType: String? = nil) {
         self.id = id
         self.name = name
         self.entries = entries
@@ -27,10 +27,10 @@ public struct AttachmentArchiveMetadataReadable: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.name = try values.decodeIfPresent(String.self, forKey: "name")
         self.entries = try values.decodeIfPresent([AttachmentArchiveItemReadable].self, forKey: "entries")
-        self.totalEntryCount = try values.decodeIfPresent(Int.self, forKey: "totalEntryCount")
+        self.totalEntryCount = try values.decodeIfPresent(Int64.self, forKey: "totalEntryCount")
         self.mediaType = try values.decodeIfPresent(String.self, forKey: "mediaType")
     }
 

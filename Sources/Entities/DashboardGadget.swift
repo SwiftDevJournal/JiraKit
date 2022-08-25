@@ -7,7 +7,7 @@ import NaiveDate
 /// Details of a gadget.
 public struct DashboardGadget: Codable {
     /// The ID of the gadget instance.
-    public var id: Int
+    public var id: Int64
     /// The module key of the gadget type.
     public var moduleKey: String?
     /// The URI of the gadget type.
@@ -31,7 +31,7 @@ public struct DashboardGadget: Codable {
         case white
     }
 
-    public init(id: Int, moduleKey: String? = nil, uri: String? = nil, color: Color, position: DashboardGadgetPosition, title: String) {
+    public init(id: Int64, moduleKey: String? = nil, uri: String? = nil, color: Color, position: DashboardGadgetPosition, title: String) {
         self.id = id
         self.moduleKey = moduleKey
         self.uri = uri
@@ -42,7 +42,7 @@ public struct DashboardGadget: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decode(Int.self, forKey: "id")
+        self.id = try values.decode(Int64.self, forKey: "id")
         self.moduleKey = try values.decodeIfPresent(String.self, forKey: "moduleKey")
         self.uri = try values.decodeIfPresent(String.self, forKey: "uri")
         self.color = try values.decode(Color.self, forKey: "color")

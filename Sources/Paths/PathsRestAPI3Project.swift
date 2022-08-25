@@ -28,10 +28,10 @@ extension Paths.API.__3 {
 
         public struct GetParameters {
             public var expand: String?
-            public var recent: Int?
+            public var recent: Int32?
             public var properties: [String]?
 
-            public init(expand: String? = nil, recent: Int? = nil, properties: [String]? = nil) {
+            public init(expand: String? = nil, recent: Int32? = nil, properties: [String]? = nil) {
                 self.expand = expand
                 self.recent = recent
                 self.properties = properties

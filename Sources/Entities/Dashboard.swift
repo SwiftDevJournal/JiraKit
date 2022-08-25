@@ -16,9 +16,9 @@ public struct Dashboard: Codable {
     /// The owner of the dashboard.
     public var owner: UserBean?
     /// The number of users who have this dashboard as a favorite.
-    public var popularity: Int?
+    public var popularity: Int64?
     /// The rank of this dashboard.
-    public var rank: Int?
+    public var rank: Int32?
     /// The URL of these dashboard details.
     public var this: URL?
     /// The details of any view share permissions for the dashboard.
@@ -26,7 +26,7 @@ public struct Dashboard: Codable {
     /// The details of any edit share permissions for the dashboard.
     public var editPermissions: [SharePermission]?
     /// The automatic refresh interval for the dashboard in milliseconds.
-    public var automaticRefreshMs: Int?
+    public var automaticRefreshMs: Int32?
     /// The URL of the dashboard.
     public var view: String?
     /// Whether the current user has permission to edit the dashboard.
@@ -34,7 +34,7 @@ public struct Dashboard: Codable {
     /// Whether the current dashboard is system dashboard.
     public var isSystemDashboard: Bool?
 
-    public init(description: String? = nil, id: String? = nil, isFavourite: Bool? = nil, name: String? = nil, owner: UserBean? = nil, popularity: Int? = nil, rank: Int? = nil, this: URL? = nil, sharePermissions: [SharePermission]? = nil, editPermissions: [SharePermission]? = nil, automaticRefreshMs: Int? = nil, view: String? = nil, isWritable: Bool? = nil, isSystemDashboard: Bool? = nil) {
+    public init(description: String? = nil, id: String? = nil, isFavourite: Bool? = nil, name: String? = nil, owner: UserBean? = nil, popularity: Int64? = nil, rank: Int32? = nil, this: URL? = nil, sharePermissions: [SharePermission]? = nil, editPermissions: [SharePermission]? = nil, automaticRefreshMs: Int32? = nil, view: String? = nil, isWritable: Bool? = nil, isSystemDashboard: Bool? = nil) {
         self.description = description
         self.id = id
         self.isFavourite = isFavourite
@@ -58,12 +58,12 @@ public struct Dashboard: Codable {
         self.isFavourite = try values.decodeIfPresent(Bool.self, forKey: "isFavourite")
         self.name = try values.decodeIfPresent(String.self, forKey: "name")
         self.owner = try values.decodeIfPresent(UserBean.self, forKey: "owner")
-        self.popularity = try values.decodeIfPresent(Int.self, forKey: "popularity")
-        self.rank = try values.decodeIfPresent(Int.self, forKey: "rank")
+        self.popularity = try values.decodeIfPresent(Int64.self, forKey: "popularity")
+        self.rank = try values.decodeIfPresent(Int32.self, forKey: "rank")
         self.this = try values.decodeIfPresent(URL.self, forKey: "self")
         self.sharePermissions = try values.decodeIfPresent([SharePermission].self, forKey: "sharePermissions")
         self.editPermissions = try values.decodeIfPresent([SharePermission].self, forKey: "editPermissions")
-        self.automaticRefreshMs = try values.decodeIfPresent(Int.self, forKey: "automaticRefreshMs")
+        self.automaticRefreshMs = try values.decodeIfPresent(Int32.self, forKey: "automaticRefreshMs")
         self.view = try values.decodeIfPresent(String.self, forKey: "view")
         self.isWritable = try values.decodeIfPresent(Bool.self, forKey: "isWritable")
         self.isSystemDashboard = try values.decodeIfPresent(Bool.self, forKey: "systemDashboard")

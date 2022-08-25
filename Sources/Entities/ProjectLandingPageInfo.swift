@@ -8,16 +8,16 @@ public struct ProjectLandingPageInfo: Codable {
     public var url: String?
     public var projectKey: String?
     public var projectType: String?
-    public var boardID: Int?
+    public var boardID: Int64?
     public var boardName: String?
     public var isSimpleBoard: Bool?
-    public var queueID: Int?
+    public var queueID: Int64?
     public var queueName: String?
     public var queueCategory: String?
     public var isSimplified: Bool?
     public var attributes: [String: String]?
 
-    public init(url: String? = nil, projectKey: String? = nil, projectType: String? = nil, boardID: Int? = nil, boardName: String? = nil, isSimpleBoard: Bool? = nil, queueID: Int? = nil, queueName: String? = nil, queueCategory: String? = nil, isSimplified: Bool? = nil, attributes: [String: String]? = nil) {
+    public init(url: String? = nil, projectKey: String? = nil, projectType: String? = nil, boardID: Int64? = nil, boardName: String? = nil, isSimpleBoard: Bool? = nil, queueID: Int64? = nil, queueName: String? = nil, queueCategory: String? = nil, isSimplified: Bool? = nil, attributes: [String: String]? = nil) {
         self.url = url
         self.projectKey = projectKey
         self.projectType = projectType
@@ -36,10 +36,10 @@ public struct ProjectLandingPageInfo: Codable {
         self.url = try values.decodeIfPresent(String.self, forKey: "url")
         self.projectKey = try values.decodeIfPresent(String.self, forKey: "projectKey")
         self.projectType = try values.decodeIfPresent(String.self, forKey: "projectType")
-        self.boardID = try values.decodeIfPresent(Int.self, forKey: "boardId")
+        self.boardID = try values.decodeIfPresent(Int64.self, forKey: "boardId")
         self.boardName = try values.decodeIfPresent(String.self, forKey: "boardName")
         self.isSimpleBoard = try values.decodeIfPresent(Bool.self, forKey: "simpleBoard")
-        self.queueID = try values.decodeIfPresent(Int.self, forKey: "queueId")
+        self.queueID = try values.decodeIfPresent(Int64.self, forKey: "queueId")
         self.queueName = try values.decodeIfPresent(String.self, forKey: "queueName")
         self.queueCategory = try values.decodeIfPresent(String.self, forKey: "queueCategory")
         self.isSimplified = try values.decodeIfPresent(Bool.self, forKey: "simplified")

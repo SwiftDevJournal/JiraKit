@@ -8,9 +8,9 @@ public struct AttachmentArchiveImpl: Codable {
     /// The list of the items included in the archive.
     public var entries: [AttachmentArchiveEntry]?
     /// The number of items in the archive.
-    public var totalEntryCount: Int?
+    public var totalEntryCount: Int32?
 
-    public init(entries: [AttachmentArchiveEntry]? = nil, totalEntryCount: Int? = nil) {
+    public init(entries: [AttachmentArchiveEntry]? = nil, totalEntryCount: Int32? = nil) {
         self.entries = entries
         self.totalEntryCount = totalEntryCount
     }
@@ -18,7 +18,7 @@ public struct AttachmentArchiveImpl: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.entries = try values.decodeIfPresent([AttachmentArchiveEntry].self, forKey: "entries")
-        self.totalEntryCount = try values.decodeIfPresent(Int.self, forKey: "totalEntryCount")
+        self.totalEntryCount = try values.decodeIfPresent(Int32.self, forKey: "totalEntryCount")
     }
 
     public func encode(to encoder: Encoder) throws {

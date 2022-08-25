@@ -30,14 +30,14 @@ extension Paths.API.__3.Project {
         }
 
         public struct GetParameters {
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int64?
+            public var maxResults: Int32?
             public var orderBy: OrderBy?
-            public var id: [Int]?
+            public var id: [Int64]?
             public var keys: [String]?
             public var query: String?
             public var typeKey: String?
-            public var categoryID: Int?
+            public var categoryID: Int64?
             public var action: Action?
             public var expand: String?
             public var status: [Status]?
@@ -82,7 +82,7 @@ extension Paths.API.__3.Project {
                 case deleted
             }
 
-            public init(startAt: Int? = nil, maxResults: Int? = nil, orderBy: OrderBy? = nil, id: [Int]? = nil, keys: [String]? = nil, query: String? = nil, typeKey: String? = nil, categoryID: Int? = nil, action: Action? = nil, expand: String? = nil, status: [Status]? = nil, propertyQuery: String? = nil) {
+            public init(startAt: Int64? = nil, maxResults: Int32? = nil, orderBy: OrderBy? = nil, id: [Int64]? = nil, keys: [String]? = nil, query: String? = nil, typeKey: String? = nil, categoryID: Int64? = nil, action: Action? = nil, expand: String? = nil, status: [Status]? = nil, propertyQuery: String? = nil) {
                 self.startAt = startAt
                 self.maxResults = maxResults
                 self.orderBy = orderBy

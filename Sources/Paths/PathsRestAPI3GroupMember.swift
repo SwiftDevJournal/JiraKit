@@ -29,10 +29,10 @@ extension Paths.API.__3.Group {
             public var groupname: String?
             public var groupID: String?
             public var isIncludeInactiveUsers: Bool?
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int64?
+            public var maxResults: Int32?
 
-            public init(groupname: String? = nil, groupID: String? = nil, isIncludeInactiveUsers: Bool? = nil, startAt: Int? = nil, maxResults: Int? = nil) {
+            public init(groupname: String? = nil, groupID: String? = nil, isIncludeInactiveUsers: Bool? = nil, startAt: Int64? = nil, maxResults: Int32? = nil) {
                 self.groupname = groupname
                 self.groupID = groupID
                 self.isIncludeInactiveUsers = isIncludeInactiveUsers

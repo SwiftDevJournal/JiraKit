@@ -38,7 +38,7 @@ public struct Version: Codable {
     /// Deprecated. Use `projectId`.
     public var project: String?
     /// The ID of the project to which this version is attached. Required when creating a version. Not applicable when updating a version.
-    public var projectID: Int?
+    public var projectID: Int64?
     /// The URL of the self link to the version to which all unfixed issues are moved when a version is released. Not applicable when creating a version. Optional when updating a version.
     public var moveUnfixedIssuesTo: URL?
     /// If the expand option `operations` is used, returns the list of operations available for this version.
@@ -46,7 +46,7 @@ public struct Version: Codable {
     /// If the expand option `issuesstatus` is used, returns the count of issues in this version for each of the status categories *to do*, *in progress*, *done*, and *unmapped*. The *unmapped* property contains a count of issues with a status other than *to do*, *in progress*, and *done*.
     public var issuesStatusForFixVersion: VersionIssuesStatus?
 
-    public init(expand: String? = nil, this: URL? = nil, id: String? = nil, description: String? = nil, name: String? = nil, isArchived: Bool? = nil, isReleased: Bool? = nil, startDate: NaiveDate? = nil, releaseDate: NaiveDate? = nil, isOverdue: Bool? = nil, userStartDate: String? = nil, userReleaseDate: String? = nil, project: String? = nil, projectID: Int? = nil, moveUnfixedIssuesTo: URL? = nil, operations: [SimpleLink]? = nil, issuesStatusForFixVersion: VersionIssuesStatus? = nil) {
+    public init(expand: String? = nil, this: URL? = nil, id: String? = nil, description: String? = nil, name: String? = nil, isArchived: Bool? = nil, isReleased: Bool? = nil, startDate: NaiveDate? = nil, releaseDate: NaiveDate? = nil, isOverdue: Bool? = nil, userStartDate: String? = nil, userReleaseDate: String? = nil, project: String? = nil, projectID: Int64? = nil, moveUnfixedIssuesTo: URL? = nil, operations: [SimpleLink]? = nil, issuesStatusForFixVersion: VersionIssuesStatus? = nil) {
         self.expand = expand
         self.this = this
         self.id = id
@@ -81,7 +81,7 @@ public struct Version: Codable {
         self.userStartDate = try values.decodeIfPresent(String.self, forKey: "userStartDate")
         self.userReleaseDate = try values.decodeIfPresent(String.self, forKey: "userReleaseDate")
         self.project = try values.decodeIfPresent(String.self, forKey: "project")
-        self.projectID = try values.decodeIfPresent(Int.self, forKey: "projectId")
+        self.projectID = try values.decodeIfPresent(Int64.self, forKey: "projectId")
         self.moveUnfixedIssuesTo = try values.decodeIfPresent(URL.self, forKey: "moveUnfixedIssuesTo")
         self.operations = try values.decodeIfPresent([SimpleLink].self, forKey: "operations")
         self.issuesStatusForFixVersion = try values.decodeIfPresent(VersionIssuesStatus.self, forKey: "issuesStatusForFixVersion")

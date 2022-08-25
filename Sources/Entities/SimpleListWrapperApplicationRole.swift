@@ -5,11 +5,11 @@ import Foundation
 import NaiveDate
 
 public struct SimpleListWrapperApplicationRole: Codable {
-    public var size: Int?
+    public var size: Int32?
     public var items: [ApplicationRole]?
-    public var maxResults: Int?
+    public var maxResults: Int32?
 
-    public init(size: Int? = nil, items: [ApplicationRole]? = nil, maxResults: Int? = nil) {
+    public init(size: Int32? = nil, items: [ApplicationRole]? = nil, maxResults: Int32? = nil) {
         self.size = size
         self.items = items
         self.maxResults = maxResults
@@ -17,9 +17,9 @@ public struct SimpleListWrapperApplicationRole: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.size = try values.decodeIfPresent(Int.self, forKey: "size")
+        self.size = try values.decodeIfPresent(Int32.self, forKey: "size")
         self.items = try values.decodeIfPresent([ApplicationRole].self, forKey: "items")
-        self.maxResults = try values.decodeIfPresent(Int.self, forKey: "max-results")
+        self.maxResults = try values.decodeIfPresent(Int32.self, forKey: "max-results")
     }
 
     public func encode(to encoder: Encoder) throws {

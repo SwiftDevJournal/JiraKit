@@ -35,10 +35,10 @@ extension Paths.API.__3.Groups {
             public var query: String?
             public var exclude: [String]?
             public var excludeID: [String]?
-            public var maxResults: Int?
+            public var maxResults: Int32?
             public var userName: String?
 
-            public init(accountID: String? = nil, query: String? = nil, exclude: [String]? = nil, excludeID: [String]? = nil, maxResults: Int? = nil, userName: String? = nil) {
+            public init(accountID: String? = nil, query: String? = nil, exclude: [String]? = nil, excludeID: [String]? = nil, maxResults: Int32? = nil, userName: String? = nil) {
                 self.accountID = accountID
                 self.query = query
                 self.exclude = exclude

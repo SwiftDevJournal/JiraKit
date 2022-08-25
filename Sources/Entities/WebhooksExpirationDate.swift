@@ -7,15 +7,15 @@ import NaiveDate
 /// The date the refreshed webhooks expire.
 public struct WebhooksExpirationDate: Codable {
     /// The expiration date of all the refreshed webhooks.
-    public var expirationDate: Int
+    public var expirationDate: Int64
 
-    public init(expirationDate: Int) {
+    public init(expirationDate: Int64) {
         self.expirationDate = expirationDate
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.expirationDate = try values.decode(Int.self, forKey: "expirationDate")
+        self.expirationDate = try values.decode(Int64.self, forKey: "expirationDate")
     }
 
     public func encode(to encoder: Encoder) throws {

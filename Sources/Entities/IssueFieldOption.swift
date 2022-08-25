@@ -7,7 +7,7 @@ import NaiveDate
 /// Details of the options for a select list issue field.
 public struct IssueFieldOption: Codable {
     /// The unique identifier for the option. This is only unique within the select field's set of options.
-    public var id: Int
+    public var id: Int64
     /// The option's name, which is displayed in Jira.
     public var value: String
     /// The properties of the object, as arbitrary key-value pairs. These properties can be searched using JQL, if the extractions (see [Issue Field Option Property Index](https://developer.atlassian.com/cloud/jira/platform/modules/issue-field-option-property-index/)) are defined in the descriptor for the issue field module.
@@ -15,7 +15,7 @@ public struct IssueFieldOption: Codable {
     /// Details of the projects the option is available in.
     public var config: IssueFieldOptionConfiguration?
 
-    public init(id: Int, value: String, properties: [String: AnyJSON]? = nil, config: IssueFieldOptionConfiguration? = nil) {
+    public init(id: Int64, value: String, properties: [String: AnyJSON]? = nil, config: IssueFieldOptionConfiguration? = nil) {
         self.id = id
         self.value = value
         self.properties = properties
@@ -24,7 +24,7 @@ public struct IssueFieldOption: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decode(Int.self, forKey: "id")
+        self.id = try values.decode(Int64.self, forKey: "id")
         self.value = try values.decode(String.self, forKey: "value")
         self.properties = try values.decodeIfPresent([String: AnyJSON].self, forKey: "properties")
         self.config = try values.decodeIfPresent(IssueFieldOptionConfiguration.self, forKey: "config")

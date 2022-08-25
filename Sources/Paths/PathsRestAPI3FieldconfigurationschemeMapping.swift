@@ -26,11 +26,11 @@ extension Paths.API.__3.Fieldconfigurationscheme {
         }
 
         public struct GetParameters {
-            public var startAt: Int?
-            public var maxResults: Int?
-            public var fieldConfigurationSchemeID: [Int]?
+            public var startAt: Int64?
+            public var maxResults: Int32?
+            public var fieldConfigurationSchemeID: [Int64]?
 
-            public init(startAt: Int? = nil, maxResults: Int? = nil, fieldConfigurationSchemeID: [Int]? = nil) {
+            public init(startAt: Int64? = nil, maxResults: Int32? = nil, fieldConfigurationSchemeID: [Int64]? = nil) {
                 self.startAt = startAt
                 self.maxResults = maxResults
                 self.fieldConfigurationSchemeID = fieldConfigurationSchemeID

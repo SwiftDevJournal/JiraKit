@@ -24,14 +24,14 @@ extension Paths.API.__3.User {
         }
 
         public struct GetParameters {
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int64?
+            public var maxResults: Int32?
             public var username: [String]?
             public var key: [String]?
             /// Example: "5b10ac8d82e05b22cc7d4ef5"
             public var accountID: [String]
 
-            public init(startAt: Int? = nil, maxResults: Int? = nil, username: [String]? = nil, key: [String]? = nil, accountID: [String]) {
+            public init(startAt: Int64? = nil, maxResults: Int32? = nil, username: [String]? = nil, key: [String]? = nil, accountID: [String]) {
                 self.startAt = startAt
                 self.maxResults = maxResults
                 self.username = username

@@ -27,12 +27,12 @@ extension Paths.API.__3.Priority {
         }
 
         public struct GetParameters {
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int64?
+            public var maxResults: Int32?
             public var id: [String]?
             public var isOnlyDefault: Bool?
 
-            public init(startAt: Int? = nil, maxResults: Int? = nil, id: [String]? = nil, isOnlyDefault: Bool? = nil) {
+            public init(startAt: Int64? = nil, maxResults: Int32? = nil, id: [String]? = nil, isOnlyDefault: Bool? = nil) {
                 self.startAt = startAt
                 self.maxResults = maxResults
                 self.id = id

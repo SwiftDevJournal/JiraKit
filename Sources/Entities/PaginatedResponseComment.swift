@@ -5,12 +5,12 @@ import Foundation
 import NaiveDate
 
 public struct PaginatedResponseComment: Codable {
-    public var total: Int?
+    public var total: Int64?
     public var results: [Comment]?
-    public var maxResults: Int?
-    public var startAt: Int?
+    public var maxResults: Int32?
+    public var startAt: Int64?
 
-    public init(total: Int? = nil, results: [Comment]? = nil, maxResults: Int? = nil, startAt: Int? = nil) {
+    public init(total: Int64? = nil, results: [Comment]? = nil, maxResults: Int32? = nil, startAt: Int64? = nil) {
         self.total = total
         self.results = results
         self.maxResults = maxResults
@@ -19,10 +19,10 @@ public struct PaginatedResponseComment: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.total = try values.decodeIfPresent(Int.self, forKey: "total")
+        self.total = try values.decodeIfPresent(Int64.self, forKey: "total")
         self.results = try values.decodeIfPresent([Comment].self, forKey: "results")
-        self.maxResults = try values.decodeIfPresent(Int.self, forKey: "maxResults")
-        self.startAt = try values.decodeIfPresent(Int.self, forKey: "startAt")
+        self.maxResults = try values.decodeIfPresent(Int32.self, forKey: "maxResults")
+        self.startAt = try values.decodeIfPresent(Int64.self, forKey: "startAt")
     }
 
     public func encode(to encoder: Encoder) throws {

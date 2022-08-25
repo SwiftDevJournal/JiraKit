@@ -7,7 +7,7 @@ import NaiveDate
 /// An issue suggested for use in the issue picker auto-completion.
 public struct SuggestedIssue: Codable {
     /// The ID of the issue.
-    public var id: Int?
+    public var id: Int64?
     /// The key of the issue.
     public var key: String?
     /// The key of the issue in HTML format.
@@ -19,7 +19,7 @@ public struct SuggestedIssue: Codable {
     /// The phrase containing the query string, as plain text.
     public var summaryText: String?
 
-    public init(id: Int? = nil, key: String? = nil, keyHTML: String? = nil, img: String? = nil, summary: String? = nil, summaryText: String? = nil) {
+    public init(id: Int64? = nil, key: String? = nil, keyHTML: String? = nil, img: String? = nil, summary: String? = nil, summaryText: String? = nil) {
         self.id = id
         self.key = key
         self.keyHTML = keyHTML
@@ -30,7 +30,7 @@ public struct SuggestedIssue: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.key = try values.decodeIfPresent(String.self, forKey: "key")
         self.keyHTML = try values.decodeIfPresent(String.self, forKey: "keyHtml")
         self.img = try values.decodeIfPresent(String.self, forKey: "img")

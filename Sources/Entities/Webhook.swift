@@ -7,7 +7,7 @@ import NaiveDate
 /// A webhook.
 public struct Webhook: Codable {
     /// The ID of the webhook.
-    public var id: Int
+    public var id: Int64
     /// The JQL filter that specifies which issues the webhook is sent for.
     public var jqlFilter: String
     /// A list of field IDs. When the issue changelog contains any of the fields, the webhook `jira:issue_updated` is sent. If this parameter is not present, the app is notified about all field updates.
@@ -17,7 +17,7 @@ public struct Webhook: Codable {
     /// The Jira events that trigger the webhook.
     public var events: [Event]
     /// The date after which the webhook is no longer sent. Use [Extend webhook life](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-webhooks/#api-rest-api-3-webhook-refresh-put) to extend the date.
-    public var expirationDate: Int?
+    public var expirationDate: Int64?
 
     public enum Event: String, Codable, CaseIterable {
         case jiraIssueCreated = "jira:issue_created"
@@ -30,7 +30,7 @@ public struct Webhook: Codable {
         case issuePropertyDeleted = "issue_property_deleted"
     }
 
-    public init(id: Int, jqlFilter: String, fieldIDsFilter: [String]? = nil, issuePropertyKeysFilter: [String]? = nil, events: [Event], expirationDate: Int? = nil) {
+    public init(id: Int64, jqlFilter: String, fieldIDsFilter: [String]? = nil, issuePropertyKeysFilter: [String]? = nil, events: [Event], expirationDate: Int64? = nil) {
         self.id = id
         self.jqlFilter = jqlFilter
         self.fieldIDsFilter = fieldIDsFilter
@@ -41,12 +41,12 @@ public struct Webhook: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decode(Int.self, forKey: "id")
+        self.id = try values.decode(Int64.self, forKey: "id")
         self.jqlFilter = try values.decode(String.self, forKey: "jqlFilter")
         self.fieldIDsFilter = try values.decodeIfPresent([String].self, forKey: "fieldIdsFilter")
         self.issuePropertyKeysFilter = try values.decodeIfPresent([String].self, forKey: "issuePropertyKeysFilter")
         self.events = try values.decode([Event].self, forKey: "events")
-        self.expirationDate = try values.decodeIfPresent(Int.self, forKey: "expirationDate")
+        self.expirationDate = try values.decodeIfPresent(Int64.self, forKey: "expirationDate")
     }
 
     public func encode(to encoder: Encoder) throws {

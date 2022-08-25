@@ -9,9 +9,9 @@ public struct SimpleErrorCollection: Codable {
     public var errors: [String: String]?
     /// The list of error messages produced by this operation. For example, "input parameter 'key' must be provided"
     public var errorMessages: [String]?
-    public var httpstatusCode: Int?
+    public var httpstatusCode: Int32?
 
-    public init(errors: [String: String]? = nil, errorMessages: [String]? = nil, httpstatusCode: Int? = nil) {
+    public init(errors: [String: String]? = nil, errorMessages: [String]? = nil, httpstatusCode: Int32? = nil) {
         self.errors = errors
         self.errorMessages = errorMessages
         self.httpstatusCode = httpstatusCode
@@ -21,7 +21,7 @@ public struct SimpleErrorCollection: Codable {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.errors = try values.decodeIfPresent([String: String].self, forKey: "errors")
         self.errorMessages = try values.decodeIfPresent([String].self, forKey: "errorMessages")
-        self.httpstatusCode = try values.decodeIfPresent(Int.self, forKey: "httpStatusCode")
+        self.httpstatusCode = try values.decodeIfPresent(Int32.self, forKey: "httpStatusCode")
     }
 
     public func encode(to encoder: Encoder) throws {

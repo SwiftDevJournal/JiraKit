@@ -6,19 +6,19 @@ import NaiveDate
 
 public struct JiraExpressionsComplexityValueBean: Codable {
     /// The complexity value of the current expression.
-    public var value: Int
+    public var value: Int32
     /// The maximum allowed complexity. The evaluation will fail if this value is exceeded.
-    public var limit: Int
+    public var limit: Int32
 
-    public init(value: Int, limit: Int) {
+    public init(value: Int32, limit: Int32) {
         self.value = value
         self.limit = limit
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.value = try values.decode(Int.self, forKey: "value")
-        self.limit = try values.decode(Int.self, forKey: "limit")
+        self.value = try values.decode(Int32.self, forKey: "value")
+        self.limit = try values.decode(Int32.self, forKey: "limit")
     }
 
     public func encode(to encoder: Encoder) throws {

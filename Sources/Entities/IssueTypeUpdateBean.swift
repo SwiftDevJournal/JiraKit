@@ -10,9 +10,9 @@ public struct IssueTypeUpdateBean: Codable {
     /// The description of the issue type.
     public var description: String?
     /// The ID of an issue type avatar.
-    public var avatarID: Int?
+    public var avatarID: Int64?
 
-    public init(name: String? = nil, description: String? = nil, avatarID: Int? = nil) {
+    public init(name: String? = nil, description: String? = nil, avatarID: Int64? = nil) {
         self.name = name
         self.description = description
         self.avatarID = avatarID
@@ -22,7 +22,7 @@ public struct IssueTypeUpdateBean: Codable {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.name = try values.decodeIfPresent(String.self, forKey: "name")
         self.description = try values.decodeIfPresent(String.self, forKey: "description")
-        self.avatarID = try values.decodeIfPresent(Int.self, forKey: "avatarId")
+        self.avatarID = try values.decodeIfPresent(Int64.self, forKey: "avatarId")
     }
 
     public func encode(to encoder: Encoder) throws {

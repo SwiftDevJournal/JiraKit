@@ -23,7 +23,7 @@ public struct SharePermissionInputBean: Codable {
     /// The user account ID that the filter is shared with. For a request, specify the `accountId` property for the user.
     public var accountID: String?
     /// The rights for the share permission.
-    public var rights: Int?
+    public var rights: Int32?
     /// The ID of the group, which uniquely identifies the group across all Atlassian products.For example, *952d12c3-5b5b-4d04-bb32-44d383afc4b2*. Cannot be provided with `groupname`.
     public var groupID: String?
 
@@ -44,7 +44,7 @@ public struct SharePermissionInputBean: Codable {
         case authenticated
     }
 
-    public init(type: `Type`, projectID: String? = nil, groupname: String? = nil, projectRoleID: String? = nil, accountID: String? = nil, rights: Int? = nil, groupID: String? = nil) {
+    public init(type: `Type`, projectID: String? = nil, groupname: String? = nil, projectRoleID: String? = nil, accountID: String? = nil, rights: Int32? = nil, groupID: String? = nil) {
         self.type = type
         self.projectID = projectID
         self.groupname = groupname
@@ -61,7 +61,7 @@ public struct SharePermissionInputBean: Codable {
         self.groupname = try values.decodeIfPresent(String.self, forKey: "groupname")
         self.projectRoleID = try values.decodeIfPresent(String.self, forKey: "projectRoleId")
         self.accountID = try values.decodeIfPresent(String.self, forKey: "accountId")
-        self.rights = try values.decodeIfPresent(Int.self, forKey: "rights")
+        self.rights = try values.decodeIfPresent(Int32.self, forKey: "rights")
         self.groupID = try values.decodeIfPresent(String.self, forKey: "groupId")
     }
 

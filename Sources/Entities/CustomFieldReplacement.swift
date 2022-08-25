@@ -7,19 +7,19 @@ import NaiveDate
 /// Details about the replacement for a deleted version.
 public struct CustomFieldReplacement: Codable {
     /// The ID of the custom field in which to replace the version number.
-    public var customFieldID: Int?
+    public var customFieldID: Int64?
     /// The version number to use as a replacement for the deleted version.
-    public var moveTo: Int?
+    public var moveTo: Int64?
 
-    public init(customFieldID: Int? = nil, moveTo: Int? = nil) {
+    public init(customFieldID: Int64? = nil, moveTo: Int64? = nil) {
         self.customFieldID = customFieldID
         self.moveTo = moveTo
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.customFieldID = try values.decodeIfPresent(Int.self, forKey: "customFieldId")
-        self.moveTo = try values.decodeIfPresent(Int.self, forKey: "moveTo")
+        self.customFieldID = try values.decodeIfPresent(Int64.self, forKey: "customFieldId")
+        self.moveTo = try values.decodeIfPresent(Int64.self, forKey: "moveTo")
     }
 
     public func encode(to encoder: Encoder) throws {

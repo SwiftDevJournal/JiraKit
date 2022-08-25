@@ -7,7 +7,7 @@ import NaiveDate
 /// A list of issue IDs and the value to update a custom field to.
 public struct CustomFieldValueUpdate: Codable {
     /// The list of issue IDs.
-    public var issueIDs: [Int]
+    public var issueIDs: [Int64]
     /// The value for the custom field. The value must be compatible with the [custom field type](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field/#data-types) as follows:
     /// 
     ///  *  `string` the value must be a string.
@@ -19,14 +19,14 @@ public struct CustomFieldValueUpdate: Codable {
     /// A list of appropriate values must be provided if the field is of the `list` [collection type](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field/#collection-types).
     public var value: AnyJSON
 
-    public init(issueIDs: [Int], value: AnyJSON) {
+    public init(issueIDs: [Int64], value: AnyJSON) {
         self.issueIDs = issueIDs
         self.value = value
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.issueIDs = try values.decode([Int].self, forKey: "issueIds")
+        self.issueIDs = try values.decode([Int64].self, forKey: "issueIds")
         self.value = try values.decode(AnyJSON.self, forKey: "value")
     }
 

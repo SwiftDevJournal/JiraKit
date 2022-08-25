@@ -23,18 +23,18 @@ public struct ApplicationRole: Codable {
     /// Deprecated.
     public var isDefined: Bool?
     /// The maximum count of users on your license.
-    public var numberOfSeats: Int?
+    public var numberOfSeats: Int32?
     /// The count of users remaining on your license.
-    public var remainingSeats: Int?
+    public var remainingSeats: Int32?
     /// The number of users counting against your license.
-    public var userCount: Int?
+    public var userCount: Int32?
     /// The [type of users](https://confluence.atlassian.com/x/lRW3Ng) being counted against your license.
     public var userCountDescription: String?
     public var hasUnlimitedSeats: Bool?
     /// Indicates if the application role belongs to Jira platform (`jira-core`).
     public var isPlatform: Bool?
 
-    public init(key: String? = nil, groups: [String]? = nil, groupDetails: [GroupName]? = nil, name: String? = nil, defaultGroups: [String]? = nil, defaultGroupsDetails: [GroupName]? = nil, isSelectedByDefault: Bool? = nil, isDefined: Bool? = nil, numberOfSeats: Int? = nil, remainingSeats: Int? = nil, userCount: Int? = nil, userCountDescription: String? = nil, hasUnlimitedSeats: Bool? = nil, isPlatform: Bool? = nil) {
+    public init(key: String? = nil, groups: [String]? = nil, groupDetails: [GroupName]? = nil, name: String? = nil, defaultGroups: [String]? = nil, defaultGroupsDetails: [GroupName]? = nil, isSelectedByDefault: Bool? = nil, isDefined: Bool? = nil, numberOfSeats: Int32? = nil, remainingSeats: Int32? = nil, userCount: Int32? = nil, userCountDescription: String? = nil, hasUnlimitedSeats: Bool? = nil, isPlatform: Bool? = nil) {
         self.key = key
         self.groups = groups
         self.groupDetails = groupDetails
@@ -61,9 +61,9 @@ public struct ApplicationRole: Codable {
         self.defaultGroupsDetails = try values.decodeIfPresent([GroupName].self, forKey: "defaultGroupsDetails")
         self.isSelectedByDefault = try values.decodeIfPresent(Bool.self, forKey: "selectedByDefault")
         self.isDefined = try values.decodeIfPresent(Bool.self, forKey: "defined")
-        self.numberOfSeats = try values.decodeIfPresent(Int.self, forKey: "numberOfSeats")
-        self.remainingSeats = try values.decodeIfPresent(Int.self, forKey: "remainingSeats")
-        self.userCount = try values.decodeIfPresent(Int.self, forKey: "userCount")
+        self.numberOfSeats = try values.decodeIfPresent(Int32.self, forKey: "numberOfSeats")
+        self.remainingSeats = try values.decodeIfPresent(Int32.self, forKey: "remainingSeats")
+        self.userCount = try values.decodeIfPresent(Int32.self, forKey: "userCount")
         self.userCountDescription = try values.decodeIfPresent(String.self, forKey: "userCountDescription")
         self.hasUnlimitedSeats = try values.decodeIfPresent(Bool.self, forKey: "hasUnlimitedSeats")
         self.isPlatform = try values.decodeIfPresent(Bool.self, forKey: "platform")

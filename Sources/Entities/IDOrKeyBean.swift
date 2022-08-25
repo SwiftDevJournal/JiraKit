@@ -6,18 +6,18 @@ import NaiveDate
 
 public struct IDOrKeyBean: Codable {
     /// The ID of the referenced item.
-    public var id: Int?
+    public var id: Int64?
     /// The key of the referenced item.
     public var key: String?
 
-    public init(id: Int? = nil, key: String? = nil) {
+    public init(id: Int64? = nil, key: String? = nil) {
         self.id = id
         self.key = key
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.key = try values.decodeIfPresent(String.self, forKey: "key")
     }
 

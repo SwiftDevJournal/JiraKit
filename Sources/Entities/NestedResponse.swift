@@ -5,18 +5,18 @@ import Foundation
 import NaiveDate
 
 public struct NestedResponse: Codable {
-    public var status: Int?
+    public var status: Int32?
     /// Error messages from an operation.
     public var errorCollection: ErrorCollection?
 
-    public init(status: Int? = nil, errorCollection: ErrorCollection? = nil) {
+    public init(status: Int32? = nil, errorCollection: ErrorCollection? = nil) {
         self.status = status
         self.errorCollection = errorCollection
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.status = try values.decodeIfPresent(Int.self, forKey: "status")
+        self.status = try values.decodeIfPresent(Int32.self, forKey: "status")
         self.errorCollection = try values.decodeIfPresent(ErrorCollection.self, forKey: "errorCollection")
     }
 

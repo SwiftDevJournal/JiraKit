@@ -7,17 +7,17 @@ import NaiveDate
 /// The description of the page of issues loaded by the provided JQL query.
 public struct IssuesJqlMetaDataBean: Codable {
     /// The index of the first issue.
-    public var startAt: Int
+    public var startAt: Int64
     /// The maximum number of issues that could be loaded in this evaluation.
-    public var maxResults: Int
+    public var maxResults: Int32
     /// The number of issues that were loaded in this evaluation.
-    public var count: Int
+    public var count: Int32
     /// The total number of issues the JQL returned.
-    public var totalCount: Int
+    public var totalCount: Int64
     /// Any warnings related to the JQL query. Present only if the validation mode was set to `warn`.
     public var validationWarnings: [String]?
 
-    public init(startAt: Int, maxResults: Int, count: Int, totalCount: Int, validationWarnings: [String]? = nil) {
+    public init(startAt: Int64, maxResults: Int32, count: Int32, totalCount: Int64, validationWarnings: [String]? = nil) {
         self.startAt = startAt
         self.maxResults = maxResults
         self.count = count
@@ -27,10 +27,10 @@ public struct IssuesJqlMetaDataBean: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.startAt = try values.decode(Int.self, forKey: "startAt")
-        self.maxResults = try values.decode(Int.self, forKey: "maxResults")
-        self.count = try values.decode(Int.self, forKey: "count")
-        self.totalCount = try values.decode(Int.self, forKey: "totalCount")
+        self.startAt = try values.decode(Int64.self, forKey: "startAt")
+        self.maxResults = try values.decode(Int32.self, forKey: "maxResults")
+        self.count = try values.decode(Int32.self, forKey: "count")
+        self.totalCount = try values.decode(Int64.self, forKey: "totalCount")
         self.validationWarnings = try values.decodeIfPresent([String].self, forKey: "validationWarnings")
     }
 

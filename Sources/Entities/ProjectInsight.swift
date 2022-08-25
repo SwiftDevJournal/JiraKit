@@ -7,18 +7,18 @@ import NaiveDate
 /// Additional details about a project.
 public struct ProjectInsight: Codable {
     /// Total issue count.
-    public var totalIssueCount: Int?
+    public var totalIssueCount: Int64?
     /// The last issue update time.
     public var lastIssueUpdateTime: Date?
 
-    public init(totalIssueCount: Int? = nil, lastIssueUpdateTime: Date? = nil) {
+    public init(totalIssueCount: Int64? = nil, lastIssueUpdateTime: Date? = nil) {
         self.totalIssueCount = totalIssueCount
         self.lastIssueUpdateTime = lastIssueUpdateTime
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.totalIssueCount = try values.decodeIfPresent(Int.self, forKey: "totalIssueCount")
+        self.totalIssueCount = try values.decodeIfPresent(Int64.self, forKey: "totalIssueCount")
         self.lastIssueUpdateTime = try values.decodeIfPresent(Date.self, forKey: "lastIssueUpdateTime")
     }
 

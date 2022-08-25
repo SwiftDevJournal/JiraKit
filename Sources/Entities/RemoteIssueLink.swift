@@ -7,7 +7,7 @@ import NaiveDate
 /// Details of an issue remote link.
 public struct RemoteIssueLink: Codable {
     /// The ID of the link.
-    public var id: Int?
+    public var id: Int64?
     /// The URL of the link.
     public var this: URL?
     /// The global ID of the link, such as the ID of the item on the remote system.
@@ -19,7 +19,7 @@ public struct RemoteIssueLink: Codable {
     /// Details of the item linked to.
     public var object: RemoteObject?
 
-    public init(id: Int? = nil, this: URL? = nil, globalID: String? = nil, application: Application? = nil, relationship: String? = nil, object: RemoteObject? = nil) {
+    public init(id: Int64? = nil, this: URL? = nil, globalID: String? = nil, application: Application? = nil, relationship: String? = nil, object: RemoteObject? = nil) {
         self.id = id
         self.this = this
         self.globalID = globalID
@@ -30,7 +30,7 @@ public struct RemoteIssueLink: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.this = try values.decodeIfPresent(URL.self, forKey: "self")
         self.globalID = try values.decodeIfPresent(String.self, forKey: "globalId")
         self.application = try values.decodeIfPresent(Application.self, forKey: "application")

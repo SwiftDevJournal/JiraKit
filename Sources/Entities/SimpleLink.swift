@@ -12,9 +12,9 @@ public struct SimpleLink: Codable {
     public var label: String?
     public var title: String?
     public var href: String?
-    public var weight: Int?
+    public var weight: Int32?
 
-    public init(id: String? = nil, styleClass: String? = nil, iconClass: String? = nil, label: String? = nil, title: String? = nil, href: String? = nil, weight: Int? = nil) {
+    public init(id: String? = nil, styleClass: String? = nil, iconClass: String? = nil, label: String? = nil, title: String? = nil, href: String? = nil, weight: Int32? = nil) {
         self.id = id
         self.styleClass = styleClass
         self.iconClass = iconClass
@@ -32,7 +32,7 @@ public struct SimpleLink: Codable {
         self.label = try values.decodeIfPresent(String.self, forKey: "label")
         self.title = try values.decodeIfPresent(String.self, forKey: "title")
         self.href = try values.decodeIfPresent(String.self, forKey: "href")
-        self.weight = try values.decodeIfPresent(Int.self, forKey: "weight")
+        self.weight = try values.decodeIfPresent(Int32.self, forKey: "weight")
     }
 
     public func encode(to encoder: Encoder) throws {

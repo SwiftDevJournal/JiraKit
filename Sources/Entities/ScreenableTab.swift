@@ -7,18 +7,18 @@ import NaiveDate
 /// A screen tab.
 public struct ScreenableTab: Codable {
     /// The ID of the screen tab.
-    public var id: Int?
+    public var id: Int64?
     /// The name of the screen tab. The maximum length is 255 characters.
     public var name: String
 
-    public init(id: Int? = nil, name: String) {
+    public init(id: Int64? = nil, name: String) {
         self.id = id
         self.name = name
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.name = try values.decode(String.self, forKey: "name")
     }
 

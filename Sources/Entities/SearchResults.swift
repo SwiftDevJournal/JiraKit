@@ -9,11 +9,11 @@ public struct SearchResults: Codable {
     /// Expand options that include additional search result details in the response.
     public var expand: String?
     /// The index of the first item returned on the page.
-    public var startAt: Int?
+    public var startAt: Int32?
     /// The maximum number of results that could be on the page.
-    public var maxResults: Int?
+    public var maxResults: Int32?
     /// The number of results on the page.
-    public var total: Int?
+    public var total: Int32?
     /// The list of issues found by the search.
     public var issues: [IssueBean]?
     /// Any warnings related to the JQL query.
@@ -23,7 +23,7 @@ public struct SearchResults: Codable {
     /// The schema describing the field types in the search results.
     public var schema: [String: JSONTypeBean]?
 
-    public init(expand: String? = nil, startAt: Int? = nil, maxResults: Int? = nil, total: Int? = nil, issues: [IssueBean]? = nil, warningMessages: [String]? = nil, names: [String: String]? = nil, schema: [String: JSONTypeBean]? = nil) {
+    public init(expand: String? = nil, startAt: Int32? = nil, maxResults: Int32? = nil, total: Int32? = nil, issues: [IssueBean]? = nil, warningMessages: [String]? = nil, names: [String: String]? = nil, schema: [String: JSONTypeBean]? = nil) {
         self.expand = expand
         self.startAt = startAt
         self.maxResults = maxResults
@@ -37,9 +37,9 @@ public struct SearchResults: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.expand = try values.decodeIfPresent(String.self, forKey: "expand")
-        self.startAt = try values.decodeIfPresent(Int.self, forKey: "startAt")
-        self.maxResults = try values.decodeIfPresent(Int.self, forKey: "maxResults")
-        self.total = try values.decodeIfPresent(Int.self, forKey: "total")
+        self.startAt = try values.decodeIfPresent(Int32.self, forKey: "startAt")
+        self.maxResults = try values.decodeIfPresent(Int32.self, forKey: "maxResults")
+        self.total = try values.decodeIfPresent(Int32.self, forKey: "total")
         self.issues = try values.decodeIfPresent([IssueBean].self, forKey: "issues")
         self.warningMessages = try values.decodeIfPresent([String].self, forKey: "warningMessages")
         self.names = try values.decodeIfPresent([String: String].self, forKey: "names")

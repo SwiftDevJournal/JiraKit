@@ -7,11 +7,11 @@ import NaiveDate
 /// A page containing dashboard details.
 public struct PageOfDashboards: Codable {
     /// The index of the first item returned on the page.
-    public var startAt: Int?
+    public var startAt: Int32?
     /// The maximum number of results that could be on the page.
-    public var maxResults: Int?
+    public var maxResults: Int32?
     /// The number of results on the page.
-    public var total: Int?
+    public var total: Int32?
     /// The URL of the previous page of results, if any.
     public var prev: String?
     /// The URL of the next page of results, if any.
@@ -19,7 +19,7 @@ public struct PageOfDashboards: Codable {
     /// List of dashboards.
     public var dashboards: [Dashboard]?
 
-    public init(startAt: Int? = nil, maxResults: Int? = nil, total: Int? = nil, prev: String? = nil, next: String? = nil, dashboards: [Dashboard]? = nil) {
+    public init(startAt: Int32? = nil, maxResults: Int32? = nil, total: Int32? = nil, prev: String? = nil, next: String? = nil, dashboards: [Dashboard]? = nil) {
         self.startAt = startAt
         self.maxResults = maxResults
         self.total = total
@@ -30,9 +30,9 @@ public struct PageOfDashboards: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.startAt = try values.decodeIfPresent(Int.self, forKey: "startAt")
-        self.maxResults = try values.decodeIfPresent(Int.self, forKey: "maxResults")
-        self.total = try values.decodeIfPresent(Int.self, forKey: "total")
+        self.startAt = try values.decodeIfPresent(Int32.self, forKey: "startAt")
+        self.maxResults = try values.decodeIfPresent(Int32.self, forKey: "maxResults")
+        self.total = try values.decodeIfPresent(Int32.self, forKey: "total")
         self.prev = try values.decodeIfPresent(String.self, forKey: "prev")
         self.next = try values.decodeIfPresent(String.self, forKey: "next")
         self.dashboards = try values.decodeIfPresent([Dashboard].self, forKey: "dashboards")

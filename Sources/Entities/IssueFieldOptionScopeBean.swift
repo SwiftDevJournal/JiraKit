@@ -6,13 +6,13 @@ import NaiveDate
 
 public struct IssueFieldOptionScopeBean: Codable {
     /// DEPRECATED
-    public var projects: [Int]?
+    public var projects: [Int64]?
     /// Defines the projects in which the option is available and the behavior of the option within each project. Specify one object per project. The behavior of the option in a project context overrides the behavior in the global context.
     public var projects2: [ProjectScopeBean]?
     /// Defines the behavior of the option within the global context. If this property is set, even if set to an empty object, then the option is available in all projects.
     public var global: GlobalScopeBean?
 
-    public init(projects: [Int]? = nil, projects2: [ProjectScopeBean]? = nil, global: GlobalScopeBean? = nil) {
+    public init(projects: [Int64]? = nil, projects2: [ProjectScopeBean]? = nil, global: GlobalScopeBean? = nil) {
         self.projects = projects
         self.projects2 = projects2
         self.global = global
@@ -20,7 +20,7 @@ public struct IssueFieldOptionScopeBean: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.projects = try values.decodeIfPresent([Int].self, forKey: "projects")
+        self.projects = try values.decodeIfPresent([Int64].self, forKey: "projects")
         self.projects2 = try values.decodeIfPresent([ProjectScopeBean].self, forKey: "projects2")
         self.global = try values.decodeIfPresent(GlobalScopeBean.self, forKey: "global")
     }

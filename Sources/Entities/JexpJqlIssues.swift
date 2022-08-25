@@ -9,9 +9,9 @@ public struct JexpJqlIssues: Codable {
     /// The JQL query.
     public var query: String?
     /// The index of the first issue to return from the JQL query.
-    public var startAt: Int?
+    public var startAt: Int64?
     /// The maximum number of issues to return from the JQL query. Inspect `meta.issues.jql.maxResults` in the response to ensure the maximum value has not been exceeded.
-    public var maxResults: Int?
+    public var maxResults: Int32?
     /// Determines how to validate the JQL query and treat the validation results.
     public var validation: Validation?
 
@@ -22,7 +22,7 @@ public struct JexpJqlIssues: Codable {
         case `none`
     }
 
-    public init(query: String? = nil, startAt: Int? = nil, maxResults: Int? = nil, validation: Validation? = nil) {
+    public init(query: String? = nil, startAt: Int64? = nil, maxResults: Int32? = nil, validation: Validation? = nil) {
         self.query = query
         self.startAt = startAt
         self.maxResults = maxResults
@@ -32,8 +32,8 @@ public struct JexpJqlIssues: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.query = try values.decodeIfPresent(String.self, forKey: "query")
-        self.startAt = try values.decodeIfPresent(Int.self, forKey: "startAt")
-        self.maxResults = try values.decodeIfPresent(Int.self, forKey: "maxResults")
+        self.startAt = try values.decodeIfPresent(Int64.self, forKey: "startAt")
+        self.maxResults = try values.decodeIfPresent(Int32.self, forKey: "maxResults")
         self.validation = try values.decodeIfPresent(Validation.self, forKey: "validation")
     }
 

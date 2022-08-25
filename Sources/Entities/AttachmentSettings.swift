@@ -9,9 +9,9 @@ public struct AttachmentSettings: Codable {
     /// Whether the ability to add attachments is enabled.
     public var isEnabled: Bool?
     /// The maximum size of attachments permitted, in bytes.
-    public var uploadLimit: Int?
+    public var uploadLimit: Int64?
 
-    public init(isEnabled: Bool? = nil, uploadLimit: Int? = nil) {
+    public init(isEnabled: Bool? = nil, uploadLimit: Int64? = nil) {
         self.isEnabled = isEnabled
         self.uploadLimit = uploadLimit
     }
@@ -19,7 +19,7 @@ public struct AttachmentSettings: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.isEnabled = try values.decodeIfPresent(Bool.self, forKey: "enabled")
-        self.uploadLimit = try values.decodeIfPresent(Int.self, forKey: "uploadLimit")
+        self.uploadLimit = try values.decodeIfPresent(Int64.self, forKey: "uploadLimit")
     }
 
     public func encode(to encoder: Encoder) throws {

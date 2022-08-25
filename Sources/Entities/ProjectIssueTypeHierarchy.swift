@@ -7,18 +7,18 @@ import NaiveDate
 /// The hierarchy of issue types within a project.
 public struct ProjectIssueTypeHierarchy: Codable {
     /// The ID of the project.
-    public var projectID: Int?
+    public var projectID: Int64?
     /// Details of an issue type hierarchy level.
     public var hierarchy: [ProjectIssueTypesHierarchyLevel]?
 
-    public init(projectID: Int? = nil, hierarchy: [ProjectIssueTypesHierarchyLevel]? = nil) {
+    public init(projectID: Int64? = nil, hierarchy: [ProjectIssueTypesHierarchyLevel]? = nil) {
         self.projectID = projectID
         self.hierarchy = hierarchy
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.projectID = try values.decodeIfPresent(Int.self, forKey: "projectId")
+        self.projectID = try values.decodeIfPresent(Int64.self, forKey: "projectId")
         self.hierarchy = try values.decodeIfPresent([ProjectIssueTypesHierarchyLevel].self, forKey: "hierarchy")
     }
 

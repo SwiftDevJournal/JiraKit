@@ -32,13 +32,13 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         }
 
         public struct GetParameters {
-            public var startAt: Int?
-            public var maxResults: Int?
-            public var startedAfter: Int?
-            public var startedBefore: Int?
+            public var startAt: Int64?
+            public var maxResults: Int32?
+            public var startedAfter: Int64?
+            public var startedBefore: Int64?
             public var expand: String?
 
-            public init(startAt: Int? = nil, maxResults: Int? = nil, startedAfter: Int? = nil, startedBefore: Int? = nil, expand: String? = nil) {
+            public init(startAt: Int64? = nil, maxResults: Int32? = nil, startedAfter: Int64? = nil, startedBefore: Int64? = nil, expand: String? = nil) {
                 self.startAt = startAt
                 self.maxResults = maxResults
                 self.startedAfter = startedAfter

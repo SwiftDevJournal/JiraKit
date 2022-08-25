@@ -9,11 +9,11 @@ public struct FailedWebhooks: Codable {
     /// The list of webhooks.
     public var values: [FailedWebhook]
     /// The maximum number of items on the page. If the list of values is shorter than this number, then there are no more pages.
-    public var maxResults: Int
+    public var maxResults: Int32
     /// The URL to the next page of results. Present only if the request returned at least one result.The next page may be empty at the time of receiving the response, but new failed webhooks may appear in time. You can save the URL to the next page and query for new results periodically (for example, every hour).
     public var next: URL?
 
-    public init(values: [FailedWebhook], maxResults: Int, next: URL? = nil) {
+    public init(values: [FailedWebhook], maxResults: Int32, next: URL? = nil) {
         self.values = values
         self.maxResults = maxResults
         self.next = next
@@ -22,7 +22,7 @@ public struct FailedWebhooks: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.values = try values.decode([FailedWebhook].self, forKey: "values")
-        self.maxResults = try values.decode(Int.self, forKey: "maxResults")
+        self.maxResults = try values.decode(Int32.self, forKey: "maxResults")
         self.next = try values.decodeIfPresent(URL.self, forKey: "next")
     }
 

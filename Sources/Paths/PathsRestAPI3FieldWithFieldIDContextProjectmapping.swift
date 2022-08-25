@@ -24,11 +24,11 @@ extension Paths.API.__3.Field.WithFieldID.Context {
         }
 
         public struct GetParameters {
-            public var contextID: [Int]?
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var contextID: [Int64]?
+            public var startAt: Int64?
+            public var maxResults: Int32?
 
-            public init(contextID: [Int]? = nil, startAt: Int? = nil, maxResults: Int? = nil) {
+            public init(contextID: [Int64]? = nil, startAt: Int64? = nil, maxResults: Int32? = nil) {
                 self.contextID = contextID
                 self.startAt = startAt
                 self.maxResults = maxResults

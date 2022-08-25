@@ -29,12 +29,12 @@ extension Paths.API.__3.Statuses {
         public struct GetParameters {
             public var expand: String?
             public var projectID: String?
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int64?
+            public var maxResults: Int32?
             public var searchString: String?
             public var statusCategory: String?
 
-            public init(expand: String? = nil, projectID: String? = nil, startAt: Int? = nil, maxResults: Int? = nil, searchString: String? = nil, statusCategory: String? = nil) {
+            public init(expand: String? = nil, projectID: String? = nil, startAt: Int64? = nil, maxResults: Int32? = nil, searchString: String? = nil, statusCategory: String? = nil) {
                 self.expand = expand
                 self.projectID = projectID
                 self.startAt = startAt

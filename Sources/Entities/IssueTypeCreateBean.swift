@@ -19,7 +19,7 @@ public struct IssueTypeCreateBean: Codable {
     ///  *  `0` for Base.
     /// 
     /// Defaults to `0`.
-    public var hierarchyLevel: Int?
+    public var hierarchyLevel: Int32?
 
     /// Deprecated. Use `hierarchyLevel` instead. See the [deprecation notice](https://community.developer.atlassian.com/t/deprecation-of-the-epic-link-parent-link-and-other-related-fields-in-rest-apis-and-webhooks/54048) for details.
     /// 
@@ -29,7 +29,7 @@ public struct IssueTypeCreateBean: Codable {
         case standard
     }
 
-    public init(name: String, description: String? = nil, type: `Type`? = nil, hierarchyLevel: Int? = nil) {
+    public init(name: String, description: String? = nil, type: `Type`? = nil, hierarchyLevel: Int32? = nil) {
         self.name = name
         self.description = description
         self.type = type
@@ -41,7 +41,7 @@ public struct IssueTypeCreateBean: Codable {
         self.name = try values.decode(String.self, forKey: "name")
         self.description = try values.decodeIfPresent(String.self, forKey: "description")
         self.type = try values.decodeIfPresent(`Type`.self, forKey: "type")
-        self.hierarchyLevel = try values.decodeIfPresent(Int.self, forKey: "hierarchyLevel")
+        self.hierarchyLevel = try values.decodeIfPresent(Int32.self, forKey: "hierarchyLevel")
     }
 
     public func encode(to encoder: Encoder) throws {

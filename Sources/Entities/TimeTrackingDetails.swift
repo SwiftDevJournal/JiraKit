@@ -13,13 +13,13 @@ public struct TimeTrackingDetails: Codable {
     /// Time worked on this issue in readable format.
     public var timeSpent: String?
     /// The original estimate of time needed for this issue in seconds.
-    public var originalEstimateSeconds: Int?
+    public var originalEstimateSeconds: Int64?
     /// The remaining estimate of time needed for this issue in seconds.
-    public var remainingEstimateSeconds: Int?
+    public var remainingEstimateSeconds: Int64?
     /// Time worked on this issue in seconds.
-    public var timeSpentSeconds: Int?
+    public var timeSpentSeconds: Int64?
 
-    public init(originalEstimate: String? = nil, remainingEstimate: String? = nil, timeSpent: String? = nil, originalEstimateSeconds: Int? = nil, remainingEstimateSeconds: Int? = nil, timeSpentSeconds: Int? = nil) {
+    public init(originalEstimate: String? = nil, remainingEstimate: String? = nil, timeSpent: String? = nil, originalEstimateSeconds: Int64? = nil, remainingEstimateSeconds: Int64? = nil, timeSpentSeconds: Int64? = nil) {
         self.originalEstimate = originalEstimate
         self.remainingEstimate = remainingEstimate
         self.timeSpent = timeSpent
@@ -33,9 +33,9 @@ public struct TimeTrackingDetails: Codable {
         self.originalEstimate = try values.decodeIfPresent(String.self, forKey: "originalEstimate")
         self.remainingEstimate = try values.decodeIfPresent(String.self, forKey: "remainingEstimate")
         self.timeSpent = try values.decodeIfPresent(String.self, forKey: "timeSpent")
-        self.originalEstimateSeconds = try values.decodeIfPresent(Int.self, forKey: "originalEstimateSeconds")
-        self.remainingEstimateSeconds = try values.decodeIfPresent(Int.self, forKey: "remainingEstimateSeconds")
-        self.timeSpentSeconds = try values.decodeIfPresent(Int.self, forKey: "timeSpentSeconds")
+        self.originalEstimateSeconds = try values.decodeIfPresent(Int64.self, forKey: "originalEstimateSeconds")
+        self.remainingEstimateSeconds = try values.decodeIfPresent(Int64.self, forKey: "remainingEstimateSeconds")
+        self.timeSpentSeconds = try values.decodeIfPresent(Int64.self, forKey: "timeSpentSeconds")
     }
 
     public func encode(to encoder: Encoder) throws {

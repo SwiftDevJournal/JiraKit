@@ -9,11 +9,11 @@ public struct IssueContextVariable: Codable {
     /// Type of custom context variable.
     public var type: String
     /// The issue ID.
-    public var id: Int?
+    public var id: Int64?
     /// The issue key.
     public var key: String?
 
-    public init(type: String, id: Int? = nil, key: String? = nil) {
+    public init(type: String, id: Int64? = nil, key: String? = nil) {
         self.type = type
         self.id = id
         self.key = key
@@ -22,7 +22,7 @@ public struct IssueContextVariable: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.type = try values.decode(String.self, forKey: "type")
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.key = try values.decodeIfPresent(String.self, forKey: "key")
     }
 

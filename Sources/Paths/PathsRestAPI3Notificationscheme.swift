@@ -46,11 +46,11 @@ extension Paths.API.__3 {
         }
 
         public struct GetParameters {
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int64?
+            public var maxResults: Int32?
             public var expand: String?
 
-            public init(startAt: Int? = nil, maxResults: Int? = nil, expand: String? = nil) {
+            public init(startAt: Int64? = nil, maxResults: Int32? = nil, expand: String? = nil) {
                 self.startAt = startAt
                 self.maxResults = maxResults
                 self.expand = expand

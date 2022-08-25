@@ -21,15 +21,15 @@ public struct UpdateProjectDetails: Codable {
     /// The default assignee when creating issues for this project.
     public var assigneeType: AssigneeType?
     /// An integer value for the project's avatar.
-    public var avatarID: Int?
+    public var avatarID: Int64?
     /// The ID of the issue security scheme for the project, which enables you to control who can and cannot view issues. Use the [Get issue security schemes](#api-rest-api-3-issuesecurityschemes-get) resource to get all issue security scheme IDs.
-    public var issueSecurityScheme: Int?
+    public var issueSecurityScheme: Int64?
     /// The ID of the permission scheme for the project. Use the [Get all permission schemes](#api-rest-api-3-permissionscheme-get) resource to see a list of all permission scheme IDs.
-    public var permissionScheme: Int?
+    public var permissionScheme: Int64?
     /// The ID of the notification scheme for the project. Use the [Get notification schemes](#api-rest-api-3-notificationscheme-get) resource to get a list of notification scheme IDs.
-    public var notificationScheme: Int?
+    public var notificationScheme: Int64?
     /// The ID of the project's category. A complete list of category IDs is found using the [Get all project categories](#api-rest-api-3-projectCategory-get) operation. To remove the project category from the project, set the value to `-1.`
-    public var categoryID: Int?
+    public var categoryID: Int64?
 
     /// The default assignee when creating issues for this project.
     public enum AssigneeType: String, Codable, CaseIterable {
@@ -37,7 +37,7 @@ public struct UpdateProjectDetails: Codable {
         case unassigned = "UNASSIGNED"
     }
 
-    public init(key: String? = nil, name: String? = nil, description: String? = nil, lead: String? = nil, leadAccountID: String? = nil, url: String? = nil, assigneeType: AssigneeType? = nil, avatarID: Int? = nil, issueSecurityScheme: Int? = nil, permissionScheme: Int? = nil, notificationScheme: Int? = nil, categoryID: Int? = nil) {
+    public init(key: String? = nil, name: String? = nil, description: String? = nil, lead: String? = nil, leadAccountID: String? = nil, url: String? = nil, assigneeType: AssigneeType? = nil, avatarID: Int64? = nil, issueSecurityScheme: Int64? = nil, permissionScheme: Int64? = nil, notificationScheme: Int64? = nil, categoryID: Int64? = nil) {
         self.key = key
         self.name = name
         self.description = description
@@ -61,11 +61,11 @@ public struct UpdateProjectDetails: Codable {
         self.leadAccountID = try values.decodeIfPresent(String.self, forKey: "leadAccountId")
         self.url = try values.decodeIfPresent(String.self, forKey: "url")
         self.assigneeType = try values.decodeIfPresent(AssigneeType.self, forKey: "assigneeType")
-        self.avatarID = try values.decodeIfPresent(Int.self, forKey: "avatarId")
-        self.issueSecurityScheme = try values.decodeIfPresent(Int.self, forKey: "issueSecurityScheme")
-        self.permissionScheme = try values.decodeIfPresent(Int.self, forKey: "permissionScheme")
-        self.notificationScheme = try values.decodeIfPresent(Int.self, forKey: "notificationScheme")
-        self.categoryID = try values.decodeIfPresent(Int.self, forKey: "categoryId")
+        self.avatarID = try values.decodeIfPresent(Int64.self, forKey: "avatarId")
+        self.issueSecurityScheme = try values.decodeIfPresent(Int64.self, forKey: "issueSecurityScheme")
+        self.permissionScheme = try values.decodeIfPresent(Int64.self, forKey: "permissionScheme")
+        self.notificationScheme = try values.decodeIfPresent(Int64.self, forKey: "notificationScheme")
+        self.categoryID = try values.decodeIfPresent(Int64.self, forKey: "categoryId")
     }
 
     public func encode(to encoder: Encoder) throws {

@@ -7,7 +7,7 @@ import NaiveDate
 /// A screen with tab details.
 public struct ScreenWithTab: Codable {
     /// The ID of the screen.
-    public var id: Int?
+    public var id: Int64?
     /// The name of the screen.
     public var name: String?
     /// The description of the screen.
@@ -17,7 +17,7 @@ public struct ScreenWithTab: Codable {
     /// The tab for the screen.
     public var tab: ScreenableTab?
 
-    public init(id: Int? = nil, name: String? = nil, description: String? = nil, scope: Scope? = nil, tab: ScreenableTab? = nil) {
+    public init(id: Int64? = nil, name: String? = nil, description: String? = nil, scope: Scope? = nil, tab: ScreenableTab? = nil) {
         self.id = id
         self.name = name
         self.description = description
@@ -27,7 +27,7 @@ public struct ScreenWithTab: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.name = try values.decodeIfPresent(String.self, forKey: "name")
         self.description = try values.decodeIfPresent(String.self, forKey: "description")
         self.scope = try values.decodeIfPresent(Scope.self, forKey: "scope")

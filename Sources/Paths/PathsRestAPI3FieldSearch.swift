@@ -31,8 +31,8 @@ extension Paths.API.__3.Field {
         }
 
         public struct GetParameters {
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int64?
+            public var maxResults: Int32?
             public var type: [`Type`]?
             public var id: [String]?
             public var query: String?
@@ -59,7 +59,7 @@ extension Paths.API.__3.Field {
                 case plusscreensCount = "+screensCount"
             }
 
-            public init(startAt: Int? = nil, maxResults: Int? = nil, type: [`Type`]? = nil, id: [String]? = nil, query: String? = nil, orderBy: OrderBy? = nil, expand: String? = nil) {
+            public init(startAt: Int64? = nil, maxResults: Int32? = nil, type: [`Type`]? = nil, id: [String]? = nil, query: String? = nil, orderBy: OrderBy? = nil, expand: String? = nil) {
                 self.startAt = startAt
                 self.maxResults = maxResults
                 self.type = type

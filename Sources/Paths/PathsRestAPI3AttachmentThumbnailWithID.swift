@@ -33,10 +33,10 @@ extension Paths.API.__3.Attachment.Thumbnail {
         public struct GetParameters {
             public var isRedirect: Bool?
             public var isFallbackToDefault: Bool?
-            public var width: Int?
-            public var height: Int?
+            public var width: Int32?
+            public var height: Int32?
 
-            public init(isRedirect: Bool? = nil, isFallbackToDefault: Bool? = nil, width: Int? = nil, height: Int? = nil) {
+            public init(isRedirect: Bool? = nil, isFallbackToDefault: Bool? = nil, width: Int32? = nil, height: Int32? = nil) {
                 self.isRedirect = isRedirect
                 self.isFallbackToDefault = isFallbackToDefault
                 self.width = width

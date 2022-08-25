@@ -30,8 +30,8 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         }
 
         public struct GetParameters {
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int64?
+            public var maxResults: Int32?
             public var orderBy: OrderBy?
             public var expand: String?
 
@@ -41,7 +41,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
                 case pluscreated = "+created"
             }
 
-            public init(startAt: Int? = nil, maxResults: Int? = nil, orderBy: OrderBy? = nil, expand: String? = nil) {
+            public init(startAt: Int64? = nil, maxResults: Int32? = nil, orderBy: OrderBy? = nil, expand: String? = nil) {
                 self.startAt = startAt
                 self.maxResults = maxResults
                 self.orderBy = orderBy

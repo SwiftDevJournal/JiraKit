@@ -27,15 +27,15 @@ extension Paths.API.__3 {
 
         public struct GetParameters {
             public var filter: Filter?
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int32?
+            public var maxResults: Int32?
 
             public enum Filter: String, Codable, CaseIterable {
                 case my
                 case favourite
             }
 
-            public init(filter: Filter? = nil, startAt: Int? = nil, maxResults: Int? = nil) {
+            public init(filter: Filter? = nil, startAt: Int32? = nil, maxResults: Int32? = nil) {
                 self.filter = filter
                 self.startAt = startAt
                 self.maxResults = maxResults

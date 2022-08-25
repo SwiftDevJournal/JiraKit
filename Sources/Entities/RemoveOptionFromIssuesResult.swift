@@ -6,13 +6,13 @@ import NaiveDate
 
 public struct RemoveOptionFromIssuesResult: Codable {
     /// The IDs of the modified issues.
-    public var modifiedIssues: [Int]?
+    public var modifiedIssues: [Int64]?
     /// The IDs of the unchanged issues, those issues where errors prevent modification.
-    public var unmodifiedIssues: [Int]?
+    public var unmodifiedIssues: [Int64]?
     /// A collection of errors related to unchanged issues. The collection size is limited, which means not all errors may be returned.
     public var errors: SimpleErrorCollection?
 
-    public init(modifiedIssues: [Int]? = nil, unmodifiedIssues: [Int]? = nil, errors: SimpleErrorCollection? = nil) {
+    public init(modifiedIssues: [Int64]? = nil, unmodifiedIssues: [Int64]? = nil, errors: SimpleErrorCollection? = nil) {
         self.modifiedIssues = modifiedIssues
         self.unmodifiedIssues = unmodifiedIssues
         self.errors = errors
@@ -20,8 +20,8 @@ public struct RemoveOptionFromIssuesResult: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.modifiedIssues = try values.decodeIfPresent([Int].self, forKey: "modifiedIssues")
-        self.unmodifiedIssues = try values.decodeIfPresent([Int].self, forKey: "unmodifiedIssues")
+        self.modifiedIssues = try values.decodeIfPresent([Int64].self, forKey: "modifiedIssues")
+        self.unmodifiedIssues = try values.decodeIfPresent([Int64].self, forKey: "unmodifiedIssues")
         self.errors = try values.decodeIfPresent(SimpleErrorCollection.self, forKey: "errors")
     }
 

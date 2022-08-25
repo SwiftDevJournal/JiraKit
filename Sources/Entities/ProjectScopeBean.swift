@@ -6,7 +6,7 @@ import NaiveDate
 
 public struct ProjectScopeBean: Codable {
     /// The ID of the project that the option's behavior applies to.
-    public var id: Int?
+    public var id: Int64?
     /// Defines the behavior of the option in the project.If notSelectable is set, the option cannot be set as the field's value. This is useful for archiving an option that has previously been selected but shouldn't be used anymore.If defaultValue is set, the option is selected by default.
     public var attributes: [Attribute]?
 
@@ -15,14 +15,14 @@ public struct ProjectScopeBean: Codable {
         case defaultValue
     }
 
-    public init(id: Int? = nil, attributes: [Attribute]? = nil) {
+    public init(id: Int64? = nil, attributes: [Attribute]? = nil) {
         self.id = id
         self.attributes = attributes
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.attributes = try values.decodeIfPresent([Attribute].self, forKey: "attributes")
     }
 

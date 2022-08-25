@@ -37,10 +37,10 @@ extension Paths.API.__3.Dashboard {
             public var owner: String?
             public var groupname: String?
             public var groupID: String?
-            public var projectID: Int?
+            public var projectID: Int64?
             public var orderBy: OrderBy?
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int64?
+            public var maxResults: Int32?
             public var status: Status?
             public var expand: String?
 
@@ -71,7 +71,7 @@ extension Paths.API.__3.Dashboard {
                 case deleted
             }
 
-            public init(dashboardName: String? = nil, accountID: String? = nil, owner: String? = nil, groupname: String? = nil, groupID: String? = nil, projectID: Int? = nil, orderBy: OrderBy? = nil, startAt: Int? = nil, maxResults: Int? = nil, status: Status? = nil, expand: String? = nil) {
+            public init(dashboardName: String? = nil, accountID: String? = nil, owner: String? = nil, groupname: String? = nil, groupID: String? = nil, projectID: Int64? = nil, orderBy: OrderBy? = nil, startAt: Int64? = nil, maxResults: Int32? = nil, status: Status? = nil, expand: String? = nil) {
                 self.dashboardName = dashboardName
                 self.accountID = accountID
                 self.owner = owner

@@ -23,11 +23,11 @@ extension Paths.API.__3.Worklog {
         /// This resource does not return worklogs deleted during the minute preceding the request.
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
-        public func get(since: Int? = nil) -> Request<JiraKit.ChangedWorklogs> {
+        public func get(since: Int64? = nil) -> Request<JiraKit.ChangedWorklogs> {
             Request(method: "GET", url: path, query: makeGetQuery(since), id: "getIdsOfWorklogsDeletedSince")
         }
 
-        private func makeGetQuery(_ since: Int?) -> [(String, String?)] {
+        private func makeGetQuery(_ since: Int64?) -> [(String, String?)] {
             let encoder = URLQueryEncoder()
             encoder.encode(since, forKey: "since")
             return encoder.items

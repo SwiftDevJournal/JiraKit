@@ -33,15 +33,15 @@ extension Paths.API.__3.App.Field.WithFieldIDOrKey.Context {
         }
 
         public struct GetParameters {
-            public var id: [Int]?
-            public var fieldContextID: [Int]?
-            public var issueID: Int?
+            public var id: [Int64]?
+            public var fieldContextID: [Int64]?
+            public var issueID: Int64?
             public var projectKeyOrID: String?
             public var issueTypeID: String?
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int64?
+            public var maxResults: Int32?
 
-            public init(id: [Int]? = nil, fieldContextID: [Int]? = nil, issueID: Int? = nil, projectKeyOrID: String? = nil, issueTypeID: String? = nil, startAt: Int? = nil, maxResults: Int? = nil) {
+            public init(id: [Int64]? = nil, fieldContextID: [Int64]? = nil, issueID: Int64? = nil, projectKeyOrID: String? = nil, issueTypeID: String? = nil, startAt: Int64? = nil, maxResults: Int32? = nil) {
                 self.id = id
                 self.fieldContextID = fieldContextID
                 self.issueID = issueID

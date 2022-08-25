@@ -31,8 +31,8 @@ extension Paths.API.__3.Workflow.Rule {
         }
 
         public struct GetParameters {
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int64?
+            public var maxResults: Int32?
             public var types: [Types]
             public var keys: [String]?
             public var workflowNames: [String]?
@@ -46,7 +46,7 @@ extension Paths.API.__3.Workflow.Rule {
                 case validator
             }
 
-            public init(startAt: Int? = nil, maxResults: Int? = nil, types: [Types], keys: [String]? = nil, workflowNames: [String]? = nil, withTags: [String]? = nil, isDraft: Bool? = nil, expand: String? = nil) {
+            public init(startAt: Int64? = nil, maxResults: Int32? = nil, types: [Types], keys: [String]? = nil, workflowNames: [String]? = nil, withTags: [String]? = nil, isDraft: Bool? = nil, expand: String? = nil) {
                 self.startAt = startAt
                 self.maxResults = maxResults
                 self.types = types

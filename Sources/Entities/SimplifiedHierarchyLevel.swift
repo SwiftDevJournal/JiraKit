@@ -6,19 +6,19 @@ import NaiveDate
 
 public struct SimplifiedHierarchyLevel: Codable {
     /// The ID of the hierarchy level. This property is deprecated, see [Change notice: Removing hierarchy level IDs from next-gen APIs](https://developer.atlassian.com/cloud/jira/platform/change-notice-removing-hierarchy-level-ids-from-next-gen-apis/).
-    public var id: Int?
+    public var id: Int64?
     /// The name of this hierarchy level.
     public var name: String?
     /// The ID of the level above this one in the hierarchy. This property is deprecated, see [Change notice: Removing hierarchy level IDs from next-gen APIs](https://developer.atlassian.com/cloud/jira/platform/change-notice-removing-hierarchy-level-ids-from-next-gen-apis/).
-    public var aboveLevelID: Int?
+    public var aboveLevelID: Int64?
     /// The ID of the level below this one in the hierarchy. This property is deprecated, see [Change notice: Removing hierarchy level IDs from next-gen APIs](https://developer.atlassian.com/cloud/jira/platform/change-notice-removing-hierarchy-level-ids-from-next-gen-apis/).
-    public var belowLevelID: Int?
+    public var belowLevelID: Int64?
     /// The ID of the project configuration. This property is deprecated, see [Change oticen: Removing hierarchy level IDs from next-gen APIs](https://developer.atlassian.com/cloud/jira/platform/change-notice-removing-hierarchy-level-ids-from-next-gen-apis/).
-    public var projectConfigurationID: Int?
+    public var projectConfigurationID: Int64?
     /// The level of this item in the hierarchy.
-    public var level: Int?
+    public var level: Int32?
     /// The issue types available in this hierarchy level.
-    public var issueTypeIDs: [Int]?
+    public var issueTypeIDs: [Int64]?
     /// The external UUID of the hierarchy level. This property is deprecated, see [Change notice: Removing hierarchy level IDs from next-gen APIs](https://developer.atlassian.com/cloud/jira/platform/change-notice-removing-hierarchy-level-ids-from-next-gen-apis/).
     public var externalUUID: UUID?
     public var globalHierarchyLevel: GlobalHierarchyLevel?
@@ -29,7 +29,7 @@ public struct SimplifiedHierarchyLevel: Codable {
         case epic = "EPIC"
     }
 
-    public init(id: Int? = nil, name: String? = nil, aboveLevelID: Int? = nil, belowLevelID: Int? = nil, projectConfigurationID: Int? = nil, level: Int? = nil, issueTypeIDs: [Int]? = nil, externalUUID: UUID? = nil, globalHierarchyLevel: GlobalHierarchyLevel? = nil) {
+    public init(id: Int64? = nil, name: String? = nil, aboveLevelID: Int64? = nil, belowLevelID: Int64? = nil, projectConfigurationID: Int64? = nil, level: Int32? = nil, issueTypeIDs: [Int64]? = nil, externalUUID: UUID? = nil, globalHierarchyLevel: GlobalHierarchyLevel? = nil) {
         self.id = id
         self.name = name
         self.aboveLevelID = aboveLevelID
@@ -43,13 +43,13 @@ public struct SimplifiedHierarchyLevel: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.name = try values.decodeIfPresent(String.self, forKey: "name")
-        self.aboveLevelID = try values.decodeIfPresent(Int.self, forKey: "aboveLevelId")
-        self.belowLevelID = try values.decodeIfPresent(Int.self, forKey: "belowLevelId")
-        self.projectConfigurationID = try values.decodeIfPresent(Int.self, forKey: "projectConfigurationId")
-        self.level = try values.decodeIfPresent(Int.self, forKey: "level")
-        self.issueTypeIDs = try values.decodeIfPresent([Int].self, forKey: "issueTypeIds")
+        self.aboveLevelID = try values.decodeIfPresent(Int64.self, forKey: "aboveLevelId")
+        self.belowLevelID = try values.decodeIfPresent(Int64.self, forKey: "belowLevelId")
+        self.projectConfigurationID = try values.decodeIfPresent(Int64.self, forKey: "projectConfigurationId")
+        self.level = try values.decodeIfPresent(Int32.self, forKey: "level")
+        self.issueTypeIDs = try values.decodeIfPresent([Int64].self, forKey: "issueTypeIds")
         self.externalUUID = try values.decodeIfPresent(UUID.self, forKey: "externalUuid")
         self.globalHierarchyLevel = try values.decodeIfPresent(GlobalHierarchyLevel.self, forKey: "globalHierarchyLevel")
     }

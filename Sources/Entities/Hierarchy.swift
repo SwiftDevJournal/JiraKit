@@ -7,18 +7,18 @@ import NaiveDate
 /// The project issue type hierarchy.
 public struct Hierarchy: Codable {
     /// The ID of the base level. This property is deprecated, see [Change notice: Removing hierarchy level IDs from next-gen APIs](https://developer.atlassian.com/cloud/jira/platform/change-notice-removing-hierarchy-level-ids-from-next-gen-apis/).
-    public var baseLevelID: Int?
+    public var baseLevelID: Int64?
     /// Details about the hierarchy level.
     public var levels: [SimplifiedHierarchyLevel]?
 
-    public init(baseLevelID: Int? = nil, levels: [SimplifiedHierarchyLevel]? = nil) {
+    public init(baseLevelID: Int64? = nil, levels: [SimplifiedHierarchyLevel]? = nil) {
         self.baseLevelID = baseLevelID
         self.levels = levels
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.baseLevelID = try values.decodeIfPresent(Int.self, forKey: "baseLevelId")
+        self.baseLevelID = try values.decodeIfPresent(Int64.self, forKey: "baseLevelId")
         self.levels = try values.decodeIfPresent([SimplifiedHierarchyLevel].self, forKey: "levels")
     }
 

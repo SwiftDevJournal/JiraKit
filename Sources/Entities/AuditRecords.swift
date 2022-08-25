@@ -7,15 +7,15 @@ import NaiveDate
 /// Container for a list of audit records.
 public struct AuditRecords: Codable {
     /// The number of audit items skipped before the first item in this list.
-    public var offset: Int?
+    public var offset: Int32?
     /// The requested or default limit on the number of audit items to be returned.
-    public var limit: Int?
+    public var limit: Int32?
     /// The total number of audit items returned.
-    public var total: Int?
+    public var total: Int64?
     /// The list of audit items.
     public var records: [AuditRecordBean]?
 
-    public init(offset: Int? = nil, limit: Int? = nil, total: Int? = nil, records: [AuditRecordBean]? = nil) {
+    public init(offset: Int32? = nil, limit: Int32? = nil, total: Int64? = nil, records: [AuditRecordBean]? = nil) {
         self.offset = offset
         self.limit = limit
         self.total = total
@@ -24,9 +24,9 @@ public struct AuditRecords: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.offset = try values.decodeIfPresent(Int.self, forKey: "offset")
-        self.limit = try values.decodeIfPresent(Int.self, forKey: "limit")
-        self.total = try values.decodeIfPresent(Int.self, forKey: "total")
+        self.offset = try values.decodeIfPresent(Int32.self, forKey: "offset")
+        self.limit = try values.decodeIfPresent(Int32.self, forKey: "limit")
+        self.total = try values.decodeIfPresent(Int64.self, forKey: "total")
         self.records = try values.decodeIfPresent([AuditRecordBean].self, forKey: "records")
     }
 

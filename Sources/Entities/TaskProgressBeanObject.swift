@@ -19,19 +19,19 @@ public struct TaskProgressBeanObject: Codable {
     /// The result of the task execution.
     public var result: AnyJSON?
     /// The ID of the user who submitted the task.
-    public var submittedBy: Int
+    public var submittedBy: Int64
     /// The progress of the task, as a percentage complete.
-    public var progress: Int
+    public var progress: Int64
     /// The execution time of the task, in milliseconds.
-    public var elapsedRuntime: Int
+    public var elapsedRuntime: Int64
     /// A timestamp recording when the task was submitted.
-    public var submitted: Int
+    public var submitted: Int64
     /// A timestamp recording when the task was started.
-    public var started: Int?
+    public var started: Int64?
     /// A timestamp recording when the task was finished.
-    public var finished: Int?
+    public var finished: Int64?
     /// A timestamp recording when the task progress was last updated.
-    public var lastUpdate: Int
+    public var lastUpdate: Int64
 
     /// The status of the task.
     public enum Status: String, Codable, CaseIterable {
@@ -44,7 +44,7 @@ public struct TaskProgressBeanObject: Codable {
         case dead = "DEAD"
     }
 
-    public init(this: URL, id: String, description: String? = nil, status: Status, message: String? = nil, result: AnyJSON? = nil, submittedBy: Int, progress: Int, elapsedRuntime: Int, submitted: Int, started: Int? = nil, finished: Int? = nil, lastUpdate: Int) {
+    public init(this: URL, id: String, description: String? = nil, status: Status, message: String? = nil, result: AnyJSON? = nil, submittedBy: Int64, progress: Int64, elapsedRuntime: Int64, submitted: Int64, started: Int64? = nil, finished: Int64? = nil, lastUpdate: Int64) {
         self.this = this
         self.id = id
         self.description = description
@@ -68,13 +68,13 @@ public struct TaskProgressBeanObject: Codable {
         self.status = try values.decode(Status.self, forKey: "status")
         self.message = try values.decodeIfPresent(String.self, forKey: "message")
         self.result = try values.decodeIfPresent(AnyJSON.self, forKey: "result")
-        self.submittedBy = try values.decode(Int.self, forKey: "submittedBy")
-        self.progress = try values.decode(Int.self, forKey: "progress")
-        self.elapsedRuntime = try values.decode(Int.self, forKey: "elapsedRuntime")
-        self.submitted = try values.decode(Int.self, forKey: "submitted")
-        self.started = try values.decodeIfPresent(Int.self, forKey: "started")
-        self.finished = try values.decodeIfPresent(Int.self, forKey: "finished")
-        self.lastUpdate = try values.decode(Int.self, forKey: "lastUpdate")
+        self.submittedBy = try values.decode(Int64.self, forKey: "submittedBy")
+        self.progress = try values.decode(Int64.self, forKey: "progress")
+        self.elapsedRuntime = try values.decode(Int64.self, forKey: "elapsedRuntime")
+        self.submitted = try values.decode(Int64.self, forKey: "submitted")
+        self.started = try values.decodeIfPresent(Int64.self, forKey: "started")
+        self.finished = try values.decodeIfPresent(Int64.self, forKey: "finished")
+        self.lastUpdate = try values.decode(Int64.self, forKey: "lastUpdate")
     }
 
     public func encode(to encoder: Encoder) throws {

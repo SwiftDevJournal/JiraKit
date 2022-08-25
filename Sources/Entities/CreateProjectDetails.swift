@@ -21,27 +21,27 @@ public struct CreateProjectDetails: Codable {
     /// The default assignee when creating issues for this project.
     public var assigneeType: AssigneeType?
     /// An integer value for the project's avatar.
-    public var avatarID: Int?
+    public var avatarID: Int64?
     /// The ID of the issue security scheme for the project, which enables you to control who can and cannot view issues. Use the [Get issue security schemes](#api-rest-api-3-issuesecurityschemes-get) resource to get all issue security scheme IDs.
-    public var issueSecurityScheme: Int?
+    public var issueSecurityScheme: Int64?
     /// The ID of the permission scheme for the project. Use the [Get all permission schemes](#api-rest-api-3-permissionscheme-get) resource to see a list of all permission scheme IDs.
-    public var permissionScheme: Int?
+    public var permissionScheme: Int64?
     /// The ID of the notification scheme for the project. Use the [Get notification schemes](#api-rest-api-3-notificationscheme-get) resource to get a list of notification scheme IDs.
-    public var notificationScheme: Int?
+    public var notificationScheme: Int64?
     /// The ID of the project's category. A complete list of category IDs is found using the [Get all project categories](#api-rest-api-3-projectCategory-get) operation.
-    public var categoryID: Int?
+    public var categoryID: Int64?
     /// The [project type](https://confluence.atlassian.com/x/GwiiLQ#Jiraapplicationsoverview-Productfeaturesandprojecttypes), which defines the application-specific feature set. If you don't specify the project template you have to specify the project type.
     public var projectTypeKey: ProjectTypeKey?
     /// A predefined configuration for a project. The type of the `projectTemplateKey` must match with the type of the `projectTypeKey`.
     public var projectTemplateKey: ProjectTemplateKey?
     /// The ID of the workflow scheme for the project. Use the [Get all workflow schemes](#api-rest-api-3-workflowscheme-get) operation to get a list of workflow scheme IDs. If you specify the workflow scheme you cannot specify the project template key.
-    public var workflowScheme: Int?
+    public var workflowScheme: Int64?
     /// The ID of the issue type screen scheme for the project. Use the [Get all issue type screen schemes](#api-rest-api-3-issuetypescreenscheme-get) operation to get a list of issue type screen scheme IDs. If you specify the issue type screen scheme you cannot specify the project template key.
-    public var issueTypeScreenScheme: Int?
+    public var issueTypeScreenScheme: Int64?
     /// The ID of the issue type scheme for the project. Use the [Get all issue type schemes](#api-rest-api-3-issuetypescheme-get) operation to get a list of issue type scheme IDs. If you specify the issue type scheme you cannot specify the project template key.
-    public var issueTypeScheme: Int?
+    public var issueTypeScheme: Int64?
     /// The ID of the field configuration scheme for the project. Use the [Get all field configuration schemes](#api-rest-api-3-fieldconfigurationscheme-get) operation to get a list of field configuration scheme IDs. If you specify the field configuration scheme you cannot specify the project template key.
-    public var fieldConfigurationScheme: Int?
+    public var fieldConfigurationScheme: Int64?
 
     /// The default assignee when creating issues for this project.
     public enum AssigneeType: String, Codable, CaseIterable {
@@ -82,7 +82,7 @@ public struct CreateProjectDetails: Codable {
         case comAtlassianJiraCoreProjectTemplatesJiraCoreSimplifiedTask = "com.atlassian.jira-core-project-templates:jira-core-simplified-task-"
     }
 
-    public init(key: String, name: String, description: String? = nil, lead: String? = nil, leadAccountID: String? = nil, url: String? = nil, assigneeType: AssigneeType? = nil, avatarID: Int? = nil, issueSecurityScheme: Int? = nil, permissionScheme: Int? = nil, notificationScheme: Int? = nil, categoryID: Int? = nil, projectTypeKey: ProjectTypeKey? = nil, projectTemplateKey: ProjectTemplateKey? = nil, workflowScheme: Int? = nil, issueTypeScreenScheme: Int? = nil, issueTypeScheme: Int? = nil, fieldConfigurationScheme: Int? = nil) {
+    public init(key: String, name: String, description: String? = nil, lead: String? = nil, leadAccountID: String? = nil, url: String? = nil, assigneeType: AssigneeType? = nil, avatarID: Int64? = nil, issueSecurityScheme: Int64? = nil, permissionScheme: Int64? = nil, notificationScheme: Int64? = nil, categoryID: Int64? = nil, projectTypeKey: ProjectTypeKey? = nil, projectTemplateKey: ProjectTemplateKey? = nil, workflowScheme: Int64? = nil, issueTypeScreenScheme: Int64? = nil, issueTypeScheme: Int64? = nil, fieldConfigurationScheme: Int64? = nil) {
         self.key = key
         self.name = name
         self.description = description
@@ -112,17 +112,17 @@ public struct CreateProjectDetails: Codable {
         self.leadAccountID = try values.decodeIfPresent(String.self, forKey: "leadAccountId")
         self.url = try values.decodeIfPresent(String.self, forKey: "url")
         self.assigneeType = try values.decodeIfPresent(AssigneeType.self, forKey: "assigneeType")
-        self.avatarID = try values.decodeIfPresent(Int.self, forKey: "avatarId")
-        self.issueSecurityScheme = try values.decodeIfPresent(Int.self, forKey: "issueSecurityScheme")
-        self.permissionScheme = try values.decodeIfPresent(Int.self, forKey: "permissionScheme")
-        self.notificationScheme = try values.decodeIfPresent(Int.self, forKey: "notificationScheme")
-        self.categoryID = try values.decodeIfPresent(Int.self, forKey: "categoryId")
+        self.avatarID = try values.decodeIfPresent(Int64.self, forKey: "avatarId")
+        self.issueSecurityScheme = try values.decodeIfPresent(Int64.self, forKey: "issueSecurityScheme")
+        self.permissionScheme = try values.decodeIfPresent(Int64.self, forKey: "permissionScheme")
+        self.notificationScheme = try values.decodeIfPresent(Int64.self, forKey: "notificationScheme")
+        self.categoryID = try values.decodeIfPresent(Int64.self, forKey: "categoryId")
         self.projectTypeKey = try values.decodeIfPresent(ProjectTypeKey.self, forKey: "projectTypeKey")
         self.projectTemplateKey = try values.decodeIfPresent(ProjectTemplateKey.self, forKey: "projectTemplateKey")
-        self.workflowScheme = try values.decodeIfPresent(Int.self, forKey: "workflowScheme")
-        self.issueTypeScreenScheme = try values.decodeIfPresent(Int.self, forKey: "issueTypeScreenScheme")
-        self.issueTypeScheme = try values.decodeIfPresent(Int.self, forKey: "issueTypeScheme")
-        self.fieldConfigurationScheme = try values.decodeIfPresent(Int.self, forKey: "fieldConfigurationScheme")
+        self.workflowScheme = try values.decodeIfPresent(Int64.self, forKey: "workflowScheme")
+        self.issueTypeScreenScheme = try values.decodeIfPresent(Int64.self, forKey: "issueTypeScreenScheme")
+        self.issueTypeScheme = try values.decodeIfPresent(Int64.self, forKey: "issueTypeScheme")
+        self.fieldConfigurationScheme = try values.decodeIfPresent(Int64.self, forKey: "fieldConfigurationScheme")
     }
 
     public func encode(to encoder: Encoder) throws {

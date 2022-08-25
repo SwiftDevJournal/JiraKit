@@ -34,11 +34,11 @@ extension Paths.API.__3.User {
             public var query: String?
             public var username: String?
             public var accountID: String?
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int32?
+            public var maxResults: Int32?
             public var property: String?
 
-            public init(query: String? = nil, username: String? = nil, accountID: String? = nil, startAt: Int? = nil, maxResults: Int? = nil, property: String? = nil) {
+            public init(query: String? = nil, username: String? = nil, accountID: String? = nil, startAt: Int32? = nil, maxResults: Int32? = nil, property: String? = nil) {
                 self.query = query
                 self.username = username
                 self.accountID = accountID

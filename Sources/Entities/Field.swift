@@ -23,13 +23,13 @@ public struct Field: Codable {
     /// The searcher key of the field. Returned for custom fields.
     public var searcherKey: String?
     /// Number of screens where the field is used.
-    public var screensCount: Int?
+    public var screensCount: Int64?
     /// Number of contexts where the field is used.
-    public var contextsCount: Int?
+    public var contextsCount: Int64?
     /// Information about the most recent use of a field.
     public var lastUsed: FieldLastUsed?
 
-    public init(id: String, name: String, schema: JSONTypeBean, description: String? = nil, key: String? = nil, isLocked: Bool? = nil, isUnscreenable: Bool? = nil, searcherKey: String? = nil, screensCount: Int? = nil, contextsCount: Int? = nil, lastUsed: FieldLastUsed? = nil) {
+    public init(id: String, name: String, schema: JSONTypeBean, description: String? = nil, key: String? = nil, isLocked: Bool? = nil, isUnscreenable: Bool? = nil, searcherKey: String? = nil, screensCount: Int64? = nil, contextsCount: Int64? = nil, lastUsed: FieldLastUsed? = nil) {
         self.id = id
         self.name = name
         self.schema = schema
@@ -53,8 +53,8 @@ public struct Field: Codable {
         self.isLocked = try values.decodeIfPresent(Bool.self, forKey: "isLocked")
         self.isUnscreenable = try values.decodeIfPresent(Bool.self, forKey: "isUnscreenable")
         self.searcherKey = try values.decodeIfPresent(String.self, forKey: "searcherKey")
-        self.screensCount = try values.decodeIfPresent(Int.self, forKey: "screensCount")
-        self.contextsCount = try values.decodeIfPresent(Int.self, forKey: "contextsCount")
+        self.screensCount = try values.decodeIfPresent(Int64.self, forKey: "screensCount")
+        self.contextsCount = try values.decodeIfPresent(Int64.self, forKey: "contextsCount")
         self.lastUsed = try values.decodeIfPresent(FieldLastUsed.self, forKey: "lastUsed")
     }
 

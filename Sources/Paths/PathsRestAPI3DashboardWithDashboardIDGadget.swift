@@ -35,9 +35,9 @@ extension Paths.API.__3.Dashboard.WithDashboardID {
         public struct GetParameters {
             public var moduleKey: [String]?
             public var uri: [String]?
-            public var gadgetID: [Int]?
+            public var gadgetID: [Int64]?
 
-            public init(moduleKey: [String]? = nil, uri: [String]? = nil, gadgetID: [Int]? = nil) {
+            public init(moduleKey: [String]? = nil, uri: [String]? = nil, gadgetID: [Int64]? = nil) {
                 self.moduleKey = moduleKey
                 self.uri = uri
                 self.gadgetID = gadgetID

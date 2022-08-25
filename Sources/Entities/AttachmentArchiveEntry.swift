@@ -7,11 +7,11 @@ import NaiveDate
 public struct AttachmentArchiveEntry: Codable {
     public var mediaType: String?
     public var abbreviatedName: String?
-    public var entryIndex: Int?
+    public var entryIndex: Int64?
     public var name: String?
-    public var size: Int?
+    public var size: Int64?
 
-    public init(mediaType: String? = nil, abbreviatedName: String? = nil, entryIndex: Int? = nil, name: String? = nil, size: Int? = nil) {
+    public init(mediaType: String? = nil, abbreviatedName: String? = nil, entryIndex: Int64? = nil, name: String? = nil, size: Int64? = nil) {
         self.mediaType = mediaType
         self.abbreviatedName = abbreviatedName
         self.entryIndex = entryIndex
@@ -23,9 +23,9 @@ public struct AttachmentArchiveEntry: Codable {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.mediaType = try values.decodeIfPresent(String.self, forKey: "mediaType")
         self.abbreviatedName = try values.decodeIfPresent(String.self, forKey: "abbreviatedName")
-        self.entryIndex = try values.decodeIfPresent(Int.self, forKey: "entryIndex")
+        self.entryIndex = try values.decodeIfPresent(Int64.self, forKey: "entryIndex")
         self.name = try values.decodeIfPresent(String.self, forKey: "name")
-        self.size = try values.decodeIfPresent(Int.self, forKey: "size")
+        self.size = try values.decodeIfPresent(Int64.self, forKey: "size")
     }
 
     public func encode(to encoder: Encoder) throws {

@@ -25,11 +25,11 @@ extension Paths.API.__3.Field.WithFieldID.Context {
         /// The order of the returned values is the same as provided in the request.
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
-        public func post(startAt: Int? = nil, maxResults: Int? = nil, _ body: JiraKit.ProjectIssueTypeMappings) -> Request<JiraKit.PageBeanContextForProjectAndIssueType> {
+        public func post(startAt: Int64? = nil, maxResults: Int32? = nil, _ body: JiraKit.ProjectIssueTypeMappings) -> Request<JiraKit.PageBeanContextForProjectAndIssueType> {
             Request(method: "POST", url: path, query: makePostQuery(startAt, maxResults), body: body, id: "getCustomFieldContextsForProjectsAndIssueTypes")
         }
 
-        private func makePostQuery(_ startAt: Int?, _ maxResults: Int?) -> [(String, String?)] {
+        private func makePostQuery(_ startAt: Int64?, _ maxResults: Int32?) -> [(String, String?)] {
             let encoder = URLQueryEncoder()
             encoder.encode(startAt, forKey: "startAt")
             encoder.encode(maxResults, forKey: "maxResults")

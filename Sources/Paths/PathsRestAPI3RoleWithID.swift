@@ -48,11 +48,11 @@ extension Paths.API.__3.Role {
         /// Deletes a project role. You must specify a replacement project role if you wish to delete a project role that is in use.
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
-        public func delete(swap: Int? = nil) -> Request<Void> {
+        public func delete(swap: Int64? = nil) -> Request<Void> {
             Request(method: "DELETE", url: path, query: makeDeleteQuery(swap), id: "deleteProjectRole")
         }
 
-        private func makeDeleteQuery(_ swap: Int?) -> [(String, String?)] {
+        private func makeDeleteQuery(_ swap: Int64?) -> [(String, String?)] {
             let encoder = URLQueryEncoder()
             encoder.encode(swap, forKey: "swap")
             return encoder.items

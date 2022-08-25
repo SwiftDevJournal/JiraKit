@@ -7,15 +7,15 @@ import NaiveDate
 /// Container for a list of webhook IDs.
 public struct ContainerForWebhookIDs: Codable {
     /// A list of webhook IDs.
-    public var webhookIDs: [Int]
+    public var webhookIDs: [Int64]
 
-    public init(webhookIDs: [Int]) {
+    public init(webhookIDs: [Int64]) {
         self.webhookIDs = webhookIDs
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.webhookIDs = try values.decode([Int].self, forKey: "webhookIds")
+        self.webhookIDs = try values.decode([Int64].self, forKey: "webhookIds")
     }
 
     public func encode(to encoder: Encoder) throws {

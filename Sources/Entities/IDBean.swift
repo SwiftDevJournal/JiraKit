@@ -6,15 +6,15 @@ import NaiveDate
 
 public struct IDBean: Codable {
     /// The ID of the permission scheme to associate with the project. Use the [Get all permission schemes](#api-rest-api-3-permissionscheme-get) resource to get a list of permission scheme IDs.
-    public var id: Int
+    public var id: Int64
 
-    public init(id: Int) {
+    public init(id: Int64) {
         self.id = id
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decode(Int.self, forKey: "id")
+        self.id = try values.decode(Int64.self, forKey: "id")
     }
 
     public func encode(to encoder: Encoder) throws {

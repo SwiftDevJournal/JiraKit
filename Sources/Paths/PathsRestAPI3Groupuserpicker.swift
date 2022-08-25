@@ -45,7 +45,7 @@ extension Paths.API.__3 {
 
         public struct GetParameters {
             public var query: String
-            public var maxResults: Int?
+            public var maxResults: Int32?
             public var isShowAvatar: Bool?
             public var fieldID: String?
             public var projectID: [String]?
@@ -78,7 +78,7 @@ extension Paths.API.__3 {
                 case xxxlarge3x = "xxxlarge@3x"
             }
 
-            public init(query: String, maxResults: Int? = nil, isShowAvatar: Bool? = nil, fieldID: String? = nil, projectID: [String]? = nil, issueTypeID: [String]? = nil, avatarSize: AvatarSize? = nil, isCaseInsensitive: Bool? = nil, excludeConnectAddons: Bool? = nil) {
+            public init(query: String, maxResults: Int32? = nil, isShowAvatar: Bool? = nil, fieldID: String? = nil, projectID: [String]? = nil, issueTypeID: [String]? = nil, avatarSize: AvatarSize? = nil, isCaseInsensitive: Bool? = nil, excludeConnectAddons: Bool? = nil) {
                 self.query = query
                 self.maxResults = maxResults
                 self.isShowAvatar = isShowAvatar

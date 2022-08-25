@@ -11,17 +11,17 @@ public struct PageBeanIssueTypeScreenSchemeItem: Codable {
     /// If there is another page of results, the URL of the next page.
     public var nextPage: URL?
     /// The maximum number of items that could be returned.
-    public var maxResults: Int?
+    public var maxResults: Int32?
     /// The index of the first item returned.
-    public var startAt: Int?
+    public var startAt: Int64?
     /// The number of items returned.
-    public var total: Int?
+    public var total: Int64?
     /// Whether this is the last page.
     public var isLast: Bool?
     /// The list of items.
     public var values: [IssueTypeScreenSchemeItem]?
 
-    public init(this: URL? = nil, nextPage: URL? = nil, maxResults: Int? = nil, startAt: Int? = nil, total: Int? = nil, isLast: Bool? = nil, values: [IssueTypeScreenSchemeItem]? = nil) {
+    public init(this: URL? = nil, nextPage: URL? = nil, maxResults: Int32? = nil, startAt: Int64? = nil, total: Int64? = nil, isLast: Bool? = nil, values: [IssueTypeScreenSchemeItem]? = nil) {
         self.this = this
         self.nextPage = nextPage
         self.maxResults = maxResults
@@ -35,9 +35,9 @@ public struct PageBeanIssueTypeScreenSchemeItem: Codable {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.this = try values.decodeIfPresent(URL.self, forKey: "self")
         self.nextPage = try values.decodeIfPresent(URL.self, forKey: "nextPage")
-        self.maxResults = try values.decodeIfPresent(Int.self, forKey: "maxResults")
-        self.startAt = try values.decodeIfPresent(Int.self, forKey: "startAt")
-        self.total = try values.decodeIfPresent(Int.self, forKey: "total")
+        self.maxResults = try values.decodeIfPresent(Int32.self, forKey: "maxResults")
+        self.startAt = try values.decodeIfPresent(Int64.self, forKey: "startAt")
+        self.total = try values.decodeIfPresent(Int64.self, forKey: "total")
         self.isLast = try values.decodeIfPresent(Bool.self, forKey: "isLast")
         self.values = try values.decodeIfPresent([IssueTypeScreenSchemeItem].self, forKey: "values")
     }

@@ -40,11 +40,11 @@ extension Paths.API.__3.Filter {
             public var owner: String?
             public var groupname: String?
             public var groupID: String?
-            public var projectID: Int?
-            public var id: [Int]?
+            public var projectID: Int64?
+            public var id: [Int64]?
             public var orderBy: OrderBy?
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int64?
+            public var maxResults: Int32?
             public var expand: String?
             public var isOverrideSharePermissions: Bool?
 
@@ -72,7 +72,7 @@ extension Paths.API.__3.Filter {
                 case plusisShared = "+is_shared"
             }
 
-            public init(filterName: String? = nil, accountID: String? = nil, owner: String? = nil, groupname: String? = nil, groupID: String? = nil, projectID: Int? = nil, id: [Int]? = nil, orderBy: OrderBy? = nil, startAt: Int? = nil, maxResults: Int? = nil, expand: String? = nil, isOverrideSharePermissions: Bool? = nil) {
+            public init(filterName: String? = nil, accountID: String? = nil, owner: String? = nil, groupname: String? = nil, groupID: String? = nil, projectID: Int64? = nil, id: [Int64]? = nil, orderBy: OrderBy? = nil, startAt: Int64? = nil, maxResults: Int32? = nil, expand: String? = nil, isOverrideSharePermissions: Bool? = nil) {
                 self.filterName = filterName
                 self.accountID = accountID
                 self.owner = owner

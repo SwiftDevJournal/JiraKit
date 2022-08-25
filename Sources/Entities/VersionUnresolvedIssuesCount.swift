@@ -9,11 +9,11 @@ public struct VersionUnresolvedIssuesCount: Codable {
     /// The URL of these count details.
     public var this: URL?
     /// Count of unresolved issues.
-    public var issuesUnresolvedCount: Int?
+    public var issuesUnresolvedCount: Int64?
     /// Count of issues.
-    public var issuesCount: Int?
+    public var issuesCount: Int64?
 
-    public init(this: URL? = nil, issuesUnresolvedCount: Int? = nil, issuesCount: Int? = nil) {
+    public init(this: URL? = nil, issuesUnresolvedCount: Int64? = nil, issuesCount: Int64? = nil) {
         self.this = this
         self.issuesUnresolvedCount = issuesUnresolvedCount
         self.issuesCount = issuesCount
@@ -22,8 +22,8 @@ public struct VersionUnresolvedIssuesCount: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.this = try values.decodeIfPresent(URL.self, forKey: "self")
-        self.issuesUnresolvedCount = try values.decodeIfPresent(Int.self, forKey: "issuesUnresolvedCount")
-        self.issuesCount = try values.decodeIfPresent(Int.self, forKey: "issuesCount")
+        self.issuesUnresolvedCount = try values.decodeIfPresent(Int64.self, forKey: "issuesUnresolvedCount")
+        self.issuesCount = try values.decodeIfPresent(Int64.self, forKey: "issuesCount")
     }
 
     public func encode(to encoder: Encoder) throws {

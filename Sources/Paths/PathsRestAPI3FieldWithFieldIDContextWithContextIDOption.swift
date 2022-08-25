@@ -26,12 +26,12 @@ extension Paths.API.__3.Field.WithFieldID.Context.WithContextID {
         }
 
         public struct GetParameters {
-            public var optionID: Int?
+            public var optionID: Int64?
             public var isOnlyOptions: Bool?
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int64?
+            public var maxResults: Int32?
 
-            public init(optionID: Int? = nil, isOnlyOptions: Bool? = nil, startAt: Int? = nil, maxResults: Int? = nil) {
+            public init(optionID: Int64? = nil, isOnlyOptions: Bool? = nil, startAt: Int64? = nil, maxResults: Int32? = nil) {
                 self.optionID = optionID
                 self.isOnlyOptions = isOnlyOptions
                 self.startAt = startAt

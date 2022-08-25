@@ -24,11 +24,11 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         /// 
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
-        public func get(startAt: Int? = nil, maxResults: Int? = nil) -> Request<JiraKit.PageBeanChangelog> {
+        public func get(startAt: Int32? = nil, maxResults: Int32? = nil) -> Request<JiraKit.PageBeanChangelog> {
             Request(method: "GET", url: path, query: makeGetQuery(startAt, maxResults), id: "getChangeLogs")
         }
 
-        private func makeGetQuery(_ startAt: Int?, _ maxResults: Int?) -> [(String, String?)] {
+        private func makeGetQuery(_ startAt: Int32?, _ maxResults: Int32?) -> [(String, String?)] {
             let encoder = URLQueryEncoder()
             encoder.encode(startAt, forKey: "startAt")
             encoder.encode(maxResults, forKey: "maxResults")

@@ -11,9 +11,9 @@ public struct UserFilter: Codable {
     /// User groups autocomplete suggestion users must belong to. If not provided, the default values are used. A maximum of 10 groups can be provided.
     public var groups: [String]?
     /// Roles that autocomplete suggestion users must belong to. If not provided, the default values are used. A maximum of 10 roles can be provided.
-    public var roleIDs: [Int]?
+    public var roleIDs: [Int64]?
 
-    public init(isEnabled: Bool, groups: [String]? = nil, roleIDs: [Int]? = nil) {
+    public init(isEnabled: Bool, groups: [String]? = nil, roleIDs: [Int64]? = nil) {
         self.isEnabled = isEnabled
         self.groups = groups
         self.roleIDs = roleIDs
@@ -23,7 +23,7 @@ public struct UserFilter: Codable {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.isEnabled = try values.decode(Bool.self, forKey: "enabled")
         self.groups = try values.decodeIfPresent([String].self, forKey: "groups")
-        self.roleIDs = try values.decodeIfPresent([Int].self, forKey: "roleIds")
+        self.roleIDs = try values.decodeIfPresent([Int64].self, forKey: "roleIds")
     }
 
     public func encode(to encoder: Encoder) throws {

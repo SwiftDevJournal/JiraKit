@@ -48,11 +48,11 @@ extension Paths.API.__3.Project.WithProjectIDOrKey {
         }
 
         public struct PostParameters {
-            public var x: Int?
-            public var y: Int?
-            public var size: Int?
+            public var x: Int32?
+            public var y: Int32?
+            public var size: Int32?
 
-            public init(x: Int? = nil, y: Int? = nil, size: Int? = nil) {
+            public init(x: Int32? = nil, y: Int32? = nil, size: Int32? = nil) {
                 self.x = x
                 self.y = y
                 self.size = size

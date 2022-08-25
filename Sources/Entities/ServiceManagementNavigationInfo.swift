@@ -5,11 +5,11 @@ import Foundation
 import NaiveDate
 
 public struct ServiceManagementNavigationInfo: Codable {
-    public var queueID: Int?
+    public var queueID: Int64?
     public var queueName: String?
     public var queueCategory: String?
 
-    public init(queueID: Int? = nil, queueName: String? = nil, queueCategory: String? = nil) {
+    public init(queueID: Int64? = nil, queueName: String? = nil, queueCategory: String? = nil) {
         self.queueID = queueID
         self.queueName = queueName
         self.queueCategory = queueCategory
@@ -17,7 +17,7 @@ public struct ServiceManagementNavigationInfo: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.queueID = try values.decodeIfPresent(Int.self, forKey: "queueId")
+        self.queueID = try values.decodeIfPresent(Int64.self, forKey: "queueId")
         self.queueName = try values.decodeIfPresent(String.self, forKey: "queueName")
         self.queueCategory = try values.decodeIfPresent(String.self, forKey: "queueCategory")
     }

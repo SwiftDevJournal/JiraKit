@@ -31,14 +31,14 @@ extension Paths.API.__3.User {
 
         public struct GetParameters {
             public var query: String
-            public var maxResults: Int?
+            public var maxResults: Int32?
             public var isShowAvatar: Bool?
             public var exclude: [String]?
             public var excludeAccountIDs: [String]?
             public var avatarSize: String?
             public var excludeConnectUsers: Bool?
 
-            public init(query: String, maxResults: Int? = nil, isShowAvatar: Bool? = nil, exclude: [String]? = nil, excludeAccountIDs: [String]? = nil, avatarSize: String? = nil, excludeConnectUsers: Bool? = nil) {
+            public init(query: String, maxResults: Int32? = nil, isShowAvatar: Bool? = nil, exclude: [String]? = nil, excludeAccountIDs: [String]? = nil, avatarSize: String? = nil, excludeConnectUsers: Bool? = nil) {
                 self.query = query
                 self.maxResults = maxResults
                 self.isShowAvatar = isShowAvatar

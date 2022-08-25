@@ -21,11 +21,11 @@ extension Paths.API.__3.Issuetype {
         /// This operation can be accessed anonymously.
         /// 
         /// **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) in the relevant project or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
-        public func get(projectID: Int, level: Int? = nil) -> Request<[JiraKit.IssueTypeDetails]> {
+        public func get(projectID: Int64, level: Int32? = nil) -> Request<[JiraKit.IssueTypeDetails]> {
             Request(method: "GET", url: path, query: makeGetQuery(projectID, level), id: "getIssueTypesForProject")
         }
 
-        private func makeGetQuery(_ projectID: Int, _ level: Int?) -> [(String, String?)] {
+        private func makeGetQuery(_ projectID: Int64, _ level: Int32?) -> [(String, String?)] {
             let encoder = URLQueryEncoder()
             encoder.encode(projectID, forKey: "projectId")
             encoder.encode(level, forKey: "level")

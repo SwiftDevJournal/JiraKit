@@ -42,10 +42,10 @@ extension Paths.API.__3.User.Search.Query {
 
         public struct GetParameters {
             public var query: String
-            public var startAt: Int?
-            public var maxResults: Int?
+            public var startAt: Int64?
+            public var maxResults: Int32?
 
-            public init(query: String, startAt: Int? = nil, maxResults: Int? = nil) {
+            public init(query: String, startAt: Int64? = nil, maxResults: Int32? = nil) {
                 self.query = query
                 self.startAt = startAt
                 self.maxResults = maxResults

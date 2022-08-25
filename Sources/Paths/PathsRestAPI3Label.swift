@@ -17,11 +17,11 @@ extension Paths.API.__3 {
         /// Get all labels
         ///
         /// Returns a [paginated](#pagination) list of labels.
-        public func get(startAt: Int? = nil, maxResults: Int? = nil) -> Request<JiraKit.PageBeanString> {
+        public func get(startAt: Int64? = nil, maxResults: Int32? = nil) -> Request<JiraKit.PageBeanString> {
             Request(method: "GET", url: path, query: makeGetQuery(startAt, maxResults), id: "getAllLabels")
         }
 
-        private func makeGetQuery(_ startAt: Int?, _ maxResults: Int?) -> [(String, String?)] {
+        private func makeGetQuery(_ startAt: Int64?, _ maxResults: Int32?) -> [(String, String?)] {
             let encoder = URLQueryEncoder()
             encoder.encode(startAt, forKey: "startAt")
             encoder.encode(maxResults, forKey: "maxResults")

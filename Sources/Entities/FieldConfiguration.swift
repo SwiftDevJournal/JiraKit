@@ -7,7 +7,7 @@ import NaiveDate
 /// Details of a field configuration.
 public struct FieldConfiguration: Codable {
     /// The ID of the field configuration.
-    public var id: Int
+    public var id: Int64
     /// The name of the field configuration.
     public var name: String
     /// The description of the field configuration.
@@ -15,7 +15,7 @@ public struct FieldConfiguration: Codable {
     /// Whether the field configuration is the default.
     public var isDefault: Bool?
 
-    public init(id: Int, name: String, description: String, isDefault: Bool? = nil) {
+    public init(id: Int64, name: String, description: String, isDefault: Bool? = nil) {
         self.id = id
         self.name = name
         self.description = description
@@ -24,7 +24,7 @@ public struct FieldConfiguration: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decode(Int.self, forKey: "id")
+        self.id = try values.decode(Int64.self, forKey: "id")
         self.name = try values.decode(String.self, forKey: "name")
         self.description = try values.decode(String.self, forKey: "description")
         self.isDefault = try values.decodeIfPresent(Bool.self, forKey: "isDefault")

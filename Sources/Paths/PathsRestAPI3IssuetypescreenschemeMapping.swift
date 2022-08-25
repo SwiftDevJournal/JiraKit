@@ -26,11 +26,11 @@ extension Paths.API.__3.Issuetypescreenscheme {
         }
 
         public struct GetParameters {
-            public var startAt: Int?
-            public var maxResults: Int?
-            public var issueTypeScreenSchemeID: [Int]?
+            public var startAt: Int64?
+            public var maxResults: Int32?
+            public var issueTypeScreenSchemeID: [Int64]?
 
-            public init(startAt: Int? = nil, maxResults: Int? = nil, issueTypeScreenSchemeID: [Int]? = nil) {
+            public init(startAt: Int64? = nil, maxResults: Int32? = nil, issueTypeScreenSchemeID: [Int64]? = nil) {
                 self.startAt = startAt
                 self.maxResults = maxResults
                 self.issueTypeScreenSchemeID = issueTypeScreenSchemeID

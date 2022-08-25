@@ -7,16 +7,16 @@ import NaiveDate
 /// The IDs of the screens for the screen types of the screen scheme.
 public struct ScreenTypes: Codable {
     /// The ID of the edit screen.
-    public var edit: Int?
+    public var edit: Int64?
     /// The ID of the create screen.
-    public var create: Int?
+    public var create: Int64?
     /// The ID of the view screen.
-    public var view: Int?
+    public var view: Int64?
     /// The ID of the default screen. Required when creating a screen scheme.
-    public var `default`: Int?
+    public var `default`: Int64?
     public var defaultScreen: AnyJSON
 
-    public init(edit: Int? = nil, create: Int? = nil, view: Int? = nil, `default`: Int? = nil, defaultScreen: AnyJSON) {
+    public init(edit: Int64? = nil, create: Int64? = nil, view: Int64? = nil, `default`: Int64? = nil, defaultScreen: AnyJSON) {
         self.edit = edit
         self.create = create
         self.view = view
@@ -26,10 +26,10 @@ public struct ScreenTypes: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.edit = try values.decodeIfPresent(Int.self, forKey: "edit")
-        self.create = try values.decodeIfPresent(Int.self, forKey: "create")
-        self.view = try values.decodeIfPresent(Int.self, forKey: "view")
-        self.default = try values.decodeIfPresent(Int.self, forKey: "default")
+        self.edit = try values.decodeIfPresent(Int64.self, forKey: "edit")
+        self.create = try values.decodeIfPresent(Int64.self, forKey: "create")
+        self.view = try values.decodeIfPresent(Int64.self, forKey: "view")
+        self.default = try values.decodeIfPresent(Int64.self, forKey: "default")
         self.defaultScreen = try values.decode(AnyJSON.self, forKey: "defaultScreen")
     }
 

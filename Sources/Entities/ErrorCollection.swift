@@ -10,9 +10,9 @@ public struct ErrorCollection: Codable {
     public var errorMessages: [String]?
     /// The list of errors by parameter returned by the operation. For example,"projectKey": "Project keys must start with an uppercase letter, followed by one or more uppercase alphanumeric characters."
     public var errors: [String: String]?
-    public var status: Int?
+    public var status: Int32?
 
-    public init(errorMessages: [String]? = nil, errors: [String: String]? = nil, status: Int? = nil) {
+    public init(errorMessages: [String]? = nil, errors: [String: String]? = nil, status: Int32? = nil) {
         self.errorMessages = errorMessages
         self.errors = errors
         self.status = status
@@ -22,7 +22,7 @@ public struct ErrorCollection: Codable {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.errorMessages = try values.decodeIfPresent([String].self, forKey: "errorMessages")
         self.errors = try values.decodeIfPresent([String: String].self, forKey: "errors")
-        self.status = try values.decodeIfPresent(Int.self, forKey: "status")
+        self.status = try values.decodeIfPresent(Int32.self, forKey: "status")
     }
 
     public func encode(to encoder: Encoder) throws {

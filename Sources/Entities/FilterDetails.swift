@@ -27,7 +27,7 @@ public struct FilterDetails: Codable {
     /// Whether the filter is selected as a favorite by any users, not including the filter owner.
     public var isFavourite: Bool?
     /// The count of how many users have selected this filter as a favorite, including the filter owner.
-    public var favouritedCount: Int?
+    public var favouritedCount: Int64?
     /// The groups and projects that the filter is shared with. This can be specified when updating a filter, but not when creating a filter.
     public var sharePermissions: [SharePermission]?
     /// The groups and projects that can edit the filter. This can be specified when updating a filter, but not when creating a filter.
@@ -35,7 +35,7 @@ public struct FilterDetails: Codable {
     /// The users that are subscribed to the filter.
     public var subscriptions: [FilterSubscription]?
 
-    public init(expand: String? = nil, this: URL? = nil, id: String? = nil, name: String, description: String? = nil, owner: User? = nil, jql: String? = nil, viewURL: URL? = nil, searchURL: URL? = nil, isFavourite: Bool? = nil, favouritedCount: Int? = nil, sharePermissions: [SharePermission]? = nil, editPermissions: [SharePermission]? = nil, subscriptions: [FilterSubscription]? = nil) {
+    public init(expand: String? = nil, this: URL? = nil, id: String? = nil, name: String, description: String? = nil, owner: User? = nil, jql: String? = nil, viewURL: URL? = nil, searchURL: URL? = nil, isFavourite: Bool? = nil, favouritedCount: Int64? = nil, sharePermissions: [SharePermission]? = nil, editPermissions: [SharePermission]? = nil, subscriptions: [FilterSubscription]? = nil) {
         self.expand = expand
         self.this = this
         self.id = id
@@ -64,7 +64,7 @@ public struct FilterDetails: Codable {
         self.viewURL = try values.decodeIfPresent(URL.self, forKey: "viewUrl")
         self.searchURL = try values.decodeIfPresent(URL.self, forKey: "searchUrl")
         self.isFavourite = try values.decodeIfPresent(Bool.self, forKey: "favourite")
-        self.favouritedCount = try values.decodeIfPresent(Int.self, forKey: "favouritedCount")
+        self.favouritedCount = try values.decodeIfPresent(Int64.self, forKey: "favouritedCount")
         self.sharePermissions = try values.decodeIfPresent([SharePermission].self, forKey: "sharePermissions")
         self.editPermissions = try values.decodeIfPresent([SharePermission].self, forKey: "editPermissions")
         self.subscriptions = try values.decodeIfPresent([FilterSubscription].self, forKey: "subscriptions")

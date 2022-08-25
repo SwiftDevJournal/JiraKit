@@ -5,12 +5,12 @@ import Foundation
 import NaiveDate
 
 public struct AttachmentArchive: Codable {
-    public var totalNumberOfEntriesAvailable: Int?
-    public var totalEntryCount: Int?
+    public var totalNumberOfEntriesAvailable: Int32?
+    public var totalEntryCount: Int32?
     public var isMoreAvailable: Bool?
     public var entries: [AttachmentArchiveEntry]?
 
-    public init(totalNumberOfEntriesAvailable: Int? = nil, totalEntryCount: Int? = nil, isMoreAvailable: Bool? = nil, entries: [AttachmentArchiveEntry]? = nil) {
+    public init(totalNumberOfEntriesAvailable: Int32? = nil, totalEntryCount: Int32? = nil, isMoreAvailable: Bool? = nil, entries: [AttachmentArchiveEntry]? = nil) {
         self.totalNumberOfEntriesAvailable = totalNumberOfEntriesAvailable
         self.totalEntryCount = totalEntryCount
         self.isMoreAvailable = isMoreAvailable
@@ -19,8 +19,8 @@ public struct AttachmentArchive: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.totalNumberOfEntriesAvailable = try values.decodeIfPresent(Int.self, forKey: "totalNumberOfEntriesAvailable")
-        self.totalEntryCount = try values.decodeIfPresent(Int.self, forKey: "totalEntryCount")
+        self.totalNumberOfEntriesAvailable = try values.decodeIfPresent(Int32.self, forKey: "totalNumberOfEntriesAvailable")
+        self.totalEntryCount = try values.decodeIfPresent(Int32.self, forKey: "totalEntryCount")
         self.isMoreAvailable = try values.decodeIfPresent(Bool.self, forKey: "moreAvailable")
         self.entries = try values.decodeIfPresent([AttachmentArchiveEntry].self, forKey: "entries")
     }

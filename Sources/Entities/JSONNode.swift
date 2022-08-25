@@ -24,15 +24,15 @@ public struct JSONNode: Codable {
     public var isValueNode: Bool?
     public var numberValue: Double?
     public var numberType: NumberType?
-    public var intValue: Int?
-    public var longValue: Int?
+    public var intValue: Int32?
+    public var longValue: Int64?
     public var bigIntegerValue: Int?
     public var doubleValue: Double?
     public var decimalValue: Double?
     public var isBooleanValue: Bool?
     public var binaryValue: [Data]?
-    public var valueAsInt: Int?
-    public var valueAsLong: Int?
+    public var valueAsInt: Int32?
+    public var valueAsLong: Int64?
     public var valueAsDouble: Double?
     public var isValueAsBoolean: Bool?
     public var textValue: String?
@@ -51,7 +51,7 @@ public struct JSONNode: Codable {
         case bigDecimal = "BIG_DECIMAL"
     }
 
-    public init(elements: [String: AnyJSON]? = nil, isFloatingPointNumber: Bool? = nil, isPojo: Bool? = nil, isNumber: Bool? = nil, isIntegralNumber: Bool? = nil, isInt: Bool? = nil, isLong: Bool? = nil, isDouble: Bool? = nil, isBigDecimal: Bool? = nil, isBigInteger: Bool? = nil, isTextual: Bool? = nil, isBoolean: Bool? = nil, isBinary: Bool? = nil, isContainerNode: Bool? = nil, isMissingNode: Bool? = nil, isObject: Bool? = nil, isValueNode: Bool? = nil, numberValue: Double? = nil, numberType: NumberType? = nil, intValue: Int? = nil, longValue: Int? = nil, bigIntegerValue: Int? = nil, doubleValue: Double? = nil, decimalValue: Double? = nil, isBooleanValue: Bool? = nil, binaryValue: [Data]? = nil, valueAsInt: Int? = nil, valueAsLong: Int? = nil, valueAsDouble: Double? = nil, isValueAsBoolean: Bool? = nil, textValue: String? = nil, valueAsText: String? = nil, fieldNames: [String: AnyJSON]? = nil, isArray: Bool? = nil, fields: [String: AnyJSON]? = nil, isNull: Bool? = nil) {
+    public init(elements: [String: AnyJSON]? = nil, isFloatingPointNumber: Bool? = nil, isPojo: Bool? = nil, isNumber: Bool? = nil, isIntegralNumber: Bool? = nil, isInt: Bool? = nil, isLong: Bool? = nil, isDouble: Bool? = nil, isBigDecimal: Bool? = nil, isBigInteger: Bool? = nil, isTextual: Bool? = nil, isBoolean: Bool? = nil, isBinary: Bool? = nil, isContainerNode: Bool? = nil, isMissingNode: Bool? = nil, isObject: Bool? = nil, isValueNode: Bool? = nil, numberValue: Double? = nil, numberType: NumberType? = nil, intValue: Int32? = nil, longValue: Int64? = nil, bigIntegerValue: Int? = nil, doubleValue: Double? = nil, decimalValue: Double? = nil, isBooleanValue: Bool? = nil, binaryValue: [Data]? = nil, valueAsInt: Int32? = nil, valueAsLong: Int64? = nil, valueAsDouble: Double? = nil, isValueAsBoolean: Bool? = nil, textValue: String? = nil, valueAsText: String? = nil, fieldNames: [String: AnyJSON]? = nil, isArray: Bool? = nil, fields: [String: AnyJSON]? = nil, isNull: Bool? = nil) {
         self.elements = elements
         self.isFloatingPointNumber = isFloatingPointNumber
         self.isPojo = isPojo
@@ -111,15 +111,15 @@ public struct JSONNode: Codable {
         self.isValueNode = try values.decodeIfPresent(Bool.self, forKey: "valueNode")
         self.numberValue = try values.decodeIfPresent(Double.self, forKey: "numberValue")
         self.numberType = try values.decodeIfPresent(NumberType.self, forKey: "numberType")
-        self.intValue = try values.decodeIfPresent(Int.self, forKey: "intValue")
-        self.longValue = try values.decodeIfPresent(Int.self, forKey: "longValue")
+        self.intValue = try values.decodeIfPresent(Int32.self, forKey: "intValue")
+        self.longValue = try values.decodeIfPresent(Int64.self, forKey: "longValue")
         self.bigIntegerValue = try values.decodeIfPresent(Int.self, forKey: "bigIntegerValue")
         self.doubleValue = try values.decodeIfPresent(Double.self, forKey: "doubleValue")
         self.decimalValue = try values.decodeIfPresent(Double.self, forKey: "decimalValue")
         self.isBooleanValue = try values.decodeIfPresent(Bool.self, forKey: "booleanValue")
         self.binaryValue = try values.decodeIfPresent([Data].self, forKey: "binaryValue")
-        self.valueAsInt = try values.decodeIfPresent(Int.self, forKey: "valueAsInt")
-        self.valueAsLong = try values.decodeIfPresent(Int.self, forKey: "valueAsLong")
+        self.valueAsInt = try values.decodeIfPresent(Int32.self, forKey: "valueAsInt")
+        self.valueAsLong = try values.decodeIfPresent(Int64.self, forKey: "valueAsLong")
         self.valueAsDouble = try values.decodeIfPresent(Double.self, forKey: "valueAsDouble")
         self.isValueAsBoolean = try values.decodeIfPresent(Bool.self, forKey: "valueAsBoolean")
         self.textValue = try values.decodeIfPresent(String.self, forKey: "textValue")

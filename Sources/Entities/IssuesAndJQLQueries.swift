@@ -9,9 +9,9 @@ public struct IssuesAndJQLQueries: Codable {
     /// A list of JQL queries.
     public var jqls: [String]
     /// A list of issue IDs.
-    public var issueIDs: [Int]
+    public var issueIDs: [Int64]
 
-    public init(jqls: [String], issueIDs: [Int]) {
+    public init(jqls: [String], issueIDs: [Int64]) {
         self.jqls = jqls
         self.issueIDs = issueIDs
     }
@@ -19,7 +19,7 @@ public struct IssuesAndJQLQueries: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
         self.jqls = try values.decode([String].self, forKey: "jqls")
-        self.issueIDs = try values.decode([Int].self, forKey: "issueIds")
+        self.issueIDs = try values.decode([Int64].self, forKey: "issueIds")
     }
 
     public func encode(to encoder: Encoder) throws {

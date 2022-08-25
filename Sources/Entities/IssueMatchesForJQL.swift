@@ -7,18 +7,18 @@ import NaiveDate
 /// A list of the issues matched to a JQL query or details of errors encountered during matching.
 public struct IssueMatchesForJQL: Codable {
     /// A list of issue IDs.
-    public var matchedIssues: [Int]
+    public var matchedIssues: [Int64]
     /// A list of errors.
     public var errors: [String]
 
-    public init(matchedIssues: [Int], errors: [String]) {
+    public init(matchedIssues: [Int64], errors: [String]) {
         self.matchedIssues = matchedIssues
         self.errors = errors
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.matchedIssues = try values.decode([Int].self, forKey: "matchedIssues")
+        self.matchedIssues = try values.decode([Int64].self, forKey: "matchedIssues")
         self.errors = try values.decode([String].self, forKey: "errors")
     }
 

@@ -46,7 +46,7 @@ public struct ProjectComponent: Codable {
     /// The key of the project the component is assigned to. Required when creating a component. Can't be updated.
     public var project: String?
     /// The ID of the project the component is assigned to.
-    public var projectID: Int?
+    public var projectID: Int64?
 
     /// The nominal user type used to determine the assignee for issues created with this component. See `realAssigneeType` for details on how the type of the user, and hence the user, assigned to issues is determined. Can take the following values:
     /// 
@@ -77,7 +77,7 @@ public struct ProjectComponent: Codable {
         case unassigned = "UNASSIGNED"
     }
 
-    public init(this: URL? = nil, id: String? = nil, name: String? = nil, description: String? = nil, lead: User? = nil, leadUserName: String? = nil, leadAccountID: String? = nil, assigneeType: AssigneeType? = nil, assignee: User? = nil, realAssigneeType: RealAssigneeType? = nil, realAssignee: User? = nil, isAssigneeTypeValid: Bool? = nil, project: String? = nil, projectID: Int? = nil) {
+    public init(this: URL? = nil, id: String? = nil, name: String? = nil, description: String? = nil, lead: User? = nil, leadUserName: String? = nil, leadAccountID: String? = nil, assigneeType: AssigneeType? = nil, assignee: User? = nil, realAssigneeType: RealAssigneeType? = nil, realAssignee: User? = nil, isAssigneeTypeValid: Bool? = nil, project: String? = nil, projectID: Int64? = nil) {
         self.this = this
         self.id = id
         self.name = name
@@ -109,7 +109,7 @@ public struct ProjectComponent: Codable {
         self.realAssignee = try values.decodeIfPresent(User.self, forKey: "realAssignee")
         self.isAssigneeTypeValid = try values.decodeIfPresent(Bool.self, forKey: "isAssigneeTypeValid")
         self.project = try values.decodeIfPresent(String.self, forKey: "project")
-        self.projectID = try values.decodeIfPresent(Int.self, forKey: "projectId")
+        self.projectID = try values.decodeIfPresent(Int64.self, forKey: "projectId")
     }
 
     public func encode(to encoder: Encoder) throws {

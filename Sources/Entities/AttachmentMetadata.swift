@@ -7,7 +7,7 @@ import NaiveDate
 /// Metadata for an issue attachment.
 public struct AttachmentMetadata: Codable {
     /// The ID of the attachment.
-    public var id: Int?
+    public var id: Int64?
     /// The URL of the attachment metadata details.
     public var this: URL?
     /// The name of the attachment file.
@@ -17,7 +17,7 @@ public struct AttachmentMetadata: Codable {
     /// The datetime the attachment was created.
     public var created: Date?
     /// The size of the attachment.
-    public var size: Int?
+    public var size: Int64?
     /// The MIME type of the attachment.
     public var mimeType: String?
     /// Additional properties of the attachment.
@@ -27,7 +27,7 @@ public struct AttachmentMetadata: Codable {
     /// The URL of a thumbnail representing the attachment.
     public var thumbnail: String?
 
-    public init(id: Int? = nil, this: URL? = nil, filename: String? = nil, author: User? = nil, created: Date? = nil, size: Int? = nil, mimeType: String? = nil, properties: [String: AnyJSON]? = nil, content: String? = nil, thumbnail: String? = nil) {
+    public init(id: Int64? = nil, this: URL? = nil, filename: String? = nil, author: User? = nil, created: Date? = nil, size: Int64? = nil, mimeType: String? = nil, properties: [String: AnyJSON]? = nil, content: String? = nil, thumbnail: String? = nil) {
         self.id = id
         self.this = this
         self.filename = filename
@@ -42,12 +42,12 @@ public struct AttachmentMetadata: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.this = try values.decodeIfPresent(URL.self, forKey: "self")
         self.filename = try values.decodeIfPresent(String.self, forKey: "filename")
         self.author = try values.decodeIfPresent(User.self, forKey: "author")
         self.created = try values.decodeIfPresent(Date.self, forKey: "created")
-        self.size = try values.decodeIfPresent(Int.self, forKey: "size")
+        self.size = try values.decodeIfPresent(Int64.self, forKey: "size")
         self.mimeType = try values.decodeIfPresent(String.self, forKey: "mimeType")
         self.properties = try values.decodeIfPresent([String: AnyJSON].self, forKey: "properties")
         self.content = try values.decodeIfPresent(String.self, forKey: "content")

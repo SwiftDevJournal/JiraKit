@@ -7,7 +7,7 @@ import NaiveDate
 /// Details about a component with a count of the issues it contains.
 public struct ComponentWithIssueCount: Codable {
     /// Count of issues for the component.
-    public var issueCount: Int?
+    public var issueCount: Int64?
     /// The type of the assignee that is assigned to issues created with this component, when an assignee cannot be set from the `assigneeType`. For example, `assigneeType` is set to `COMPONENT_LEAD` but no component lead is set. This property is set to one of the following values:
     /// 
     ///  *  `PROJECT_LEAD` when `assigneeType` is `PROJECT_LEAD` and the project lead has permission to be assigned issues in the project that the component is in.
@@ -26,7 +26,7 @@ public struct ComponentWithIssueCount: Codable {
     /// The key of the project to which the component is assigned.
     public var project: String?
     /// Not used.
-    public var projectID: Int?
+    public var projectID: Int64?
     /// The details of the user associated with `assigneeType`, if any. See `realAssignee` for details of the user assigned to issues created with this component.
     public var assignee: User?
     /// The nominal user type used to determine the assignee for issues created with this component. See `realAssigneeType` for details on how the type of the user, and hence the user, assigned to issues is determined. Takes the following values:
@@ -69,7 +69,7 @@ public struct ComponentWithIssueCount: Codable {
         case unassigned = "UNASSIGNED"
     }
 
-    public init(issueCount: Int? = nil, realAssigneeType: RealAssigneeType? = nil, realAssignee: User? = nil, isAssigneeTypeValid: Bool? = nil, description: String? = nil, this: URL? = nil, project: String? = nil, projectID: Int? = nil, assignee: User? = nil, assigneeType: AssigneeType? = nil, lead: User? = nil, name: String? = nil, id: String? = nil) {
+    public init(issueCount: Int64? = nil, realAssigneeType: RealAssigneeType? = nil, realAssignee: User? = nil, isAssigneeTypeValid: Bool? = nil, description: String? = nil, this: URL? = nil, project: String? = nil, projectID: Int64? = nil, assignee: User? = nil, assigneeType: AssigneeType? = nil, lead: User? = nil, name: String? = nil, id: String? = nil) {
         self.issueCount = issueCount
         self.realAssigneeType = realAssigneeType
         self.realAssignee = realAssignee
@@ -87,14 +87,14 @@ public struct ComponentWithIssueCount: Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.issueCount = try values.decodeIfPresent(Int.self, forKey: "issueCount")
+        self.issueCount = try values.decodeIfPresent(Int64.self, forKey: "issueCount")
         self.realAssigneeType = try values.decodeIfPresent(RealAssigneeType.self, forKey: "realAssigneeType")
         self.realAssignee = try values.decodeIfPresent(User.self, forKey: "realAssignee")
         self.isAssigneeTypeValid = try values.decodeIfPresent(Bool.self, forKey: "isAssigneeTypeValid")
         self.description = try values.decodeIfPresent(String.self, forKey: "description")
         self.this = try values.decodeIfPresent(URL.self, forKey: "self")
         self.project = try values.decodeIfPresent(String.self, forKey: "project")
-        self.projectID = try values.decodeIfPresent(Int.self, forKey: "projectId")
+        self.projectID = try values.decodeIfPresent(Int64.self, forKey: "projectId")
         self.assignee = try values.decodeIfPresent(User.self, forKey: "assignee")
         self.assigneeType = try values.decodeIfPresent(AssigneeType.self, forKey: "assigneeType")
         self.lead = try values.decodeIfPresent(User.self, forKey: "lead")

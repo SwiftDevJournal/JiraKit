@@ -7,18 +7,18 @@ import NaiveDate
 /// Details of the identifiers for a created or updated remote issue link.
 public struct RemoteIssueLinkIdentifies: Codable {
     /// The ID of the remote issue link, such as the ID of the item on the remote system.
-    public var id: Int?
+    public var id: Int64?
     /// The URL of the remote issue link.
     public var this: String?
 
-    public init(id: Int? = nil, this: String? = nil) {
+    public init(id: Int64? = nil, this: String? = nil) {
         self.id = id
         self.this = this
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: StringCodingKey.self)
-        self.id = try values.decodeIfPresent(Int.self, forKey: "id")
+        self.id = try values.decodeIfPresent(Int64.self, forKey: "id")
         self.this = try values.decodeIfPresent(String.self, forKey: "self")
     }
 

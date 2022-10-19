@@ -22,7 +22,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey {
         /// 
         /// **[Permissions](#permissions) required:** *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
         public var get: Request<[JiraKit.ProjectComponent]> {
-            Request(method: "GET", url: path, id: "getProjectComponents")
+            Request(path: path, method: "GET", id: "getProjectComponents")
         }
     }
 }

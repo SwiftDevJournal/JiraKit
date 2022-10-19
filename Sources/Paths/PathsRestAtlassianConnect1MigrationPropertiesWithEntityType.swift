@@ -18,7 +18,7 @@ extension Paths.AtlassianConnect.__1.Migration.Properties {
         ///
         /// Updates the values of multiple entity properties for an object, up to 50 updates per request. This operation is for use by Connect apps during app migration.
         public func put(_ body: [JiraKit.EntityPropertyDetails]) -> Request<Void> {
-            Request(method: "PUT", url: path, body: body, id: "MigrationResource.updateEntityPropertiesValue_put")
+            Request(path: path, method: "PUT", body: body, id: "MigrationResource.updateEntityPropertiesValue_put")
         }
     }
 }

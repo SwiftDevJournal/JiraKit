@@ -25,7 +25,7 @@ extension Paths.API.__3.Issuetype.WithIssueTypeID.Properties {
         ///  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) to get the details of any issue type.
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) to get the details of any issue types associated with the projects the user has permission to browse.
         public var get: Request<JiraKit.EntityProperty> {
-            Request(method: "GET", url: path, id: "getIssueTypeProperty")
+            Request(path: path, method: "GET", id: "getIssueTypeProperty")
         }
 
         /// Set issue type property
@@ -36,7 +36,7 @@ extension Paths.API.__3.Issuetype.WithIssueTypeID.Properties {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: AnyJSON) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "setIssueTypeProperty")
+            Request(path: path, method: "PUT", body: body, id: "setIssueTypeProperty")
         }
 
         /// Delete issue type property
@@ -45,7 +45,7 @@ extension Paths.API.__3.Issuetype.WithIssueTypeID.Properties {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteIssueTypeProperty")
+            Request(path: path, method: "DELETE", id: "deleteIssueTypeProperty")
         }
     }
 }

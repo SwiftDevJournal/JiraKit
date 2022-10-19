@@ -28,7 +28,7 @@ extension Paths.API.__3.Filter.WithID.Permission {
         ///  *  filters shared with a public project.
         ///  *  filters shared with the public.
         public var get: Request<JiraKit.SharePermission> {
-            Request(method: "GET", url: path, id: "getSharePermission")
+            Request(path: path, method: "GET", id: "getSharePermission")
         }
 
         /// Delete share permission
@@ -37,7 +37,7 @@ extension Paths.API.__3.Filter.WithID.Permission {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira and the user must own the filter.
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteSharePermission")
+            Request(path: path, method: "DELETE", id: "deleteSharePermission")
         }
     }
 }

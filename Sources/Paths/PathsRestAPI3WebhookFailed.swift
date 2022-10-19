@@ -26,7 +26,7 @@ extension Paths.API.__3.Webhook {
         /// 
         /// **[Permissions](#permissions) required:** Only [Connect apps](https://developer.atlassian.com/cloud/jira/platform/index/#connect-apps) can use this operation.
         public func get(maxResults: Int32? = nil, after: Int64? = nil) -> Request<JiraKit.FailedWebhooks> {
-            Request(method: "GET", url: path, query: makeGetQuery(maxResults, after), id: "getFailedWebhooks")
+            Request(path: path, method: "GET", query: makeGetQuery(maxResults, after), id: "getFailedWebhooks")
         }
 
         private func makeGetQuery(_ maxResults: Int32?, _ after: Int64?) -> [(String, String?)] {

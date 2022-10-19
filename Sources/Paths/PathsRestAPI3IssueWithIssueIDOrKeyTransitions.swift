@@ -29,7 +29,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         /// 
         /// However, if the user does not have the *Transition issues* [ project permission](https://confluence.atlassian.com/x/yodKLg) the response will not list any transitions.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.Transitions> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getTransitions")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getTransitions")
         }
 
         public struct GetParameters {
@@ -71,7 +71,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         ///  *  *Browse projects* and *Transition issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func post(_ body: JiraKit.IssueUpdateDetails) -> Request<AnyJSON> {
-            Request(method: "POST", url: path, body: body, id: "doTransition")
+            Request(path: path, method: "POST", body: body, id: "doTransition")
         }
     }
 }

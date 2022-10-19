@@ -22,7 +22,7 @@ extension Paths.API.__3.Issuetype {
         /// 
         /// **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) in a project the issue type is associated with or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var get: Request<JiraKit.IssueTypeDetails> {
-            Request(method: "GET", url: path, id: "getIssueType")
+            Request(path: path, method: "GET", id: "getIssueType")
         }
 
         /// Update issue type
@@ -31,7 +31,7 @@ extension Paths.API.__3.Issuetype {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.IssueTypeUpdateBean) -> Request<JiraKit.IssueTypeDetails> {
-            Request(method: "PUT", url: path, body: body, id: "updateIssueType")
+            Request(path: path, method: "PUT", body: body, id: "updateIssueType")
         }
 
         /// Delete issue type
@@ -40,7 +40,7 @@ extension Paths.API.__3.Issuetype {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func delete(alternativeIssueTypeID: String? = nil) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: makeDeleteQuery(alternativeIssueTypeID), id: "deleteIssueType")
+            Request(path: path, method: "DELETE", query: makeDeleteQuery(alternativeIssueTypeID), id: "deleteIssueType")
         }
 
         private func makeDeleteQuery(_ alternativeIssueTypeID: String?) -> [(String, String?)] {

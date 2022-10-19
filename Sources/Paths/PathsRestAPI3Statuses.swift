@@ -23,7 +23,7 @@ extension Paths.API.__3 {
         ///  *  *Administer projects* [project permission.](https://confluence.atlassian.com/x/yodKLg)
         ///  *  *Administer Jira* [project permission.](https://confluence.atlassian.com/x/yodKLg)
         public func get(expand: String? = nil, id: [String]? = nil) -> Request<[JiraKit.JiraStatus]> {
-            Request(method: "GET", url: path, query: makeGetQuery(expand, id), id: "getStatusesById")
+            Request(path: path, method: "GET", query: makeGetQuery(expand, id), id: "getStatusesById")
         }
 
         private func makeGetQuery(_ expand: String?, _ id: [String]?) -> [(String, String?)] {
@@ -42,7 +42,7 @@ extension Paths.API.__3 {
         ///  *  *Administer projects* [project permission.](https://confluence.atlassian.com/x/yodKLg)
         ///  *  *Administer Jira* [project permission.](https://confluence.atlassian.com/x/yodKLg)
         public func post(_ body: JiraKit.StatusCreateRequest) -> Request<[JiraKit.JiraStatus]> {
-            Request(method: "POST", url: path, body: body, id: "createStatuses")
+            Request(path: path, method: "POST", body: body, id: "createStatuses")
         }
 
         /// Bulk update statuses
@@ -54,7 +54,7 @@ extension Paths.API.__3 {
         ///  *  *Administer projects* [project permission.](https://confluence.atlassian.com/x/yodKLg)
         ///  *  *Administer Jira* [project permission.](https://confluence.atlassian.com/x/yodKLg)
         public func put(_ body: JiraKit.StatusUpdateRequest) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "updateStatuses")
+            Request(path: path, method: "PUT", body: body, id: "updateStatuses")
         }
 
         /// Bulk delete Statuses
@@ -66,7 +66,7 @@ extension Paths.API.__3 {
         ///  *  *Administer projects* [project permission.](https://confluence.atlassian.com/x/yodKLg)
         ///  *  *Administer Jira* [project permission.](https://confluence.atlassian.com/x/yodKLg)
         public func delete(id: [String]? = nil) -> Request<AnyJSON> {
-            Request(method: "DELETE", url: path, query: makeDeleteQuery(id), id: "deleteStatusesById")
+            Request(path: path, method: "DELETE", query: makeDeleteQuery(id), id: "deleteStatusesById")
         }
 
         private func makeDeleteQuery(_ id: [String]?) -> [(String, String?)] {

@@ -23,7 +23,7 @@ extension Paths.API.__3 {
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         @available(*, deprecated, message: "Deprecated")
         public func get(workflowName: String? = nil) -> Request<[JiraKit.DeprecatedWorkflow]> {
-            Request(method: "GET", url: path, query: makeGetQuery(workflowName), id: "getAllWorkflows")
+            Request(path: path, method: "GET", query: makeGetQuery(workflowName), id: "getAllWorkflows")
         }
 
         private func makeGetQuery(_ workflowName: String?) -> [(String, String?)] {
@@ -766,7 +766,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.CreateWorkflowDetails) -> Request<JiraKit.WorkflowIDs> {
-            Request(method: "POST", url: path, body: body, id: "createWorkflow")
+            Request(path: path, method: "POST", body: body, id: "createWorkflow")
         }
     }
 }

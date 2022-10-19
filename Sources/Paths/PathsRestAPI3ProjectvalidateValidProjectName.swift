@@ -20,7 +20,7 @@ extension Paths.API.__3.Projectvalidate {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public func get(name: String) -> Request<String> {
-            Request(method: "GET", url: path, query: [("name", name)], id: "getValidProjectName")
+            Request(path: path, method: "GET", query: [("name", name)], id: "getValidProjectName")
         }
     }
 }

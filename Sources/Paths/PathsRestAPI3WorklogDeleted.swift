@@ -24,7 +24,7 @@ extension Paths.API.__3.Worklog {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public func get(since: Int64? = nil) -> Request<JiraKit.ChangedWorklogs> {
-            Request(method: "GET", url: path, query: makeGetQuery(since), id: "getIdsOfWorklogsDeletedSince")
+            Request(path: path, method: "GET", query: makeGetQuery(since), id: "getIdsOfWorklogsDeletedSince")
         }
 
         private func makeGetQuery(_ since: Int64?) -> [(String, String?)] {

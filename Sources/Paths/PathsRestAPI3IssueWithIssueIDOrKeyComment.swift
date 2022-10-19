@@ -26,7 +26,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         ///  *  If the comment has visibility restrictions, belongs to the group or has the role visibility is role visibility is restricted to.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageOfComments> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getComments")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getComments")
         }
 
         public struct GetParameters {
@@ -69,7 +69,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         ///  *  *Browse projects* and *Add comments* [ project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue containing the comment is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func post(expand: String? = nil, _ body: JiraKit.Comment) -> Request<JiraKit.Comment> {
-            Request(method: "POST", url: path, query: makePostQuery(expand), body: body, id: "addComment")
+            Request(path: path, method: "POST", query: makePostQuery(expand), body: body, id: "addComment")
         }
 
         private func makePostQuery(_ expand: String?) -> [(String, String?)] {

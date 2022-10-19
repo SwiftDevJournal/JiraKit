@@ -20,7 +20,7 @@ extension Paths.API.__3.User {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public func get(parameters: GetParameters) -> Request<JiraKit.PageBeanUser> {
-            Request(method: "GET", url: path, query: parameters.asQuery, id: "bulkGetUsers")
+            Request(path: path, method: "GET", query: parameters.asQuery, id: "bulkGetUsers")
         }
 
         public struct GetParameters {

@@ -25,7 +25,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var post: Request<Void> {
-            Request(method: "POST", url: path, id: "deleteProjectAsynchronously")
+            Request(path: path, method: "POST", id: "deleteProjectAsynchronously")
         }
     }
 }

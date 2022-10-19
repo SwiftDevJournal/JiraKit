@@ -26,7 +26,7 @@ extension Paths.API.__3.UniversalAvatar.`Type`.WithType.Owner {
         ///  *  for custom issue type avatars, *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for at least one project the issue type is used in.
         ///  *  for system avatars, none.
         public var get: Request<JiraKit.Avatars> {
-            Request(method: "GET", url: path, id: "getAvatars")
+            Request(path: path, method: "GET", id: "getAvatars")
         }
 
         /// Load avatar
@@ -62,7 +62,7 @@ extension Paths.API.__3.UniversalAvatar.`Type`.WithType.Owner {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(parameters: PostParameters, _ body: Data) -> Request<JiraKit.Avatar> {
-            Request(method: "POST", url: path, query: parameters.asQuery, body: body, id: "storeAvatar")
+            Request(path: path, method: "POST", query: parameters.asQuery, body: body, id: "storeAvatar")
         }
 
         public struct PostParameters {

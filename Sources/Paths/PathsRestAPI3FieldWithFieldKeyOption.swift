@@ -22,7 +22,7 @@ extension Paths.API.__3.Field.WithFieldKey {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). Jira permissions are not required for the app providing the field.
         public func get(startAt: Int64? = nil, maxResults: Int32? = nil) -> Request<JiraKit.PageBeanIssueFieldOption> {
-            Request(method: "GET", url: path, query: makeGetQuery(startAt, maxResults), id: "getAllIssueFieldOptions")
+            Request(path: path, method: "GET", query: makeGetQuery(startAt, maxResults), id: "getAllIssueFieldOptions")
         }
 
         private func makeGetQuery(_ startAt: Int64?, _ maxResults: Int32?) -> [(String, String?)] {
@@ -40,7 +40,7 @@ extension Paths.API.__3.Field.WithFieldKey {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). Jira permissions are not required for the app providing the field.
         public func post(_ body: JiraKit.IssueFieldOptionCreateBean) -> Request<JiraKit.IssueFieldOption> {
-            Request(method: "POST", url: path, body: body, id: "createIssueFieldOption")
+            Request(path: path, method: "POST", body: body, id: "createIssueFieldOption")
         }
     }
 }

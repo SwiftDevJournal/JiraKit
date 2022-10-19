@@ -18,7 +18,7 @@ extension Paths.API.__3.Project.`Type` {
         ///
         /// Returns all [project types](https://confluence.atlassian.com/x/Var1Nw) with a valid license.
         public var get: Request<[JiraKit.ProjectType]> {
-            Request(method: "GET", url: path, id: "getAllAccessibleProjectTypes")
+            Request(path: path, method: "GET", id: "getAllAccessibleProjectTypes")
         }
     }
 }

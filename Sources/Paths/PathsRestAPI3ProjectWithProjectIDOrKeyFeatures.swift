@@ -18,7 +18,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey {
         ///
         /// Returns the list of features for a project.
         public var get: Request<JiraKit.ContainerForProjectFeatures> {
-            Request(method: "GET", url: path, id: "getFeaturesForProject")
+            Request(path: path, method: "GET", id: "getFeaturesForProject")
         }
     }
 }

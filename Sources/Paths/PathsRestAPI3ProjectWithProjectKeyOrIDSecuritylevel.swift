@@ -22,7 +22,7 @@ extension Paths.API.__3.Project.WithProjectKeyOrID {
         /// 
         /// **[Permissions](#permissions) required:** *Browse projects* [global permission](https://confluence.atlassian.com/x/x4dKLg) for the project, however, issue security levels are only returned for authenticated user with *Set Issue Security* [global permission](https://confluence.atlassian.com/x/x4dKLg) for the project.
         public var get: Request<JiraKit.ProjectIssueSecurityLevels> {
-            Request(method: "GET", url: path, id: "getSecurityLevelsForProject")
+            Request(path: path, method: "GET", id: "getSecurityLevelsForProject")
         }
     }
 }

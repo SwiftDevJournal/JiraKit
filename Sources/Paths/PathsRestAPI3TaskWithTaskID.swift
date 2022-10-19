@@ -25,7 +25,7 @@ extension Paths.API.__3.Task {
         ///  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         ///  *  Creator of the task.
         public var get: Request<JiraKit.TaskProgressBeanObject> {
-            Request(method: "GET", url: path, id: "getTask")
+            Request(path: path, method: "GET", id: "getTask")
         }
     }
 }

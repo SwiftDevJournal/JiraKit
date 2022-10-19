@@ -23,7 +23,7 @@ extension Paths.API.__3.Task.WithTaskID {
         ///  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         ///  *  Creator of the task.
         public var post: Request<AnyJSON> {
-            Request(method: "POST", url: path, id: "cancelTask")
+            Request(path: path, method: "POST", id: "cancelTask")
         }
     }
 }

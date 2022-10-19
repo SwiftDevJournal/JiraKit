@@ -22,7 +22,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey.Properties {
         /// 
         /// **[Permissions](#permissions) required:** *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the property.
         public var get: Request<JiraKit.EntityProperty> {
-            Request(method: "GET", url: path, id: "getProjectProperty")
+            Request(path: path, method: "GET", id: "getProjectProperty")
         }
 
         /// Set project property
@@ -35,7 +35,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey.Properties {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project in which the property is created.
         public func put(_ body: AnyJSON) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "setProjectProperty")
+            Request(path: path, method: "PUT", body: body, id: "setProjectProperty")
         }
 
         /// Delete project property
@@ -46,7 +46,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey.Properties {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the property.
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteProjectProperty")
+            Request(path: path, method: "DELETE", id: "deleteProjectProperty")
         }
     }
 }

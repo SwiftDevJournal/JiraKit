@@ -25,7 +25,7 @@ extension Paths.API.__3.Worklog {
         ///  *  the worklog is set as *Viewable by All Users*.
         ///  *  the user is a member of a project role or group with permission to view the worklog.
         public func post(expand: String? = nil, _ body: JiraKit.WorklogIDsRequestBean) -> Request<[JiraKit.Worklog]> {
-            Request(method: "POST", url: path, query: makePostQuery(expand), body: body, id: "getWorklogsForIds")
+            Request(path: path, method: "POST", query: makePostQuery(expand), body: body, id: "getWorklogsForIds")
         }
 
         private func makePostQuery(_ expand: String?) -> [(String, String?)] {

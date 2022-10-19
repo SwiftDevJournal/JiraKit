@@ -24,7 +24,7 @@ extension Paths.API.__3.Jql {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public var get: Request<JiraKit.JQLReferenceData> {
-            Request(method: "GET", url: path, id: "getAutoComplete")
+            Request(path: path, method: "GET", id: "getAutoComplete")
         }
 
         /// Get field reference data (POST)
@@ -37,7 +37,7 @@ extension Paths.API.__3.Jql {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public func post(_ body: JiraKit.SearchAutoCompleteFilter) -> Request<JiraKit.JQLReferenceData> {
-            Request(method: "POST", url: path, body: body, id: "getAutoCompletePost")
+            Request(path: path, method: "POST", body: body, id: "getAutoCompletePost")
         }
     }
 }

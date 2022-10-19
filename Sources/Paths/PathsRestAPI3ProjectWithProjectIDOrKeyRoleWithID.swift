@@ -24,7 +24,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey.Role {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(excludeInactiveUsers: Bool? = nil) -> Request<JiraKit.ProjectRole> {
-            Request(method: "GET", url: path, query: makeGetQuery(excludeInactiveUsers), id: "getProjectRole")
+            Request(path: path, method: "GET", query: makeGetQuery(excludeInactiveUsers), id: "getProjectRole")
         }
 
         private func makeGetQuery(_ excludeInactiveUsers: Bool?) -> [(String, String?)] {
@@ -43,7 +43,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey.Role {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.ActorsMap) -> Request<JiraKit.ProjectRole> {
-            Request(method: "POST", url: path, body: body, id: "addActorUsers")
+            Request(path: path, method: "POST", body: body, id: "addActorUsers")
         }
 
         /// Set actors for project role
@@ -54,7 +54,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey.Role {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.ProjectRoleActorsUpdateBean) -> Request<JiraKit.ProjectRole> {
-            Request(method: "PUT", url: path, body: body, id: "setActors")
+            Request(path: path, method: "PUT", body: body, id: "setActors")
         }
 
         /// Delete actors from project role
@@ -67,7 +67,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey.Role {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func delete(parameters: DeleteParameters? = nil) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: parameters?.asQuery, id: "deleteActor")
+            Request(path: path, method: "DELETE", query: parameters?.asQuery, id: "deleteActor")
         }
 
         public struct DeleteParameters {

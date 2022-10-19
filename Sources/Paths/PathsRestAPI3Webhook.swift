@@ -20,7 +20,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** Only [Connect](https://developer.atlassian.com/cloud/jira/platform/#connect-apps) and [OAuth 2.0](https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps) apps can use this operation.
         public func get(startAt: Int64? = nil, maxResults: Int32? = nil) -> Request<JiraKit.PageBeanWebhook> {
-            Request(method: "GET", url: path, query: makeGetQuery(startAt, maxResults), id: "getDynamicWebhooksForApp")
+            Request(path: path, method: "GET", query: makeGetQuery(startAt, maxResults), id: "getDynamicWebhooksForApp")
         }
 
         private func makeGetQuery(_ startAt: Int64?, _ maxResults: Int32?) -> [(String, String?)] {
@@ -36,7 +36,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** Only [Connect](https://developer.atlassian.com/cloud/jira/platform/#connect-apps) and [OAuth 2.0](https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps) apps can use this operation.
         public func post(_ body: JiraKit.WebhookRegistrationDetails) -> Request<JiraKit.ContainerForRegisteredWebhooks> {
-            Request(method: "POST", url: path, body: body, id: "registerDynamicWebhooks")
+            Request(path: path, method: "POST", body: body, id: "registerDynamicWebhooks")
         }
 
         /// Delete webhooks by ID
@@ -45,7 +45,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** Only [Connect](https://developer.atlassian.com/cloud/jira/platform/#connect-apps) and [OAuth 2.0](https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps) apps can use this operation.
         public func delete(_ body: JiraKit.ContainerForWebhookIDs) -> Request<Void> {
-            Request(method: "DELETE", url: path, body: body, id: "deleteWebhookById")
+            Request(path: path, method: "DELETE", body: body, id: "deleteWebhookById")
         }
     }
 }

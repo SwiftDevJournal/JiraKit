@@ -20,7 +20,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var get: Request<JiraKit.AnnouncementBannerConfiguration> {
-            Request(method: "GET", url: path, id: "getBanner")
+            Request(path: path, method: "GET", id: "getBanner")
         }
 
         /// Update announcement banner configuration
@@ -29,7 +29,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.AnnouncementBannerConfigurationUpdate) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "setBanner")
+            Request(path: path, method: "PUT", body: body, id: "setBanner")
         }
     }
 }

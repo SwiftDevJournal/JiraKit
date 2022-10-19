@@ -24,7 +24,7 @@ extension Paths.API.__3.Version.WithID.Mergeto {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that contains the version.
         public var put: Request<AnyJSON> {
-            Request(method: "PUT", url: path, id: "mergeVersions")
+            Request(path: path, method: "PUT", id: "mergeVersions")
         }
     }
 }

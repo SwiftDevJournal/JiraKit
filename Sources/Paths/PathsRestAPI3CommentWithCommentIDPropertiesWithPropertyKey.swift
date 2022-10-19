@@ -26,7 +26,7 @@ extension Paths.API.__3.Comment.WithCommentID.Properties {
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         ///  *  If the comment has visibility restrictions, belongs to the group or has the role visibility is restricted to.
         public var get: Request<JiraKit.EntityProperty> {
-            Request(method: "GET", url: path, id: "getCommentProperty")
+            Request(path: path, method: "GET", id: "getCommentProperty")
         }
 
         /// Set comment property
@@ -42,7 +42,7 @@ extension Paths.API.__3.Comment.WithCommentID.Properties {
         /// 
         /// Also, when the visibility of a comment is restricted to a role or group the user must be a member of that role or group.
         public func put(_ body: AnyJSON) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "setCommentProperty")
+            Request(path: path, method: "PUT", body: body, id: "setCommentProperty")
         }
 
         /// Delete comment property
@@ -56,7 +56,7 @@ extension Paths.API.__3.Comment.WithCommentID.Properties {
         /// 
         /// Also, when the visibility of a comment is restricted to a role or group the user must be a member of that role or group.
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteCommentProperty")
+            Request(path: path, method: "DELETE", id: "deleteCommentProperty")
         }
     }
 }

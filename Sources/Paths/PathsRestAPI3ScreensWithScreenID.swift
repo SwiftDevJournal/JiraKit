@@ -20,7 +20,7 @@ extension Paths.API.__3.Screens {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.UpdateScreenDetails) -> Request<JiraKit.Screen> {
-            Request(method: "PUT", url: path, body: body, id: "updateScreen")
+            Request(path: path, method: "PUT", body: body, id: "updateScreen")
         }
 
         /// Delete screen
@@ -29,7 +29,7 @@ extension Paths.API.__3.Screens {
         /// 
         /// Only screens used in classic projects can be deleted.
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteScreen")
+            Request(path: path, method: "DELETE", id: "deleteScreen")
         }
     }
 }

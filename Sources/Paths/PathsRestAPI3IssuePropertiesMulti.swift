@@ -30,7 +30,7 @@ extension Paths.API.__3.Issue.Properties {
         ///  *  *Browse projects* and *Edit issues* [project permissions](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func post(_ body: JiraKit.MultiIssueEntityProperties) -> Request<Void> {
-            Request(method: "POST", url: path, body: body, id: "bulkSetIssuePropertiesByIssue")
+            Request(path: path, method: "POST", body: body, id: "bulkSetIssuePropertiesByIssue")
         }
     }
 }

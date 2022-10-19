@@ -20,7 +20,7 @@ extension Paths.API.__3.Priority {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.SetDefaultPriorityRequest) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "setDefaultPriority")
+            Request(path: path, method: "PUT", body: body, id: "setDefaultPriority")
         }
     }
 }

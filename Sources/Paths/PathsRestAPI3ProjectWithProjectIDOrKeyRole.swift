@@ -24,7 +24,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for any project on the site or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var get: Request<[String: URL]> {
-            Request(method: "GET", url: path, id: "getProjectRoles")
+            Request(path: path, method: "GET", id: "getProjectRoles")
         }
     }
 }

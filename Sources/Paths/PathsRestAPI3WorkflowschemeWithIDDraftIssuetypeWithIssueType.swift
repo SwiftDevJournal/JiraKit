@@ -20,7 +20,7 @@ extension Paths.API.__3.Workflowscheme.WithID.Draft.Issuetype {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var get: Request<JiraKit.IssueTypeWorkflowMapping> {
-            Request(method: "GET", url: path, id: "getWorkflowSchemeDraftIssueType")
+            Request(path: path, method: "GET", id: "getWorkflowSchemeDraftIssueType")
         }
 
         /// Set workflow for issue type in draft workflow scheme
@@ -29,7 +29,7 @@ extension Paths.API.__3.Workflowscheme.WithID.Draft.Issuetype {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.IssueTypeWorkflowMapping) -> Request<JiraKit.WorkflowScheme> {
-            Request(method: "PUT", url: path, body: body, id: "setWorkflowSchemeDraftIssueType")
+            Request(path: path, method: "PUT", body: body, id: "setWorkflowSchemeDraftIssueType")
         }
 
         /// Delete workflow for issue type in draft workflow scheme
@@ -38,7 +38,7 @@ extension Paths.API.__3.Workflowscheme.WithID.Draft.Issuetype {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var delete: Request<JiraKit.WorkflowScheme> {
-            Request(method: "DELETE", url: path, id: "deleteWorkflowSchemeDraftIssueType")
+            Request(path: path, method: "DELETE", id: "deleteWorkflowSchemeDraftIssueType")
         }
     }
 }

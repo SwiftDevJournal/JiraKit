@@ -46,7 +46,7 @@ extension Paths.API.__3.Expression {
         /// **[Permissions](#permissions) required**: None. However, an expression may return different results for different users depending on their permissions. For example, different users may see different comments on the same issue.  
         /// Permission to access Jira Software is required to access Jira Software context variables (`board` and `sprint`) or fields (for example, `issue.sprint`).
         public func post(expand: String? = nil, _ body: JiraKit.JiraExpressionEvalRequestBean) -> Request<JiraKit.JiraExpressionResult> {
-            Request(method: "POST", url: path, query: makePostQuery(expand), body: body, id: "evaluateJiraExpression")
+            Request(path: path, method: "POST", query: makePostQuery(expand), body: body, id: "evaluateJiraExpression")
         }
 
         private func makePostQuery(_ expand: String?) -> [(String, String?)] {

@@ -27,7 +27,7 @@ extension Paths.API.__3.Project.WithProjectID {
         /// **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
         @available(*, deprecated, message: "Deprecated")
         public var get: Request<JiraKit.ProjectIssueTypeHierarchy> {
-            Request(method: "GET", url: path, id: "getHierarchy")
+            Request(path: path, method: "GET", id: "getHierarchy")
         }
     }
 }

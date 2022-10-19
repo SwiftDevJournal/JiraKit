@@ -20,7 +20,7 @@ extension Paths.API.__3.Applicationrole {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var get: Request<JiraKit.ApplicationRole> {
-            Request(method: "GET", url: path, id: "getApplicationRole")
+            Request(path: path, method: "GET", id: "getApplicationRole")
         }
     }
 }

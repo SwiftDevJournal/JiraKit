@@ -26,7 +26,7 @@ extension Paths.API.__3.UniversalAvatar.View.`Type`.WithType.Owner {
         ///  *  For custom project avatars, *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project the avatar belongs to.
         ///  *  For custom issue type avatars, *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for at least one project the issue type is used in.
         public func get(size: Size? = nil, format: Format? = nil) -> Request<[String: AnyJSON]> {
-            Request(method: "GET", url: path, query: makeGetQuery(size, format), id: "getAvatarImageByOwner")
+            Request(path: path, method: "GET", query: makeGetQuery(size, format), id: "getAvatarImageByOwner")
         }
 
         private func makeGetQuery(_ size: Size?, _ format: Format?) -> [(String, String?)] {

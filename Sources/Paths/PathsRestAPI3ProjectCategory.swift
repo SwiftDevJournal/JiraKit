@@ -20,7 +20,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public var get: Request<[JiraKit.ProjectCategory]> {
-            Request(method: "GET", url: path, id: "getAllProjectCategories")
+            Request(path: path, method: "GET", id: "getAllProjectCategories")
         }
 
         /// Create project category
@@ -29,7 +29,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.ProjectCategory) -> Request<JiraKit.ProjectCategory> {
-            Request(method: "POST", url: path, body: body, id: "createProjectCategory")
+            Request(path: path, method: "POST", body: body, id: "createProjectCategory")
         }
     }
 }

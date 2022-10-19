@@ -22,7 +22,7 @@ extension Paths.API.__3.Field.WithFieldKey.Option {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). Jira permissions are not required for the app providing the field.
         public var get: Request<JiraKit.IssueFieldOption> {
-            Request(method: "GET", url: path, id: "getIssueFieldOption")
+            Request(path: path, method: "GET", id: "getIssueFieldOption")
         }
 
         /// Update issue field option
@@ -33,7 +33,7 @@ extension Paths.API.__3.Field.WithFieldKey.Option {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). Jira permissions are not required for the app providing the field.
         public func put(_ body: JiraKit.IssueFieldOption) -> Request<JiraKit.IssueFieldOption> {
-            Request(method: "PUT", url: path, body: body, id: "updateIssueFieldOption")
+            Request(path: path, method: "PUT", body: body, id: "updateIssueFieldOption")
         }
 
         /// Delete issue field option
@@ -44,7 +44,7 @@ extension Paths.API.__3.Field.WithFieldKey.Option {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). Jira permissions are not required for the app providing the field.
         public var delete: Request<AnyJSON> {
-            Request(method: "DELETE", url: path, id: "deleteIssueFieldOption")
+            Request(path: path, method: "DELETE", id: "deleteIssueFieldOption")
         }
     }
 }

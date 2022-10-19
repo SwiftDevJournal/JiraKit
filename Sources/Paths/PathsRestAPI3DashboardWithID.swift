@@ -24,7 +24,7 @@ extension Paths.API.__3.Dashboard {
         /// 
         /// However, to get a dashboard, the dashboard must be shared with the user or the user must own it. Note, users with the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) are considered owners of the System dashboard. The System dashboard is considered to be shared with all other users.
         public var get: Request<JiraKit.Dashboard> {
-            Request(method: "GET", url: path, id: "getDashboard")
+            Request(path: path, method: "GET", id: "getDashboard")
         }
 
         /// Update dashboard
@@ -35,7 +35,7 @@ extension Paths.API.__3.Dashboard {
         /// 
         /// The dashboard to be updated must be owned by the user.
         public func put(_ body: JiraKit.DashboardDetails) -> Request<JiraKit.Dashboard> {
-            Request(method: "PUT", url: path, body: body, id: "updateDashboard")
+            Request(path: path, method: "PUT", body: body, id: "updateDashboard")
         }
 
         /// Delete dashboard
@@ -46,7 +46,7 @@ extension Paths.API.__3.Dashboard {
         /// 
         /// The dashboard to be deleted must be owned by the user.
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteDashboard")
+            Request(path: path, method: "DELETE", id: "deleteDashboard")
         }
     }
 }

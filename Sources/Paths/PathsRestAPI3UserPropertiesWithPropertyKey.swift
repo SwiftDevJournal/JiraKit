@@ -25,7 +25,7 @@ extension Paths.API.__3.User.Properties {
         ///  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), to get a property from any user.
         ///  *  Access to Jira, to get a property from the calling user's record.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.EntityProperty> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getUserProperty")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getUserProperty")
         }
 
         public struct GetParameters {
@@ -60,7 +60,7 @@ extension Paths.API.__3.User.Properties {
         ///  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), to set a property on any user.
         ///  *  Access to Jira, to set a property on the calling user's record.
         public func put(parameters: PutParameters? = nil, _ body: AnyJSON) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, query: parameters?.asQuery, body: body, id: "setUserProperty")
+            Request(path: path, method: "PUT", query: parameters?.asQuery, body: body, id: "setUserProperty")
         }
 
         public struct PutParameters {
@@ -95,7 +95,7 @@ extension Paths.API.__3.User.Properties {
         ///  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), to delete a property from any user.
         ///  *  Access to Jira, to delete a property from the calling user's record.
         public func delete(parameters: DeleteParameters? = nil) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: parameters?.asQuery, id: "deleteUserProperty")
+            Request(path: path, method: "DELETE", query: parameters?.asQuery, id: "deleteUserProperty")
         }
 
         public struct DeleteParameters {

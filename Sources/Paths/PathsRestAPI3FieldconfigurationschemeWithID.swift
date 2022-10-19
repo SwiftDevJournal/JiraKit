@@ -22,7 +22,7 @@ extension Paths.API.__3.Fieldconfigurationscheme {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.UpdateFieldConfigurationSchemeDetails) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "updateFieldConfigurationScheme")
+            Request(path: path, method: "PUT", body: body, id: "updateFieldConfigurationScheme")
         }
 
         /// Delete field configuration scheme
@@ -33,7 +33,7 @@ extension Paths.API.__3.Fieldconfigurationscheme {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var delete: Request<AnyJSON> {
-            Request(method: "DELETE", url: path, id: "deleteFieldConfigurationScheme")
+            Request(path: path, method: "DELETE", id: "deleteFieldConfigurationScheme")
         }
     }
 }

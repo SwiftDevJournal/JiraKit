@@ -20,7 +20,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public var get: Request<JiraKit.Configuration> {
-            Request(method: "GET", url: path, id: "getConfiguration")
+            Request(path: path, method: "GET", id: "getConfiguration")
         }
     }
 }

@@ -22,7 +22,7 @@ extension Paths.API.__3.Issuesecurityschemes.WithIssueSecuritySchemeID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageBeanIssueSecurityLevelMember> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getIssueSecurityLevelMembers")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getIssueSecurityLevelMembers")
         }
 
         public struct GetParameters {

@@ -22,7 +22,7 @@ extension Paths.API.__3.Avatar.WithType {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public var get: Request<JiraKit.SystemAvatars> {
-            Request(method: "GET", url: path, id: "getAllSystemAvatars")
+            Request(path: path, method: "GET", id: "getAllSystemAvatars")
         }
     }
 }

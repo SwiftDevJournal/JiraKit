@@ -26,7 +26,7 @@ extension Paths.API.__3.Groups {
         /// 
         /// **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg). Anonymous calls and calls by users without the required permission return an empty list.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.FoundGroups> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "findGroups")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "findGroups")
         }
 
         public struct GetParameters {

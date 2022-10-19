@@ -24,7 +24,7 @@ extension Paths.API.__3.Status {
         /// 
         /// [Permissions](#permissions) required: None.
         public var get: Request<JiraKit.StatusDetails> {
-            Request(method: "GET", url: path, id: "getStatus")
+            Request(path: path, method: "GET", id: "getStatus")
         }
     }
 }

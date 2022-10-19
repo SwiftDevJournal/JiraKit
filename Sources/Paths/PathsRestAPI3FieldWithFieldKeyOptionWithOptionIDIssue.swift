@@ -26,7 +26,7 @@ extension Paths.API.__3.Field.WithFieldKey.Option.WithOptionID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). Jira permissions are not required for the app providing the field.
         public func delete(parameters: DeleteParameters? = nil) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: parameters?.asQuery, id: "replaceIssueFieldOption")
+            Request(path: path, method: "DELETE", query: parameters?.asQuery, id: "replaceIssueFieldOption")
         }
 
         public struct DeleteParameters {

@@ -20,7 +20,7 @@ extension Paths.API.__3.App.Field {
         /// 
         /// **[Permissions](#permissions) required:** Only the app that created the custom field can update its values with this operation.
         public func post(isGenerateChangelog: Bool? = nil, _ body: JiraKit.MultipleCustomFieldValuesUpdateDetails) -> Request<AnyJSON> {
-            Request(method: "POST", url: path, query: makePostQuery(isGenerateChangelog), body: body, id: "updateMultipleCustomFieldValues")
+            Request(path: path, method: "POST", query: makePostQuery(isGenerateChangelog), body: body, id: "updateMultipleCustomFieldValues")
         }
 
         private func makePostQuery(_ isGenerateChangelog: Bool?) -> [(String, String?)] {

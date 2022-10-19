@@ -37,7 +37,7 @@ extension Paths.API.__3.User.Search {
         /// 
         /// `is assignee of PROJ AND [propertyKey].entity.property.path is "property value"`
         public func get(parameters: GetParameters) -> Request<JiraKit.PageBeanUser> {
-            Request(method: "GET", url: path, query: parameters.asQuery, id: "findUsersByQuery")
+            Request(path: path, method: "GET", query: parameters.asQuery, id: "findUsersByQuery")
         }
 
         public struct GetParameters {

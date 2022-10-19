@@ -24,7 +24,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var get: Request<JiraKit.Permissions> {
-            Request(method: "GET", url: path, id: "getAllPermissions")
+            Request(path: path, method: "GET", id: "getAllPermissions")
         }
     }
 }

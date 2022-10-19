@@ -24,7 +24,7 @@ extension Paths.API.__3.Workflowscheme.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var get: Request<JiraKit.WorkflowScheme> {
-            Request(method: "GET", url: path, id: "getWorkflowSchemeDraft")
+            Request(path: path, method: "GET", id: "getWorkflowSchemeDraft")
         }
 
         /// Update draft workflow scheme
@@ -33,7 +33,7 @@ extension Paths.API.__3.Workflowscheme.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.WorkflowScheme) -> Request<JiraKit.WorkflowScheme> {
-            Request(method: "PUT", url: path, body: body, id: "updateWorkflowSchemeDraft")
+            Request(path: path, method: "PUT", body: body, id: "updateWorkflowSchemeDraft")
         }
 
         /// Delete draft workflow scheme
@@ -42,7 +42,7 @@ extension Paths.API.__3.Workflowscheme.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteWorkflowSchemeDraft")
+            Request(path: path, method: "DELETE", id: "deleteWorkflowSchemeDraft")
         }
     }
 }

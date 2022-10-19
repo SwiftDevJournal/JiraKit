@@ -22,7 +22,7 @@ extension Paths.API.__3.Webhook {
         /// 
         /// **[Permissions](#permissions) required:** Only [Connect](https://developer.atlassian.com/cloud/jira/platform/#connect-apps) and [OAuth 2.0](https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps) apps can use this operation.
         public func put(_ body: JiraKit.ContainerForWebhookIDs) -> Request<JiraKit.WebhooksExpirationDate> {
-            Request(method: "PUT", url: path, body: body, id: "refreshWebhooks")
+            Request(path: path, method: "PUT", body: body, id: "refreshWebhooks")
         }
     }
 }

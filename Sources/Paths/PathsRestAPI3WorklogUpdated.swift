@@ -27,7 +27,7 @@ extension Paths.API.__3.Worklog {
         ///  *  the worklog is set as *Viewable by All Users*.
         ///  *  the user is a member of a project role or group with permission to view the worklog.
         public func get(since: Int64? = nil, expand: String? = nil) -> Request<JiraKit.ChangedWorklogs> {
-            Request(method: "GET", url: path, query: makeGetQuery(since, expand), id: "getIdsOfWorklogsModifiedSince")
+            Request(path: path, method: "GET", query: makeGetQuery(since, expand), id: "getIdsOfWorklogsModifiedSince")
         }
 
         private func makeGetQuery(_ since: Int64?, _ expand: String?) -> [(String, String?)] {

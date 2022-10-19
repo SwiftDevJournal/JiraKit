@@ -20,7 +20,7 @@ extension Paths.API.__3.App.Field.WithFieldIDOrKey {
         /// 
         /// **[Permissions](#permissions) required:** Only the app that created the custom field can update its values with this operation.
         public func put(isGenerateChangelog: Bool? = nil, _ body: JiraKit.CustomFieldValueUpdateDetails) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, query: makePutQuery(isGenerateChangelog), body: body, id: "updateCustomFieldValue")
+            Request(path: path, method: "PUT", query: makePutQuery(isGenerateChangelog), body: body, id: "updateCustomFieldValue")
         }
 
         private func makePutQuery(_ isGenerateChangelog: Bool?) -> [(String, String?)] {

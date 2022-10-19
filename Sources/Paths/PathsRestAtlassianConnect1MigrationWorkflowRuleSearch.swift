@@ -18,7 +18,7 @@ extension Paths.AtlassianConnect.__1.Migration.Workflow.Rule {
         ///
         /// Returns configurations for workflow transition rules migrated from server to cloud and owned by the calling Connect app.
         public func post(_ body: JiraKit.WorkflowRulesSearch) -> Request<JiraKit.WorkflowRulesSearchDetails> {
-            Request(method: "POST", url: path, body: body, id: "MigrationResource.workflowRuleSearch_post")
+            Request(path: path, method: "POST", body: body, id: "MigrationResource.workflowRuleSearch_post")
         }
     }
 }

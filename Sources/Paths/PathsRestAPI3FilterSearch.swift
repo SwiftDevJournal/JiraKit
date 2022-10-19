@@ -31,7 +31,7 @@ extension Paths.API.__3.Filter {
         ///  *  filters shared with a public project.
         ///  *  filters shared with the public.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageBeanFilterDetails> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getFiltersPaginated")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getFiltersPaginated")
         }
 
         public struct GetParameters {

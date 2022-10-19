@@ -20,7 +20,7 @@ extension Paths.API.__3.Workflow.Transitions.WithTransitionID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(parameters: GetParameters) -> Request<JiraKit.WorkflowTransitionProperty> {
-            Request(method: "GET", url: path, query: parameters.asQuery, id: "getWorkflowTransitionProperties")
+            Request(path: path, method: "GET", query: parameters.asQuery, id: "getWorkflowTransitionProperties")
         }
 
         public struct GetParameters {
@@ -57,7 +57,7 @@ extension Paths.API.__3.Workflow.Transitions.WithTransitionID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(parameters: PostParameters, _ body: JiraKit.WorkflowTransitionProperty) -> Request<JiraKit.WorkflowTransitionProperty> {
-            Request(method: "POST", url: path, query: parameters.asQuery, body: body, id: "createWorkflowTransitionProperty")
+            Request(path: path, method: "POST", query: parameters.asQuery, body: body, id: "createWorkflowTransitionProperty")
         }
 
         public struct PostParameters {
@@ -91,7 +91,7 @@ extension Paths.API.__3.Workflow.Transitions.WithTransitionID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(parameters: PutParameters, _ body: JiraKit.WorkflowTransitionProperty) -> Request<JiraKit.WorkflowTransitionProperty> {
-            Request(method: "PUT", url: path, query: parameters.asQuery, body: body, id: "updateWorkflowTransitionProperty")
+            Request(path: path, method: "PUT", query: parameters.asQuery, body: body, id: "updateWorkflowTransitionProperty")
         }
 
         public struct PutParameters {
@@ -125,7 +125,7 @@ extension Paths.API.__3.Workflow.Transitions.WithTransitionID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func delete(parameters: DeleteParameters) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: parameters.asQuery, id: "deleteWorkflowTransitionProperty")
+            Request(path: path, method: "DELETE", query: parameters.asQuery, id: "deleteWorkflowTransitionProperty")
         }
 
         public struct DeleteParameters {

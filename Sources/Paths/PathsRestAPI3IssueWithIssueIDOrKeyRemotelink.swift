@@ -27,7 +27,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func get(globalID: String? = nil) -> Request<JiraKit.RemoteIssueLink> {
-            Request(method: "GET", url: path, query: makeGetQuery(globalID), id: "getRemoteIssueLinks")
+            Request(path: path, method: "GET", query: makeGetQuery(globalID), id: "getRemoteIssueLinks")
         }
 
         private func makeGetQuery(_ globalID: String?) -> [(String, String?)] {
@@ -51,7 +51,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         ///  *  *Browse projects* and *Link issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func post(_ body: JiraKit.RemoteIssueLinkRequest) -> Request<JiraKit.RemoteIssueLinkIdentifies> {
-            Request(method: "POST", url: path, body: body, id: "createOrUpdateRemoteIssueLink")
+            Request(path: path, method: "POST", body: body, id: "createOrUpdateRemoteIssueLink")
         }
 
         /// Delete remote issue link by global ID
@@ -67,7 +67,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         ///  *  *Browse projects* and *Link issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is implemented, issue-level security permission to view the issue.
         public func delete(globalID: String) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: [("globalId", globalID)], id: "deleteRemoteIssueLinkByGlobalId")
+            Request(path: path, method: "DELETE", query: [("globalId", globalID)], id: "deleteRemoteIssueLinkByGlobalId")
         }
     }
 }

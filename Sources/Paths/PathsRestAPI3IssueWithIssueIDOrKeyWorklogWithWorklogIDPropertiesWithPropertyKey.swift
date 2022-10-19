@@ -26,7 +26,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey.Worklog.WithWorklogID.Properties 
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         ///  *  If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to.
         public var get: Request<JiraKit.EntityProperty> {
-            Request(method: "GET", url: path, id: "getWorklogProperty")
+            Request(path: path, method: "GET", id: "getWorklogProperty")
         }
 
         /// Set worklog property
@@ -44,7 +44,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey.Worklog.WithWorklogID.Properties 
         ///  *  *Edit all worklogs*[ project permission](https://confluence.atlassian.com/x/yodKLg) to update any worklog or *Edit own worklogs* to update worklogs created by the user.
         ///  *  If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to.
         public func put(_ body: AnyJSON) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "setWorklogProperty")
+            Request(path: path, method: "PUT", body: body, id: "setWorklogProperty")
         }
 
         /// Delete worklog property
@@ -59,7 +59,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey.Worklog.WithWorklogID.Properties 
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         ///  *  If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to.
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteWorklogProperty")
+            Request(path: path, method: "DELETE", id: "deleteWorklogProperty")
         }
     }
 }

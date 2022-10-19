@@ -25,7 +25,7 @@ extension Paths.API.__3.Issuetype.WithIssueTypeID {
         ///  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) to get the property keys of any issue type.
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) to get the property keys of any issue types associated with the projects the user has permission to browse.
         public var get: Request<JiraKit.PropertyKeys> {
-            Request(method: "GET", url: path, id: "getIssueTypePropertyKeys")
+            Request(path: path, method: "GET", id: "getIssueTypePropertyKeys")
         }
     }
 }

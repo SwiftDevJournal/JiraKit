@@ -22,7 +22,7 @@ extension Paths.API.__3.Issuetype {
         /// 
         /// **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) in the relevant project or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(projectID: Int64, level: Int32? = nil) -> Request<[JiraKit.IssueTypeDetails]> {
-            Request(method: "GET", url: path, query: makeGetQuery(projectID, level), id: "getIssueTypesForProject")
+            Request(path: path, method: "GET", query: makeGetQuery(projectID, level), id: "getIssueTypesForProject")
         }
 
         private func makeGetQuery(_ projectID: Int64, _ level: Int32?) -> [(String, String?)] {

@@ -28,7 +28,7 @@ extension Paths.API.__3.Filter {
         ///  *  shared with a public project.
         ///  *  shared with the public.
         public func get(expand: String? = nil, isOverrideSharePermissions: Bool? = nil) -> Request<JiraKit.Filter> {
-            Request(method: "GET", url: path, query: makeGetQuery(expand, isOverrideSharePermissions), id: "getFilter")
+            Request(path: path, method: "GET", query: makeGetQuery(expand, isOverrideSharePermissions), id: "getFilter")
         }
 
         private func makeGetQuery(_ expand: String?, _ isOverrideSharePermissions: Bool?) -> [(String, String?)] {
@@ -44,7 +44,7 @@ extension Paths.API.__3.Filter {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira, however the user must own the filter.
         public func put(expand: String? = nil, isOverrideSharePermissions: Bool? = nil, _ body: JiraKit.Filter) -> Request<JiraKit.Filter> {
-            Request(method: "PUT", url: path, query: makePutQuery(expand, isOverrideSharePermissions), body: body, id: "updateFilter")
+            Request(path: path, method: "PUT", query: makePutQuery(expand, isOverrideSharePermissions), body: body, id: "updateFilter")
         }
 
         private func makePutQuery(_ expand: String?, _ isOverrideSharePermissions: Bool?) -> [(String, String?)] {
@@ -60,7 +60,7 @@ extension Paths.API.__3.Filter {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira, however filters can only be deleted by the creator of the filter or a user with *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteFilter")
+            Request(path: path, method: "DELETE", id: "deleteFilter")
         }
     }
 }

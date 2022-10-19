@@ -20,7 +20,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(startAt: Int64? = nil, maxResults: Int32? = nil) -> Request<JiraKit.PageBeanWorkflowScheme> {
-            Request(method: "GET", url: path, query: makeGetQuery(startAt, maxResults), id: "getAllWorkflowSchemes")
+            Request(path: path, method: "GET", query: makeGetQuery(startAt, maxResults), id: "getAllWorkflowSchemes")
         }
 
         private func makeGetQuery(_ startAt: Int64?, _ maxResults: Int32?) -> [(String, String?)] {
@@ -36,7 +36,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.WorkflowScheme) -> Request<JiraKit.WorkflowScheme> {
-            Request(method: "POST", url: path, body: body, id: "createWorkflowScheme")
+            Request(path: path, method: "POST", body: body, id: "createWorkflowScheme")
         }
     }
 }

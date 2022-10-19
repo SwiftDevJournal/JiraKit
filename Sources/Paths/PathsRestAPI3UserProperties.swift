@@ -25,7 +25,7 @@ extension Paths.API.__3.User {
         ///  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), to access the property keys on any user.
         ///  *  Access to Jira, to access the calling user's property keys.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PropertyKeys> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getUserPropertyKeys")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getUserPropertyKeys")
         }
 
         public struct GetParameters {

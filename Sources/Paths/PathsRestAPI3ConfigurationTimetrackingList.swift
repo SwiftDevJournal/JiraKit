@@ -20,7 +20,7 @@ extension Paths.API.__3.Configuration.Timetracking {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var get: Request<[JiraKit.TimeTrackingProvider]> {
-            Request(method: "GET", url: path, id: "getAvailableTimeTrackingImplementations")
+            Request(path: path, method: "GET", id: "getAvailableTimeTrackingImplementations")
         }
     }
 }

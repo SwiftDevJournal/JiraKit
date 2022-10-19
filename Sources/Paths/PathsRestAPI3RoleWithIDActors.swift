@@ -20,7 +20,7 @@ extension Paths.API.__3.Role.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var get: Request<JiraKit.ProjectRole> {
-            Request(method: "GET", url: path, id: "getProjectRoleActorsForRole")
+            Request(path: path, method: "GET", id: "getProjectRoleActorsForRole")
         }
 
         /// Add default actors to project role
@@ -31,7 +31,7 @@ extension Paths.API.__3.Role.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.ActorInputBean) -> Request<JiraKit.ProjectRole> {
-            Request(method: "POST", url: path, body: body, id: "addProjectRoleActorsToRole")
+            Request(path: path, method: "POST", body: body, id: "addProjectRoleActorsToRole")
         }
 
         /// Delete default actors from project role
@@ -42,7 +42,7 @@ extension Paths.API.__3.Role.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func delete(parameters: DeleteParameters? = nil) -> Request<JiraKit.ProjectRole> {
-            Request(method: "DELETE", url: path, query: parameters?.asQuery, id: "deleteProjectRoleActorsFromRole")
+            Request(path: path, method: "DELETE", query: parameters?.asQuery, id: "deleteProjectRoleActorsFromRole")
         }
 
         public struct DeleteParameters {

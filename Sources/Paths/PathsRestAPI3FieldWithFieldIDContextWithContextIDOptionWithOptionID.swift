@@ -24,7 +24,7 @@ extension Paths.API.__3.Field.WithFieldID.Context.WithContextID.Option {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteCustomFieldOption")
+            Request(path: path, method: "DELETE", id: "deleteCustomFieldOption")
         }
     }
 }

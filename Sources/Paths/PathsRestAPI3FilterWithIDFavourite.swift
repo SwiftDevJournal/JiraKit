@@ -26,7 +26,7 @@ extension Paths.API.__3.Filter.WithID {
         ///  *  filters shared with a public project.
         ///  *  filters shared with the public.
         public func put(expand: String? = nil) -> Request<JiraKit.Filter> {
-            Request(method: "PUT", url: path, query: makePutQuery(expand), id: "setFavouriteForFilter")
+            Request(path: path, method: "PUT", query: makePutQuery(expand), id: "setFavouriteForFilter")
         }
 
         private func makePutQuery(_ expand: String?) -> [(String, String?)] {
@@ -41,7 +41,7 @@ extension Paths.API.__3.Filter.WithID {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public func delete(expand: String? = nil) -> Request<JiraKit.Filter> {
-            Request(method: "DELETE", url: path, query: makeDeleteQuery(expand), id: "deleteFavouriteForFilter")
+            Request(path: path, method: "DELETE", query: makeDeleteQuery(expand), id: "deleteFavouriteForFilter")
         }
 
         private func makeDeleteQuery(_ expand: String?) -> [(String, String?)] {

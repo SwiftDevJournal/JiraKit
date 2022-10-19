@@ -23,7 +23,7 @@ extension Paths.API.__3.Statuses {
         ///  *  *Administer projects* [project permission.](https://confluence.atlassian.com/x/yodKLg)
         ///  *  *Administer Jira* [project permission.](https://confluence.atlassian.com/x/yodKLg)
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageOfStatuses> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "search")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "search")
         }
 
         public struct GetParameters {

@@ -23,7 +23,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         ///  *  *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func post(_ body: JiraKit.Notification) -> Request<AnyJSON> {
-            Request(method: "POST", url: path, body: body, id: "notify")
+            Request(path: path, method: "POST", body: body, id: "notify")
         }
     }
 }

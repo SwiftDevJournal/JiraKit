@@ -34,7 +34,7 @@ extension Paths.API.__3.Permissions {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) to check the permissions for other users, otherwise none. However, Connect apps can make a call from the app server to the product to obtain permission details for any user, without admin permission. This Connect app ability doesn't apply to calls made using AP.request() in a browser.
         public func post(_ body: JiraKit.BulkPermissionsRequestBean) -> Request<JiraKit.BulkPermissionGrants> {
-            Request(method: "POST", url: path, body: body, id: "getBulkPermissions")
+            Request(path: path, method: "POST", body: body, id: "getBulkPermissions")
         }
     }
 }

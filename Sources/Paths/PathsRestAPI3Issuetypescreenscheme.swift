@@ -22,7 +22,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageBeanIssueTypeScreenScheme> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getIssueTypeScreenSchemes")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getIssueTypeScreenSchemes")
         }
 
         public struct GetParameters {
@@ -69,7 +69,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.IssueTypeScreenSchemeDetails) -> Request<JiraKit.IssueTypeScreenSchemeID> {
-            Request(method: "POST", url: path, body: body, id: "createIssueTypeScreenScheme")
+            Request(path: path, method: "POST", body: body, id: "createIssueTypeScreenScheme")
         }
     }
 }

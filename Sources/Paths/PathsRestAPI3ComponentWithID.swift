@@ -22,7 +22,7 @@ extension Paths.API.__3.Component {
         /// 
         /// **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for project containing the component.
         public var get: Request<JiraKit.ProjectComponent> {
-            Request(method: "GET", url: path, id: "getComponent")
+            Request(path: path, method: "GET", id: "getComponent")
         }
 
         /// Update component
@@ -33,7 +33,7 @@ extension Paths.API.__3.Component {
         /// 
         /// **[Permissions](#permissions) required:** *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the component or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.ProjectComponent) -> Request<JiraKit.ProjectComponent> {
-            Request(method: "PUT", url: path, body: body, id: "updateComponent")
+            Request(path: path, method: "PUT", body: body, id: "updateComponent")
         }
 
         /// Delete component
@@ -44,7 +44,7 @@ extension Paths.API.__3.Component {
         /// 
         /// **[Permissions](#permissions) required:** *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the component or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func delete(moveIssuesTo: String? = nil) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: makeDeleteQuery(moveIssuesTo), id: "deleteComponent")
+            Request(path: path, method: "DELETE", query: makeDeleteQuery(moveIssuesTo), id: "deleteComponent")
         }
 
         private func makeDeleteQuery(_ moveIssuesTo: String?) -> [(String, String?)] {

@@ -46,7 +46,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         /// 
         /// Note: For any fields to be editable the user must have the *Edit issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the issue.
         public func get(isOverrideScreenSecurity: Bool? = nil, isOverrideEditableFlag: Bool? = nil) -> Request<JiraKit.IssueUpdateMetadata> {
-            Request(method: "GET", url: path, query: makeGetQuery(isOverrideScreenSecurity, isOverrideEditableFlag), id: "getEditIssueMeta")
+            Request(path: path, method: "GET", query: makeGetQuery(isOverrideScreenSecurity, isOverrideEditableFlag), id: "getEditIssueMeta")
         }
 
         private func makeGetQuery(_ isOverrideScreenSecurity: Bool?, _ isOverrideEditableFlag: Bool?) -> [(String, String?)] {

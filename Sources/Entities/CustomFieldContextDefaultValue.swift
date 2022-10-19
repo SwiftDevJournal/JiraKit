@@ -40,8 +40,9 @@ public enum CustomFieldContextDefaultValue: Codable {
         }
 
         let container = try decoder.singleValueContainer()
+        let discriminatorValue = try container.decode(Discriminator.self).type
 
-        switch (try container.decode(Discriminator.self)).type {
+        switch discriminatorValue {
         case "option.cascading": self = .customFieldContextDefaultValueCascadingOption(try container.decode(CustomFieldContextDefaultValueCascadingOption.self))
         case "option.multiple": self = .customFieldContextDefaultValueMultipleOption(try container.decode(CustomFieldContextDefaultValueMultipleOption.self))
         case "option.single": self = .customFieldContextDefaultValueSingleOption(try container.decode(CustomFieldContextDefaultValueSingleOption.self))
@@ -71,7 +72,10 @@ public enum CustomFieldContextDefaultValue: Codable {
         case "forge.user.list": self = .customFieldContextDefaultValueForgeMultiUserField(try container.decode(CustomFieldContextDefaultValueForgeMultiUserField.self))
 
         default:
-            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Failed to initialize `oneOf`")
+            throw DecodingError.dataCorruptedError(
+                in: container,
+                debugDescription: "Discriminator value '\(discriminatorValue)' does not match any expected values (option.cascading, option.multiple, option.single, single.user.select, multi.user.select, grouppicker.single, grouppicker.multiple, datepicker, datetimepicker, url, project, float, labels, textfield, textarea, readonly, version.single, version.multiple, forge.string, forge.string.list, forge.object, forge.datetime, forge.group, forge.group.list, forge.number, forge.user, forge.user.list)."
+            )
         }
     }
 

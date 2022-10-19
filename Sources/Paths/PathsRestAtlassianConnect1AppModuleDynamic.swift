@@ -20,7 +20,7 @@ extension Paths.AtlassianConnect.__1.App.Module {
         /// 
         /// **[Permissions](#permissions) required:** Only Connect apps can make this request.
         public var get: Request<JiraKit.ConnectModules> {
-            Request(method: "GET", url: path, id: "DynamicModulesResource.getModules_get")
+            Request(path: path, method: "GET", id: "DynamicModulesResource.getModules_get")
         }
 
         /// Register modules
@@ -29,7 +29,7 @@ extension Paths.AtlassianConnect.__1.App.Module {
         /// 
         /// **[Permissions](#permissions) required:** Only Connect apps can make this request.
         public func post(_ body: JiraKit.ConnectModules) -> Request<Void> {
-            Request(method: "POST", url: path, body: body, id: "DynamicModulesResource.registerModules_post")
+            Request(path: path, method: "POST", body: body, id: "DynamicModulesResource.registerModules_post")
         }
 
         /// Remove modules
@@ -38,7 +38,7 @@ extension Paths.AtlassianConnect.__1.App.Module {
         /// 
         /// **[Permissions](#permissions) required:** Only Connect apps can make this request.
         public func delete(moduleKey: [String]? = nil) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: makeDeleteQuery(moduleKey), id: "DynamicModulesResource.removeModules_delete")
+            Request(path: path, method: "DELETE", query: makeDeleteQuery(moduleKey), id: "DynamicModulesResource.removeModules_delete")
         }
 
         private func makeDeleteQuery(_ moduleKey: [String]?) -> [(String, String?)] {

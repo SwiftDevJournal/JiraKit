@@ -20,7 +20,7 @@ extension Paths.API.__3.Resolution {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public var get: Request<JiraKit.Resolution> {
-            Request(method: "GET", url: path, id: "getResolution")
+            Request(path: path, method: "GET", id: "getResolution")
         }
     }
 }

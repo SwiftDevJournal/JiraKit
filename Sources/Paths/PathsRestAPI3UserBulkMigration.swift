@@ -20,7 +20,7 @@ extension Paths.API.__3.User.Bulk {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public func get(parameters: GetParameters? = nil) -> Request<[JiraKit.UserMigrationBean]> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "bulkGetUsersMigration")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "bulkGetUsersMigration")
         }
 
         public struct GetParameters {

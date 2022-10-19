@@ -22,7 +22,7 @@ extension Paths.API.__3.Screens.WithScreenID.Tabs.WithTabID.Fields.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.MoveFieldBean) -> Request<AnyJSON> {
-            Request(method: "POST", url: path, body: body, id: "moveScreenTabField")
+            Request(path: path, method: "POST", body: body, id: "moveScreenTabField")
         }
     }
 }

@@ -20,7 +20,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageBeanUiModificationDetails> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getUiModifications")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getUiModifications")
         }
 
         public struct GetParameters {
@@ -54,7 +54,7 @@ extension Paths.API.__3 {
         ///  *  *None* if the UI modification is created without contexts.
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for one or more projects, if the UI modification is created with contexts.
         public func post(_ body: JiraKit.CreateUiModificationDetails) -> Request<JiraKit.UiModificationIdentifiers> {
-            Request(method: "POST", url: path, body: body, id: "createUiModification")
+            Request(path: path, method: "POST", body: body, id: "createUiModification")
         }
     }
 }

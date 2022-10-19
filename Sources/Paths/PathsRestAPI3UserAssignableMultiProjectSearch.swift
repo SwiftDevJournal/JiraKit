@@ -26,7 +26,7 @@ extension Paths.API.__3.User.Assignable {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public func get(parameters: GetParameters) -> Request<[JiraKit.User]> {
-            Request(method: "GET", url: path, query: parameters.asQuery, id: "findBulkAssignableUsers")
+            Request(path: path, method: "GET", query: parameters.asQuery, id: "findBulkAssignableUsers")
         }
 
         public struct GetParameters {

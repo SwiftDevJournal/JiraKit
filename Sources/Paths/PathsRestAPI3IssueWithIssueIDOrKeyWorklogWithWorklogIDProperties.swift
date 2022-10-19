@@ -26,7 +26,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey.Worklog.WithWorklogID {
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         ///  *  If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to.
         public var get: Request<JiraKit.PropertyKeys> {
-            Request(method: "GET", url: path, id: "getWorklogPropertyKeys")
+            Request(path: path, method: "GET", id: "getWorklogPropertyKeys")
         }
     }
 }

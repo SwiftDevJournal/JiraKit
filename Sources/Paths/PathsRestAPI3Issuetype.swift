@@ -25,7 +25,7 @@ extension Paths.API.__3 {
         ///  *  if the user has the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), all issue types are returned.
         ///  *  if the user has the *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for one or more projects, the issue types associated with the projects the user has permission to browse are returned.
         public var get: Request<[JiraKit.IssueTypeDetails]> {
-            Request(method: "GET", url: path, id: "getIssueAllTypes")
+            Request(path: path, method: "GET", id: "getIssueAllTypes")
         }
 
         /// Create issue type
@@ -34,7 +34,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.IssueTypeCreateBean) -> Request<JiraKit.IssueTypeDetails> {
-            Request(method: "POST", url: path, body: body, id: "createIssueType")
+            Request(path: path, method: "POST", body: body, id: "createIssueType")
         }
     }
 }

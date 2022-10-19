@@ -29,7 +29,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         /// 
         /// Note that users with the necessary permissions for this operation but without the *View voters and watchers* project permissions are not returned details in the `voters` field.
         public var get: Request<JiraKit.Votes> {
-            Request(method: "GET", url: path, id: "getVotes")
+            Request(path: path, method: "GET", id: "getVotes")
         }
 
         /// Add vote
@@ -43,7 +43,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public var post: Request<AnyJSON> {
-            Request(method: "POST", url: path, id: "addVote")
+            Request(path: path, method: "POST", id: "addVote")
         }
 
         /// Delete vote
@@ -57,7 +57,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "removeVote")
+            Request(path: path, method: "DELETE", id: "removeVote")
         }
     }
 }

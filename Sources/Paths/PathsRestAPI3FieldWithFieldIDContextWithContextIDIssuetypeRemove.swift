@@ -22,7 +22,7 @@ extension Paths.API.__3.Field.WithFieldID.Context.WithContextID.Issuetype {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.IssueTypeIDs) -> Request<AnyJSON> {
-            Request(method: "POST", url: path, body: body, id: "removeIssueTypesFromContext")
+            Request(path: path, method: "POST", body: body, id: "removeIssueTypesFromContext")
         }
     }
 }

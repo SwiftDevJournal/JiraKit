@@ -30,7 +30,7 @@ extension Paths.API.__3.Filter {
         /// 
         /// For example, if the user favorites a public filter that is subsequently made private that filter is not returned by this operation.
         public func get(expand: String? = nil) -> Request<[JiraKit.Filter]> {
-            Request(method: "GET", url: path, query: makeGetQuery(expand), id: "getFavouriteFilters")
+            Request(path: path, method: "GET", query: makeGetQuery(expand), id: "getFavouriteFilters")
         }
 
         private func makeGetQuery(_ expand: String?) -> [(String, String?)] {

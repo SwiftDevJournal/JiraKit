@@ -42,7 +42,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira, however the user must have permission to administer at least one project associated with a notification scheme for it to be returned.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageBeanNotificationScheme> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getNotificationSchemes")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getNotificationSchemes")
         }
 
         public struct GetParameters {

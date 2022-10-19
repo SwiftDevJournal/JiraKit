@@ -20,7 +20,7 @@ extension Paths.API.__3.Issuetypescreenscheme.WithIssueTypeScreenSchemeID.Mappin
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.UpdateDefaultScreenScheme) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "updateDefaultScreenScheme")
+            Request(path: path, method: "PUT", body: body, id: "updateDefaultScreenScheme")
         }
     }
 }

@@ -27,7 +27,7 @@ extension Paths.API.__3.Workflow.Rule {
         /// 
         /// **[Permissions](#permissions) required:** Only Connect apps can use this operation.
         public func get(parameters: GetParameters) -> Request<JiraKit.PageBeanWorkflowTransitionRules> {
-            Request(method: "GET", url: path, query: parameters.asQuery, id: "getWorkflowTransitionRuleConfigurations")
+            Request(path: path, method: "GET", query: parameters.asQuery, id: "getWorkflowTransitionRuleConfigurations")
         }
 
         public struct GetParameters {
@@ -90,7 +90,7 @@ extension Paths.API.__3.Workflow.Rule {
         /// 
         /// **[Permissions](#permissions) required:** Only Connect apps can use this operation.
         public func put(_ body: JiraKit.WorkflowTransitionRulesUpdate) -> Request<JiraKit.WorkflowTransitionRulesUpdateErrors> {
-            Request(method: "PUT", url: path, body: body, id: "updateWorkflowTransitionRuleConfigurations")
+            Request(path: path, method: "PUT", body: body, id: "updateWorkflowTransitionRuleConfigurations")
         }
     }
 }

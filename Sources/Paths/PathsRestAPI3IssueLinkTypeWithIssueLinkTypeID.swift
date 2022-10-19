@@ -24,7 +24,7 @@ extension Paths.API.__3.IssueLinkType {
         /// 
         /// **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for a project in the site.
         public var get: Request<JiraKit.IssueLinkType> {
-            Request(method: "GET", url: path, id: "getIssueLinkType")
+            Request(path: path, method: "GET", id: "getIssueLinkType")
         }
 
         /// Update issue link type
@@ -35,7 +35,7 @@ extension Paths.API.__3.IssueLinkType {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.IssueLinkType) -> Request<JiraKit.IssueLinkType> {
-            Request(method: "PUT", url: path, body: body, id: "updateIssueLinkType")
+            Request(path: path, method: "PUT", body: body, id: "updateIssueLinkType")
         }
 
         /// Delete issue link type
@@ -46,7 +46,7 @@ extension Paths.API.__3.IssueLinkType {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteIssueLinkType")
+            Request(path: path, method: "DELETE", id: "deleteIssueLinkType")
         }
     }
 }

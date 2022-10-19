@@ -24,7 +24,7 @@ extension Paths.API.__3.Version.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that contains the version.
         public func post(_ body: JiraKit.DeleteAndReplaceVersionBean) -> Request<AnyJSON> {
-            Request(method: "POST", url: path, body: body, id: "deleteAndReplaceVersion")
+            Request(path: path, method: "POST", body: body, id: "deleteAndReplaceVersion")
         }
     }
 }

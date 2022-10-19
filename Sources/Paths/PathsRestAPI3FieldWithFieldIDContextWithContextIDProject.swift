@@ -22,7 +22,7 @@ extension Paths.API.__3.Field.WithFieldID.Context.WithContextID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.ProjectIDs) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "assignProjectsToCustomFieldContext")
+            Request(path: path, method: "PUT", body: body, id: "assignProjectsToCustomFieldContext")
         }
     }
 }

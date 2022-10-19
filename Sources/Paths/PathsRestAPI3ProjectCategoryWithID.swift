@@ -20,7 +20,7 @@ extension Paths.API.__3.ProjectCategory {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public var get: Request<JiraKit.ProjectCategory> {
-            Request(method: "GET", url: path, id: "getProjectCategoryById")
+            Request(path: path, method: "GET", id: "getProjectCategoryById")
         }
 
         /// Update project category
@@ -29,7 +29,7 @@ extension Paths.API.__3.ProjectCategory {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.ProjectCategory) -> Request<JiraKit.UpdatedProjectCategory> {
-            Request(method: "PUT", url: path, body: body, id: "updateProjectCategory")
+            Request(path: path, method: "PUT", body: body, id: "updateProjectCategory")
         }
 
         /// Delete project category
@@ -38,7 +38,7 @@ extension Paths.API.__3.ProjectCategory {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "removeProjectCategory")
+            Request(path: path, method: "DELETE", id: "removeProjectCategory")
         }
     }
 }

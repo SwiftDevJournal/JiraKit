@@ -22,7 +22,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey {
         /// 
         /// **[Permissions](#permissions) required:** *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
         public func get(expand: String? = nil) -> Request<[JiraKit.Version]> {
-            Request(method: "GET", url: path, query: makeGetQuery(expand), id: "getProjectVersions")
+            Request(path: path, method: "GET", query: makeGetQuery(expand), id: "getProjectVersions")
         }
 
         private func makeGetQuery(_ expand: String?) -> [(String, String?)] {

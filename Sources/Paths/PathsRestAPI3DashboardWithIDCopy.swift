@@ -22,7 +22,7 @@ extension Paths.API.__3.Dashboard.WithID {
         /// 
         /// The dashboard to be copied must be owned by or shared with the user.
         public func post(_ body: JiraKit.DashboardDetails) -> Request<JiraKit.Dashboard> {
-            Request(method: "POST", url: path, body: body, id: "copyDashboard")
+            Request(path: path, method: "POST", body: body, id: "copyDashboard")
         }
     }
 }

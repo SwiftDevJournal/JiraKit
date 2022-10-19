@@ -20,7 +20,7 @@ extension Paths.API.__3.Statuscategory {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public var get: Request<JiraKit.StatusCategory> {
-            Request(method: "GET", url: path, id: "getStatusCategory")
+            Request(path: path, method: "GET", id: "getStatusCategory")
         }
     }
 }

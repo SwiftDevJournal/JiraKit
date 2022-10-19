@@ -24,7 +24,7 @@ extension Paths.API.__3.Expression {
         /// 
         /// **[Permissions](#permissions) required**: None.
         public func post(check: Check? = nil, _ body: JiraKit.JiraExpressionForAnalysis) -> Request<JiraKit.JiraExpressionsAnalysis> {
-            Request(method: "POST", url: path, query: makePostQuery(check), body: body, id: "analyseExpression")
+            Request(path: path, method: "POST", query: makePostQuery(check), body: body, id: "analyseExpression")
         }
 
         private func makePostQuery(_ check: Check?) -> [(String, String?)] {

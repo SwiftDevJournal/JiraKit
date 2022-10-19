@@ -20,7 +20,7 @@ extension Paths.API.__3.Filter.WithID {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira. However, the user must own the filter or have the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.ChangeFilterOwner) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "changeFilterOwner")
+            Request(path: path, method: "PUT", body: body, id: "changeFilterOwner")
         }
     }
 }

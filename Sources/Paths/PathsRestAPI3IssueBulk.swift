@@ -27,7 +27,7 @@ extension Paths.API.__3.Issue {
         /// 
         /// **[Permissions](#permissions) required:** *Browse projects* and *Create issues* [project permissions](https://confluence.atlassian.com/x/yodKLg) for the project in which each issue or subtask is created.
         public func post(_ body: JiraKit.IssuesUpdateBean) -> Request<JiraKit.CreatedIssues> {
-            Request(method: "POST", url: path, body: body, id: "createIssues")
+            Request(path: path, method: "POST", body: body, id: "createIssues")
         }
     }
 }

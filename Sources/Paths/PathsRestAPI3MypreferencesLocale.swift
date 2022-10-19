@@ -24,7 +24,7 @@ extension Paths.API.__3.Mypreferences {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public var get: Request<JiraKit.Locale> {
-            Request(method: "GET", url: path, id: "getLocale")
+            Request(path: path, method: "GET", id: "getLocale")
         }
 
         /// Set locale
@@ -36,7 +36,7 @@ extension Paths.API.__3.Mypreferences {
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         @available(*, deprecated, message: "Deprecated")
         public func put(_ body: JiraKit.Locale) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "setLocale")
+            Request(path: path, method: "PUT", body: body, id: "setLocale")
         }
 
         /// Delete locale
@@ -48,7 +48,7 @@ extension Paths.API.__3.Mypreferences {
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         @available(*, deprecated, message: "Deprecated")
         public var delete: Request<AnyJSON> {
-            Request(method: "DELETE", url: path, id: "deleteLocale")
+            Request(path: path, method: "DELETE", id: "deleteLocale")
         }
     }
 }

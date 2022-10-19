@@ -26,7 +26,7 @@ extension Paths.API.__3.Workflow.Rule.Config {
         /// 
         /// **[Permissions](#permissions) required:** Only Connect apps can use this operation.
         public func put(_ body: JiraKit.WorkflowsWithTransitionRulesDetails) -> Request<JiraKit.WorkflowTransitionRulesUpdateErrors> {
-            Request(method: "PUT", url: path, body: body, id: "deleteWorkflowTransitionRuleConfigurations")
+            Request(path: path, method: "PUT", body: body, id: "deleteWorkflowTransitionRuleConfigurations")
         }
     }
 }

@@ -21,7 +21,7 @@ extension Paths.AtlassianConnect.__1.Migration {
         /// 
         /// **[Permissions](#permissions) required:** Only Connect apps can make this request.
         public func put(_ body: JiraKit.ConnectCustomFieldValues) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "AppIssueFieldValueUpdateResource.updateIssueFields_put")
+            Request(path: path, method: "PUT", body: body, id: "AppIssueFieldValueUpdateResource.updateIssueFields_put")
         }
     }
 }

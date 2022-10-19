@@ -23,7 +23,7 @@ extension Paths.API.__3 {
         /// **[Permissions](#permissions) required:** Projects are returned only where the user has *Browse Projects* or *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
         @available(*, deprecated, message: "Deprecated")
         public func get(parameters: GetParameters? = nil) -> Request<[JiraKit.Project]> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getAllProjects")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getAllProjects")
         }
 
         public struct GetParameters {
@@ -65,7 +65,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.CreateProjectDetails) -> Request<JiraKit.ProjectIdentifiers> {
-            Request(method: "POST", url: path, body: body, id: "createProject")
+            Request(path: path, method: "POST", body: body, id: "createProject")
         }
     }
 }

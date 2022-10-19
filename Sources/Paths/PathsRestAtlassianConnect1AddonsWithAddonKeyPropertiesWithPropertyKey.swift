@@ -20,7 +20,7 @@ extension Paths.AtlassianConnect.__1.Addons.WithAddonKey.Properties {
         /// 
         /// **[Permissions](#permissions) required:** Only a Connect app whose key matches `addonKey` can make this request.
         public var get: Request<JiraKit.EntityProperty> {
-            Request(method: "GET", url: path, id: "AddonPropertiesResource.getAddonProperty_get")
+            Request(path: path, method: "GET", id: "AddonPropertiesResource.getAddonProperty_get")
         }
 
         /// Set app property
@@ -31,7 +31,7 @@ extension Paths.AtlassianConnect.__1.Addons.WithAddonKey.Properties {
         /// 
         /// **[Permissions](#permissions) required:** Only a Connect app whose key matches `addonKey` can make this request.
         public func put(_ body: AnyJSON) -> Request<JiraKit.OperationMessage> {
-            Request(method: "PUT", url: path, body: body, id: "AddonPropertiesResource.putAddonProperty_put")
+            Request(path: path, method: "PUT", body: body, id: "AddonPropertiesResource.putAddonProperty_put")
         }
 
         /// Delete app property
@@ -40,7 +40,7 @@ extension Paths.AtlassianConnect.__1.Addons.WithAddonKey.Properties {
         /// 
         /// **[Permissions](#permissions) required:** Only a Connect app whose key matches `addonKey` can make this request.
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "AddonPropertiesResource.deleteAddonProperty_delete")
+            Request(path: path, method: "DELETE", id: "AddonPropertiesResource.deleteAddonProperty_delete")
         }
     }
 }

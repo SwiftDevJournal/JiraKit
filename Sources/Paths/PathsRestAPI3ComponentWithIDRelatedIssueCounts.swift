@@ -22,7 +22,7 @@ extension Paths.API.__3.Component.WithID {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public var get: Request<JiraKit.ComponentIssuesCount> {
-            Request(method: "GET", url: path, id: "getComponentRelatedIssues")
+            Request(path: path, method: "GET", id: "getComponentRelatedIssues")
         }
     }
 }

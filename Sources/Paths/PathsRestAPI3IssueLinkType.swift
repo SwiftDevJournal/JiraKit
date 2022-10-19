@@ -24,7 +24,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for a project in the site.
         public var get: Request<JiraKit.IssueLinkTypes> {
-            Request(method: "GET", url: path, id: "getIssueLinkTypes")
+            Request(path: path, method: "GET", id: "getIssueLinkTypes")
         }
 
         /// Create issue link type
@@ -35,7 +35,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.IssueLinkType) -> Request<JiraKit.IssueLinkType> {
-            Request(method: "POST", url: path, body: body, id: "createIssueLinkType")
+            Request(path: path, method: "POST", body: body, id: "createIssueLinkType")
         }
     }
 }

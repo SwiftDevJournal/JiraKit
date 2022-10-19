@@ -20,7 +20,7 @@ extension Paths.API.__3.Configuration.Timetracking {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var get: Request<JiraKit.TimeTrackingConfiguration> {
-            Request(method: "GET", url: path, id: "getSharedTimeTrackingConfiguration")
+            Request(path: path, method: "GET", id: "getSharedTimeTrackingConfiguration")
         }
 
         /// Set time tracking settings
@@ -29,7 +29,7 @@ extension Paths.API.__3.Configuration.Timetracking {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.TimeTrackingConfiguration) -> Request<JiraKit.TimeTrackingConfiguration> {
-            Request(method: "PUT", url: path, body: body, id: "setSharedTimeTrackingConfiguration")
+            Request(path: path, method: "PUT", body: body, id: "setSharedTimeTrackingConfiguration")
         }
     }
 }

@@ -48,7 +48,7 @@ extension Paths.API.__3.Issue.Properties {
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         ///  *  *Edit issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for each issue.
         public func put(_ body: JiraKit.BulkIssuePropertyUpdateRequest) -> Request<Void> {
-            Request(method: "PUT", url: path, body: body, id: "bulkSetIssueProperty")
+            Request(path: path, method: "PUT", body: body, id: "bulkSetIssueProperty")
         }
 
         /// Bulk delete issue property
@@ -75,7 +75,7 @@ extension Paths.API.__3.Issue.Properties {
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         ///  *  *Edit issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for each issue.
         public func delete(_ body: JiraKit.IssueFilterForBulkPropertyDelete) -> Request<Void> {
-            Request(method: "DELETE", url: path, body: body, id: "bulkDeleteIssueProperty")
+            Request(path: path, method: "DELETE", body: body, id: "bulkDeleteIssueProperty")
         }
     }
 }

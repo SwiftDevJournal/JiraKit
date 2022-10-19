@@ -20,7 +20,7 @@ extension Paths.API.__3.Project.WithProjectKeyOrID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg).
         public func get(expand: String? = nil) -> Request<JiraKit.NotificationScheme> {
-            Request(method: "GET", url: path, query: makeGetQuery(expand), id: "getNotificationSchemeForProject")
+            Request(path: path, method: "GET", query: makeGetQuery(expand), id: "getNotificationSchemeForProject")
         }
 
         private func makeGetQuery(_ expand: String?) -> [(String, String?)] {

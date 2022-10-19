@@ -23,7 +23,7 @@ extension Paths.API.__3.User {
         ///  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLgl), to get the column details for any user.
         ///  *  Permission to access Jira, to get the calling user's column details.
         public func get(accountID: String? = nil, username: String? = nil) -> Request<[JiraKit.ColumnItem]> {
-            Request(method: "GET", url: path, query: makeGetQuery(accountID, username), id: "getUserDefaultColumns")
+            Request(path: path, method: "GET", query: makeGetQuery(accountID, username), id: "getUserDefaultColumns")
         }
 
         private func makeGetQuery(_ accountID: String?, _ username: String?) -> [(String, String?)] {
@@ -46,7 +46,7 @@ extension Paths.API.__3.User {
         ///  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), to set the columns on any user.
         ///  *  Permission to access Jira, to set the calling user's columns.
         public func put(accountID: String? = nil, _ body: Data? = nil) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, query: makePutQuery(accountID), body: body, id: "setUserColumns")
+            Request(path: path, method: "PUT", query: makePutQuery(accountID), body: body, id: "setUserColumns")
         }
 
         private func makePutQuery(_ accountID: String?) -> [(String, String?)] {
@@ -64,7 +64,7 @@ extension Paths.API.__3.User {
         ///  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), to set the columns on any user.
         ///  *  Permission to access Jira, to set the calling user's columns.
         public func delete(accountID: String? = nil, username: String? = nil) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: makeDeleteQuery(accountID, username), id: "resetUserColumns")
+            Request(path: path, method: "DELETE", query: makeDeleteQuery(accountID, username), id: "resetUserColumns")
         }
 
         private func makeDeleteQuery(_ accountID: String?, _ username: String?) -> [(String, String?)] {

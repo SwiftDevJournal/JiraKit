@@ -28,7 +28,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         ///  *  If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageOfWorklogs> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getIssueWorklog")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getIssueWorklog")
         }
 
         public struct GetParameters {
@@ -70,7 +70,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         ///  *  *Browse projects* and *Work on issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func post(parameters: PostParameters? = nil, _ body: JiraKit.Worklog) -> Request<JiraKit.Worklog> {
-            Request(method: "POST", url: path, query: parameters?.asQuery, body: body, id: "addWorklog")
+            Request(path: path, method: "POST", query: parameters?.asQuery, body: body, id: "addWorklog")
         }
 
         public struct PostParameters {

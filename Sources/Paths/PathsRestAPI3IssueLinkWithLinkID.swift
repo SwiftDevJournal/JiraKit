@@ -25,7 +25,7 @@ extension Paths.API.__3.IssueLink {
         ///  *  *Browse project* [project permission](https://confluence.atlassian.com/x/yodKLg) for all the projects containing the linked issues.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, permission to view both of the issues.
         public var get: Request<JiraKit.IssueLink> {
-            Request(method: "GET", url: path, id: "getIssueLink")
+            Request(path: path, method: "GET", id: "getIssueLink")
         }
 
         /// Delete issue link
@@ -40,7 +40,7 @@ extension Paths.API.__3.IssueLink {
         ///  *  *Link issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for at least one of the projects containing issues in the link.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, permission to view both of the issues.
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteIssueLink")
+            Request(path: path, method: "DELETE", id: "deleteIssueLink")
         }
     }
 }

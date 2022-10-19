@@ -22,7 +22,7 @@ extension Paths.API.__3.Field.WithFieldID.Context.WithContextID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageBeanCustomFieldContextOption> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getOptionsForContext")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getOptionsForContext")
         }
 
         public struct GetParameters {
@@ -58,7 +58,7 @@ extension Paths.API.__3.Field.WithFieldID.Context.WithContextID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.BulkCustomFieldOptionCreateRequest) -> Request<JiraKit.CustomFieldCreatedContextOptionsList> {
-            Request(method: "POST", url: path, body: body, id: "createCustomFieldOption")
+            Request(path: path, method: "POST", body: body, id: "createCustomFieldOption")
         }
 
         /// Update custom field options (context)
@@ -71,7 +71,7 @@ extension Paths.API.__3.Field.WithFieldID.Context.WithContextID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.BulkCustomFieldOptionUpdateRequest) -> Request<JiraKit.CustomFieldUpdatedContextOptionsList> {
-            Request(method: "PUT", url: path, body: body, id: "updateCustomFieldOption")
+            Request(path: path, method: "PUT", body: body, id: "updateCustomFieldOption")
         }
     }
 }

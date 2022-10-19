@@ -20,7 +20,7 @@ extension Paths.API.__3.Screenscheme {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.UpdateScreenSchemeDetails) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "updateScreenScheme")
+            Request(path: path, method: "PUT", body: body, id: "updateScreenScheme")
         }
 
         /// Delete screen scheme
@@ -31,7 +31,7 @@ extension Paths.API.__3.Screenscheme {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteScreenScheme")
+            Request(path: path, method: "DELETE", id: "deleteScreenScheme")
         }
     }
 }

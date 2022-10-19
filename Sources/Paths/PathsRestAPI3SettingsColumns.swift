@@ -20,7 +20,7 @@ extension Paths.API.__3.Settings {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var get: Request<[JiraKit.ColumnItem]> {
-            Request(method: "GET", url: path, id: "getIssueNavigatorDefaultColumns")
+            Request(path: path, method: "GET", id: "getIssueNavigatorDefaultColumns")
         }
 
         /// Set issue navigator default columns
@@ -37,7 +37,7 @@ extension Paths.API.__3.Settings {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: Data? = nil) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "setIssueNavigatorDefaultColumns")
+            Request(path: path, method: "PUT", body: body, id: "setIssueNavigatorDefaultColumns")
         }
     }
 }

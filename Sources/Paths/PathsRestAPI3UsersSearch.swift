@@ -22,7 +22,7 @@ extension Paths.API.__3.Users {
         /// 
         /// **[Permissions](#permissions) required:** *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(startAt: Int32? = nil, maxResults: Int32? = nil) -> Request<[JiraKit.User]> {
-            Request(method: "GET", url: path, query: makeGetQuery(startAt, maxResults), id: "getAllUsers")
+            Request(path: path, method: "GET", query: makeGetQuery(startAt, maxResults), id: "getAllUsers")
         }
 
         private func makeGetQuery(_ startAt: Int32?, _ maxResults: Int32?) -> [(String, String?)] {

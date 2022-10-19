@@ -26,7 +26,7 @@ extension Paths.API.__3.Jql {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.JqlQueriesToSanitize) -> Request<JiraKit.SanitizedJqlQueries> {
-            Request(method: "POST", url: path, body: body, id: "sanitiseJqlQueries")
+            Request(path: path, method: "POST", body: body, id: "sanitiseJqlQueries")
         }
     }
 }

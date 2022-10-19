@@ -20,7 +20,7 @@ extension Paths.API.__3.Priority {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public var get: Request<JiraKit.Priority> {
-            Request(method: "GET", url: path, id: "getPriority")
+            Request(path: path, method: "GET", id: "getPriority")
         }
 
         /// Update priority
@@ -29,7 +29,7 @@ extension Paths.API.__3.Priority {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.UpdatePriorityDetails) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "updatePriority")
+            Request(path: path, method: "PUT", body: body, id: "updatePriority")
         }
     }
 }

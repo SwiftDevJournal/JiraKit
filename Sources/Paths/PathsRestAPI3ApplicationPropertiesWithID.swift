@@ -70,7 +70,7 @@ extension Paths.API.__3.ApplicationProperties {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.SimpleApplicationPropertyBean) -> Request<JiraKit.ApplicationProperty> {
-            Request(method: "PUT", url: path, body: body, id: "setApplicationProperty")
+            Request(path: path, method: "PUT", body: body, id: "setApplicationProperty")
         }
     }
 }

@@ -20,7 +20,7 @@ extension Paths.API.__3.Group {
         /// 
         /// **[Permissions](#permissions) required:** Site administration (that is, member of the *site-admin* [group](https://confluence.atlassian.com/x/24xjL)).
         public func post(groupname: String? = nil, groupID: String? = nil, _ body: JiraKit.UpdateUserToGroupBean) -> Request<JiraKit.Group> {
-            Request(method: "POST", url: path, query: makePostQuery(groupname, groupID), body: body, id: "addUserToGroup")
+            Request(path: path, method: "POST", query: makePostQuery(groupname, groupID), body: body, id: "addUserToGroup")
         }
 
         private func makePostQuery(_ groupname: String?, _ groupID: String?) -> [(String, String?)] {
@@ -36,7 +36,7 @@ extension Paths.API.__3.Group {
         /// 
         /// **[Permissions](#permissions) required:** Site administration (that is, member of the *site-admin* [group](https://confluence.atlassian.com/x/24xjL)).
         public func delete(parameters: DeleteParameters) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: parameters.asQuery, id: "removeUserFromGroup")
+            Request(path: path, method: "DELETE", query: parameters.asQuery, id: "removeUserFromGroup")
         }
 
         public struct DeleteParameters {

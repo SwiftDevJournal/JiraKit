@@ -27,7 +27,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey.Remotelink {
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public var get: Request<JiraKit.RemoteIssueLink> {
-            Request(method: "GET", url: path, id: "getRemoteIssueLinkById")
+            Request(path: path, method: "GET", id: "getRemoteIssueLinkById")
         }
 
         /// Update remote issue link by ID
@@ -45,7 +45,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey.Remotelink {
         ///  *  *Browse projects* and *Link issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func put(_ body: JiraKit.RemoteIssueLinkRequest) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "updateRemoteIssueLink")
+            Request(path: path, method: "PUT", body: body, id: "updateRemoteIssueLink")
         }
 
         /// Delete remote issue link by ID
@@ -61,7 +61,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey.Remotelink {
         ///  *  *Browse projects*, *Edit issues*, and *Link issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteRemoteIssueLinkById")
+            Request(path: path, method: "DELETE", id: "deleteRemoteIssueLinkById")
         }
     }
 }

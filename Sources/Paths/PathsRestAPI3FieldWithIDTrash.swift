@@ -20,7 +20,7 @@ extension Paths.API.__3.Field.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var post: Request<AnyJSON> {
-            Request(method: "POST", url: path, id: "trashCustomField")
+            Request(path: path, method: "POST", id: "trashCustomField")
         }
     }
 }

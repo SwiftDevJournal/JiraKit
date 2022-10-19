@@ -20,7 +20,7 @@ extension Paths.API.__3.Workflowscheme.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var post: Request<JiraKit.WorkflowScheme> {
-            Request(method: "POST", url: path, id: "createWorkflowSchemeDraftFromParent")
+            Request(path: path, method: "POST", id: "createWorkflowSchemeDraftFromParent")
         }
     }
 }

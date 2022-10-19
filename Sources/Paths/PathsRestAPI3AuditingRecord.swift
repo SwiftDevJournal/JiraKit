@@ -36,7 +36,7 @@ extension Paths.API.__3.Auditing {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.AuditRecords> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getAuditRecords")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getAuditRecords")
         }
 
         public struct GetParameters {

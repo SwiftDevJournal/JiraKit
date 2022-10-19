@@ -20,7 +20,7 @@ extension Paths.API.__3.Role {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var get: Request<JiraKit.ProjectRole> {
-            Request(method: "GET", url: path, id: "getProjectRoleById")
+            Request(path: path, method: "GET", id: "getProjectRoleById")
         }
 
         /// Partial update project role
@@ -31,7 +31,7 @@ extension Paths.API.__3.Role {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.CreateUpdateRoleRequestBean) -> Request<JiraKit.ProjectRole> {
-            Request(method: "POST", url: path, body: body, id: "partialUpdateProjectRole")
+            Request(path: path, method: "POST", body: body, id: "partialUpdateProjectRole")
         }
 
         /// Fully update project role
@@ -40,7 +40,7 @@ extension Paths.API.__3.Role {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.CreateUpdateRoleRequestBean) -> Request<JiraKit.ProjectRole> {
-            Request(method: "PUT", url: path, body: body, id: "fullyUpdateProjectRole")
+            Request(path: path, method: "PUT", body: body, id: "fullyUpdateProjectRole")
         }
 
         /// Delete project role
@@ -49,7 +49,7 @@ extension Paths.API.__3.Role {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func delete(swap: Int64? = nil) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: makeDeleteQuery(swap), id: "deleteProjectRole")
+            Request(path: path, method: "DELETE", query: makeDeleteQuery(swap), id: "deleteProjectRole")
         }
 
         private func makeDeleteQuery(_ swap: Int64?) -> [(String, String?)] {

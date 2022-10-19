@@ -29,7 +29,7 @@ extension Paths.API.__3.Jql.Autocompletedata {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.AutoCompleteSuggestions> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getFieldAutoCompleteForQueryString")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getFieldAutoCompleteForQueryString")
         }
 
         public struct GetParameters {

@@ -20,7 +20,7 @@ extension Paths.API.__3.User {
         /// 
         /// **[Permissions](#permissions) required:** *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(parameters: GetParameters) -> Request<[JiraKit.GroupName]> {
-            Request(method: "GET", url: path, query: parameters.asQuery, id: "getUserGroups")
+            Request(path: path, method: "GET", query: parameters.asQuery, id: "getUserGroups")
         }
 
         public struct GetParameters {

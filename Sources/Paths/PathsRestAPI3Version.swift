@@ -22,7 +22,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project the version is added to.
         public func post(_ body: JiraKit.Version) -> Request<JiraKit.Version> {
-            Request(method: "POST", url: path, body: body, id: "createVersion")
+            Request(path: path, method: "POST", body: body, id: "createVersion")
         }
     }
 }

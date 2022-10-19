@@ -27,7 +27,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public func get(key: String) -> Request<String> {
-            Request(method: "GET", url: path, query: [("key", key)], id: "getPreference")
+            Request(path: path, method: "GET", query: [("key", key)], id: "getPreference")
         }
 
         /// Set preference
@@ -49,7 +49,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public func put(key: String, _ body: String) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, query: [("key", key)], body: body, id: "setPreference")
+            Request(path: path, method: "PUT", query: [("key", key)], body: body, id: "setPreference")
         }
 
         /// Delete preference
@@ -65,7 +65,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public func delete(key: String) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: [("key", key)], id: "removePreference")
+            Request(path: path, method: "DELETE", query: [("key", key)], id: "removePreference")
         }
     }
 }

@@ -166,7 +166,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         ///  *  *Browse Projects* and *Create attachments* [ project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func post(_ body: Data? = nil) -> Request<[JiraKit.Attachment]> {
-            Request(method: "POST", url: path, body: body, id: "addAttachment")
+            Request(path: path, method: "POST", body: body, id: "addAttachment")
         }
     }
 }

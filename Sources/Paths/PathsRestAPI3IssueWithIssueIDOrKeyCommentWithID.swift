@@ -26,7 +26,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey.Comment {
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         ///  *  If the comment has visibility restrictions, the user belongs to the group or has the role visibility is restricted to.
         public func get(expand: String? = nil) -> Request<JiraKit.Comment> {
-            Request(method: "GET", url: path, query: makeGetQuery(expand), id: "getComment")
+            Request(path: path, method: "GET", query: makeGetQuery(expand), id: "getComment")
         }
 
         private func makeGetQuery(_ expand: String?) -> [(String, String?)] {
@@ -48,7 +48,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey.Comment {
         ///  *  *Edit all comments*[ project permission](https://confluence.atlassian.com/x/yodKLg) to update any comment or *Edit own comments* to update comment created by the user.
         ///  *  If the comment has visibility restrictions, the user belongs to the group or has the role visibility is restricted to.
         public func put(parameters: PutParameters? = nil, _ body: JiraKit.Comment) -> Request<JiraKit.Comment> {
-            Request(method: "PUT", url: path, query: parameters?.asQuery, body: body, id: "updateComment")
+            Request(path: path, method: "PUT", query: parameters?.asQuery, body: body, id: "updateComment")
         }
 
         public struct PutParameters {
@@ -82,7 +82,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey.Comment {
         ///  *  *Delete all comments*[ project permission](https://confluence.atlassian.com/x/yodKLg) to delete any comment or *Delete own comments* to delete comment created by the user,
         ///  *  If the comment has visibility restrictions, the user belongs to the group or has the role visibility is restricted to.
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteComment")
+            Request(path: path, method: "DELETE", id: "deleteComment")
         }
     }
 }

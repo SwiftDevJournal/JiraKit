@@ -22,7 +22,7 @@ extension Paths.API.__3.Jql {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public func post(_ body: JiraKit.JQLPersonalDataMigrationRequest) -> Request<JiraKit.ConvertedJQLQueries> {
-            Request(method: "POST", url: path, body: body, id: "migrateQueries")
+            Request(path: path, method: "POST", body: body, id: "migrateQueries")
         }
     }
 }

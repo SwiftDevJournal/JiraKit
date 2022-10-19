@@ -26,7 +26,7 @@ extension Paths.API.__3.Issuetypescheme.WithIssueTypeSchemeID.Issuetype {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.OrderOfIssueTypes) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "reorderIssueTypesInIssueTypeScheme")
+            Request(path: path, method: "PUT", body: body, id: "reorderIssueTypesInIssueTypeScheme")
         }
     }
 }

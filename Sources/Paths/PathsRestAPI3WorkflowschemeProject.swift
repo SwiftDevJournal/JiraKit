@@ -22,7 +22,7 @@ extension Paths.API.__3.Workflowscheme {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(projectID: [Int64]) -> Request<JiraKit.ContainerOfWorkflowSchemeAssociations> {
-            Request(method: "GET", url: path, query: makeGetQuery(projectID), id: "getWorkflowSchemeProjectAssociations")
+            Request(path: path, method: "GET", query: makeGetQuery(projectID), id: "getWorkflowSchemeProjectAssociations")
         }
 
         private func makeGetQuery(_ projectID: [Int64]) -> [(String, String?)] {
@@ -39,7 +39,7 @@ extension Paths.API.__3.Workflowscheme {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.WorkflowSchemeProjectAssociation) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "assignSchemeToProject")
+            Request(path: path, method: "PUT", body: body, id: "assignSchemeToProject")
         }
     }
 }

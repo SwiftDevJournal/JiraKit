@@ -22,7 +22,7 @@ extension Paths.API.__3.UniversalAvatar.View.`Type` {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public func get(size: Size? = nil, format: Format? = nil) -> Request<[String: AnyJSON]> {
-            Request(method: "GET", url: path, query: makeGetQuery(size, format), id: "getAvatarImageByType")
+            Request(path: path, method: "GET", query: makeGetQuery(size, format), id: "getAvatarImageByType")
         }
 
         private func makeGetQuery(_ size: Size?, _ format: Format?) -> [(String, String?)] {

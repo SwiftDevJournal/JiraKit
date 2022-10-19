@@ -24,7 +24,7 @@ extension Paths.API.__3.Workflowscheme.WithID.Draft {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(isValidateOnly: Bool? = nil, _ body: JiraKit.PublishDraftWorkflowScheme) -> Request<Void> {
-            Request(method: "POST", url: path, query: makePostQuery(isValidateOnly), body: body, id: "publishDraftWorkflowScheme")
+            Request(path: path, method: "POST", query: makePostQuery(isValidateOnly), body: body, id: "publishDraftWorkflowScheme")
         }
 
         private func makePostQuery(_ isValidateOnly: Bool?) -> [(String, String?)] {

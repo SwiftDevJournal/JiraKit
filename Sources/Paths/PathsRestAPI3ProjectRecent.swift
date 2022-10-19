@@ -26,7 +26,7 @@ extension Paths.API.__3.Project {
         ///  *  *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
         ///  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(expand: String? = nil) -> Request<[JiraKit.Project]> {
-            Request(method: "GET", url: path, query: makeGetQuery(expand), id: "getRecent")
+            Request(path: path, method: "GET", query: makeGetQuery(expand), id: "getRecent")
         }
 
         private func makeGetQuery(_ expand: String?) -> [(String, String?)] {

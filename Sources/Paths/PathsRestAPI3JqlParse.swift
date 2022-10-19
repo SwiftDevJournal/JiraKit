@@ -24,7 +24,7 @@ extension Paths.API.__3.Jql {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public func post(validation: Validation? = nil, _ body: JiraKit.JqlQueriesToParse) -> Request<JiraKit.ParsedJqlQueries> {
-            Request(method: "POST", url: path, query: makePostQuery(validation), body: body, id: "parseJqlQueries")
+            Request(path: path, method: "POST", query: makePostQuery(validation), body: body, id: "parseJqlQueries")
         }
 
         private func makePostQuery(_ validation: Validation?) -> [(String, String?)] {

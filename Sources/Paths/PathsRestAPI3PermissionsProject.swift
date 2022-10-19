@@ -22,7 +22,7 @@ extension Paths.API.__3.Permissions {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public func post(_ body: JiraKit.PermissionsKeysBean) -> Request<JiraKit.PermittedProjects> {
-            Request(method: "POST", url: path, body: body, id: "getPermittedProjects")
+            Request(path: path, method: "POST", body: body, id: "getPermittedProjects")
         }
     }
 }

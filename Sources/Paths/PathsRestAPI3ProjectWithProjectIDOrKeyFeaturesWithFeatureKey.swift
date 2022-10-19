@@ -18,7 +18,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey.Features {
         ///
         /// Sets the state of a project feature.
         public func put(_ body: JiraKit.ProjectFeatureState) -> Request<JiraKit.ContainerForProjectFeatures> {
-            Request(method: "PUT", url: path, body: body, id: "toggleFeatureForProject")
+            Request(path: path, method: "PUT", body: body, id: "toggleFeatureForProject")
         }
     }
 }

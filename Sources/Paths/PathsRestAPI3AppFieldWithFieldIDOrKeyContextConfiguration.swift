@@ -29,7 +29,7 @@ extension Paths.API.__3.App.Field.WithFieldIDOrKey.Context {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). Jira permissions are not required for the Forge app that created the custom field.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageBeanContextualConfiguration> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getCustomFieldConfiguration")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getCustomFieldConfiguration")
         }
 
         public struct GetParameters {
@@ -70,7 +70,7 @@ extension Paths.API.__3.App.Field.WithFieldIDOrKey.Context {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). Jira permissions are not required for the Forge app that created the custom field.
         public func put(_ body: JiraKit.CustomFieldConfigurations) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "updateCustomFieldConfiguration")
+            Request(path: path, method: "PUT", body: body, id: "updateCustomFieldConfiguration")
         }
     }
 }

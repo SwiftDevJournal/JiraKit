@@ -27,7 +27,7 @@ extension Paths.API.__3.Attachment.Content {
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func get(isRedirect: Bool? = nil) -> Request<[String: AnyJSON]> {
-            Request(method: "GET", url: path, query: makeGetQuery(isRedirect), id: "getAttachmentContent")
+            Request(path: path, method: "GET", query: makeGetQuery(isRedirect), id: "getAttachmentContent")
         }
 
         private func makeGetQuery(_ isRedirect: Bool?) -> [(String, String?)] {

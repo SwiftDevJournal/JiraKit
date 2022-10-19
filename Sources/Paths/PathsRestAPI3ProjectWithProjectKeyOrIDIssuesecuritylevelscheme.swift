@@ -20,7 +20,7 @@ extension Paths.API.__3.Project.WithProjectKeyOrID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or the *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg).
         public var get: Request<JiraKit.SecurityScheme> {
-            Request(method: "GET", url: path, id: "getProjectIssueSecurityScheme")
+            Request(path: path, method: "GET", id: "getProjectIssueSecurityScheme")
         }
     }
 }

@@ -22,7 +22,7 @@ extension Paths.API.__3.Version {
         /// 
         /// **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the version.
         public func get(expand: String? = nil) -> Request<JiraKit.Version> {
-            Request(method: "GET", url: path, query: makeGetQuery(expand), id: "getVersion")
+            Request(path: path, method: "GET", query: makeGetQuery(expand), id: "getVersion")
         }
 
         private func makeGetQuery(_ expand: String?) -> [(String, String?)] {
@@ -39,7 +39,7 @@ extension Paths.API.__3.Version {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that contains the version.
         public func put(_ body: JiraKit.Version) -> Request<JiraKit.Version> {
-            Request(method: "PUT", url: path, body: body, id: "updateVersion")
+            Request(path: path, method: "PUT", body: body, id: "updateVersion")
         }
 
         /// Delete version
@@ -55,7 +55,7 @@ extension Paths.API.__3.Version {
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that contains the version.
         @available(*, deprecated, message: "Deprecated")
         public func delete(moveFixIssuesTo: String? = nil, moveAffectedIssuesTo: String? = nil) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: makeDeleteQuery(moveFixIssuesTo, moveAffectedIssuesTo), id: "deleteVersion")
+            Request(path: path, method: "DELETE", query: makeDeleteQuery(moveFixIssuesTo, moveAffectedIssuesTo), id: "deleteVersion")
         }
 
         private func makeDeleteQuery(_ moveFixIssuesTo: String?, _ moveAffectedIssuesTo: String?) -> [(String, String?)] {

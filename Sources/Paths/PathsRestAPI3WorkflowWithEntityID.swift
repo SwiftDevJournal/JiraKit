@@ -27,7 +27,7 @@ extension Paths.API.__3.Workflow {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteInactiveWorkflow")
+            Request(path: path, method: "DELETE", id: "deleteInactiveWorkflow")
         }
     }
 }

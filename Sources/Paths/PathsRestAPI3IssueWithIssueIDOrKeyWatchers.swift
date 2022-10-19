@@ -28,7 +28,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         ///  *  To see details of users on the watchlist other than themselves, *View voters and watchers* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         public var get: Request<JiraKit.Watchers> {
-            Request(method: "GET", url: path, id: "getIssueWatchers")
+            Request(path: path, method: "GET", id: "getIssueWatchers")
         }
 
         /// Add watcher
@@ -43,7 +43,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         ///  *  To add users other than themselves to the watchlist, *Manage watcher list* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         public func post(_ body: String) -> Request<AnyJSON> {
-            Request(method: "POST", url: path, body: body, id: "addWatcher")
+            Request(path: path, method: "POST", body: body, id: "addWatcher")
         }
 
         /// Delete watcher
@@ -58,7 +58,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey {
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         ///  *  To remove users other than themselves from the watchlist, *Manage watcher list* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         public func delete(username: String? = nil, accountID: String? = nil) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: makeDeleteQuery(username, accountID), id: "removeWatcher")
+            Request(path: path, method: "DELETE", query: makeDeleteQuery(username, accountID), id: "removeWatcher")
         }
 
         private func makeDeleteQuery(_ username: String?, _ accountID: String?) -> [(String, String?)] {

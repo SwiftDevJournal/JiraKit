@@ -26,7 +26,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageBeanFieldConfigurationDetails> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getAllFieldConfigurations")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getAllFieldConfigurations")
         }
 
         public struct GetParameters {
@@ -63,7 +63,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.FieldConfigurationDetails) -> Request<JiraKit.FieldConfiguration> {
-            Request(method: "POST", url: path, body: body, id: "createFieldConfiguration")
+            Request(path: path, method: "POST", body: body, id: "createFieldConfiguration")
         }
     }
 }

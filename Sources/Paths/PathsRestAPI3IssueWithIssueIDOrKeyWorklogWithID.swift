@@ -28,7 +28,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey.Worklog {
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         ///  *  If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to.
         public func get(expand: String? = nil) -> Request<JiraKit.Worklog> {
-            Request(method: "GET", url: path, query: makeGetQuery(expand), id: "getWorklog")
+            Request(path: path, method: "GET", query: makeGetQuery(expand), id: "getWorklog")
         }
 
         private func makeGetQuery(_ expand: String?) -> [(String, String?)] {
@@ -52,7 +52,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey.Worklog {
         ///  *  *Edit all worklogs*[ project permission](https://confluence.atlassian.com/x/yodKLg) to update any worklog or *Edit own worklogs* to update worklogs created by the user.
         ///  *  If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to.
         public func put(parameters: PutParameters? = nil, _ body: JiraKit.Worklog) -> Request<JiraKit.Worklog> {
-            Request(method: "PUT", url: path, query: parameters?.asQuery, body: body, id: "updateWorklog")
+            Request(path: path, method: "PUT", query: parameters?.asQuery, body: body, id: "updateWorklog")
         }
 
         public struct PutParameters {
@@ -103,7 +103,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey.Worklog {
         ///  *  *Delete all worklogs*[ project permission](https://confluence.atlassian.com/x/yodKLg) to delete any worklog or *Delete own worklogs* to delete worklogs created by the user,
         ///  *  If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to.
         public func delete(parameters: DeleteParameters? = nil) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: parameters?.asQuery, id: "deleteWorklog")
+            Request(path: path, method: "DELETE", query: parameters?.asQuery, id: "deleteWorklog")
         }
 
         public struct DeleteParameters {

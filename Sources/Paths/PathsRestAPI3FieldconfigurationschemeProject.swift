@@ -24,7 +24,7 @@ extension Paths.API.__3.Fieldconfigurationscheme {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(parameters: GetParameters) -> Request<JiraKit.PageBeanFieldConfigurationSchemeProjects> {
-            Request(method: "GET", url: path, query: parameters.asQuery, id: "getFieldConfigurationSchemeProjectMapping")
+            Request(path: path, method: "GET", query: parameters.asQuery, id: "getFieldConfigurationSchemeProjectMapping")
         }
 
         public struct GetParameters {
@@ -55,7 +55,7 @@ extension Paths.API.__3.Fieldconfigurationscheme {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.FieldConfigurationSchemeProjectAssociation) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "assignFieldConfigurationSchemeToProject")
+            Request(path: path, method: "PUT", body: body, id: "assignFieldConfigurationSchemeToProject")
         }
     }
 }

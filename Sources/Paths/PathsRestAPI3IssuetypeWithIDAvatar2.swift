@@ -34,7 +34,7 @@ extension Paths.API.__3.Issuetype.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(parameters: PostParameters, _ body: Data) -> Request<JiraKit.Avatar> {
-            Request(method: "POST", url: path, query: parameters.asQuery, body: body, id: "createIssueTypeAvatar")
+            Request(path: path, method: "POST", query: parameters.asQuery, body: body, id: "createIssueTypeAvatar")
         }
 
         public struct PostParameters {

@@ -28,7 +28,7 @@ extension Paths.API.__3.Dashboard.WithDashboardID.Items.WithItemID.Properties {
         /// 
         /// **[Permissions](#permissions) required:** The user must be the owner of the dashboard or have the dashboard shared with them. Note, users with the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) are considered owners of the System dashboard. The System dashboard is considered to be shared with all other users, and is accessible to anonymous users when Jira’s anonymous access is permitted.
         public var get: Request<JiraKit.EntityProperty> {
-            Request(method: "GET", url: path, id: "getDashboardItemProperty")
+            Request(path: path, method: "GET", id: "getDashboardItemProperty")
         }
 
         /// Set dashboard item property
@@ -47,7 +47,7 @@ extension Paths.API.__3.Dashboard.WithDashboardID.Items.WithItemID.Properties {
         /// 
         /// **[Permissions](#permissions) required:** The user must be the owner of the dashboard. Note, users with the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) are considered owners of the System dashboard.
         public func put(_ body: AnyJSON) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "setDashboardItemProperty")
+            Request(path: path, method: "PUT", body: body, id: "setDashboardItemProperty")
         }
 
         /// Delete dashboard item property
@@ -58,7 +58,7 @@ extension Paths.API.__3.Dashboard.WithDashboardID.Items.WithItemID.Properties {
         /// 
         /// **[Permissions](#permissions) required:** The user must be the owner of the dashboard. Note, users with the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) are considered owners of the System dashboard.
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteDashboardItemProperty")
+            Request(path: path, method: "DELETE", id: "deleteDashboardItemProperty")
         }
     }
 }

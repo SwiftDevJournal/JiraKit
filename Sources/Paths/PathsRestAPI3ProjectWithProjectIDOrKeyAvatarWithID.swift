@@ -20,7 +20,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey.Avatar {
         /// 
         /// **[Permissions](#permissions) required:** *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg).
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteProjectAvatar")
+            Request(path: path, method: "DELETE", id: "deleteProjectAvatar")
         }
     }
 }

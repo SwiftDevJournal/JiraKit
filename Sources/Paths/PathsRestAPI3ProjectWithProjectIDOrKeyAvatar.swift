@@ -22,7 +22,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey {
         /// 
         /// **[Permissions](#permissions) required:** *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg).
         public func put(_ body: JiraKit.Avatar) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "updateProjectAvatar")
+            Request(path: path, method: "PUT", body: body, id: "updateProjectAvatar")
         }
     }
 }

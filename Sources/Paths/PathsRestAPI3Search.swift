@@ -27,7 +27,7 @@ extension Paths.API.__3 {
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.SearchResults> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "searchForIssuesUsingJql")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "searchForIssuesUsingJql")
         }
 
         public struct GetParameters {
@@ -87,7 +87,7 @@ extension Paths.API.__3 {
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func post(_ body: JiraKit.SearchRequestBean) -> Request<JiraKit.SearchResults> {
-            Request(method: "POST", url: path, body: body, id: "searchForIssuesUsingJqlPost")
+            Request(path: path, method: "POST", body: body, id: "searchForIssuesUsingJqlPost")
         }
     }
 }

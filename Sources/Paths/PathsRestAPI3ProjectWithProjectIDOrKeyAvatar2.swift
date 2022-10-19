@@ -44,7 +44,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey {
         /// 
         /// **[Permissions](#permissions) required:** *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg).
         public func post(parameters: PostParameters? = nil, _ body: Data) -> Request<JiraKit.Avatar> {
-            Request(method: "POST", url: path, query: parameters?.asQuery, body: body, id: "createProjectAvatar")
+            Request(path: path, method: "POST", query: parameters?.asQuery, body: body, id: "createProjectAvatar")
         }
 
         public struct PostParameters {

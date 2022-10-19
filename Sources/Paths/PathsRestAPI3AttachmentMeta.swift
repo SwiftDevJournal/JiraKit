@@ -24,7 +24,7 @@ extension Paths.API.__3.Attachment {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public var get: Request<JiraKit.AttachmentSettings> {
-            Request(method: "GET", url: path, id: "getAttachmentMeta")
+            Request(path: path, method: "GET", id: "getAttachmentMeta")
         }
     }
 }

@@ -33,7 +33,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.Permissions> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getMyPermissions")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getMyPermissions")
         }
 
         public struct GetParameters {

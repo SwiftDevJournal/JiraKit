@@ -22,7 +22,7 @@ extension Paths.API.__3.Fieldconfigurationscheme.WithID.Mapping {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.IssueTypeIDsToRemove) -> Request<AnyJSON> {
-            Request(method: "POST", url: path, body: body, id: "removeIssueTypesFromGlobalFieldConfigurationScheme")
+            Request(path: path, method: "POST", body: body, id: "removeIssueTypesFromGlobalFieldConfigurationScheme")
         }
     }
 }

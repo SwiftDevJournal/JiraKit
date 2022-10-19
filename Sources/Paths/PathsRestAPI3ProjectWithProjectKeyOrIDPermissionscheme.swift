@@ -20,7 +20,7 @@ extension Paths.API.__3.Project.WithProjectKeyOrID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg).
         public func get(expand: String? = nil) -> Request<JiraKit.PermissionScheme> {
-            Request(method: "GET", url: path, query: makeGetQuery(expand), id: "getAssignedPermissionScheme")
+            Request(path: path, method: "GET", query: makeGetQuery(expand), id: "getAssignedPermissionScheme")
         }
 
         private func makeGetQuery(_ expand: String?) -> [(String, String?)] {
@@ -35,7 +35,7 @@ extension Paths.API.__3.Project.WithProjectKeyOrID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg)
         public func put(expand: String? = nil, _ body: JiraKit.IDBean) -> Request<JiraKit.PermissionScheme> {
-            Request(method: "PUT", url: path, query: makePutQuery(expand), body: body, id: "assignPermissionScheme")
+            Request(path: path, method: "PUT", query: makePutQuery(expand), body: body, id: "assignPermissionScheme")
         }
 
         private func makePutQuery(_ expand: String?) -> [(String, String?)] {

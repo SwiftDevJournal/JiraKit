@@ -20,7 +20,7 @@ extension Paths.API.__3.Notificationscheme {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira, however the user must have permission to administer at least one project associated with the notification scheme.
         public func get(expand: String? = nil) -> Request<JiraKit.NotificationScheme> {
-            Request(method: "GET", url: path, query: makeGetQuery(expand), id: "getNotificationScheme")
+            Request(path: path, method: "GET", query: makeGetQuery(expand), id: "getNotificationScheme")
         }
 
         private func makeGetQuery(_ expand: String?) -> [(String, String?)] {

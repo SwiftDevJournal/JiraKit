@@ -23,7 +23,7 @@ extension Paths.API.__3.Issuesecurityschemes {
         ///  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         ///  *  *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for a project that uses the requested issue security scheme.
         public var get: Request<JiraKit.SecurityScheme> {
-            Request(method: "GET", url: path, id: "getIssueSecurityScheme")
+            Request(path: path, method: "GET", id: "getIssueSecurityScheme")
         }
     }
 }

@@ -34,7 +34,7 @@ extension Paths.API.__3.User.Viewissue {
         /// 
         /// **[Permissions](#permissions) required:** *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg). Anonymous calls and calls by users without the required permission return empty search results.
         public func get(parameters: GetParameters? = nil) -> Request<[JiraKit.User]> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "findUsersWithBrowsePermission")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "findUsersWithBrowsePermission")
         }
 
         public struct GetParameters {

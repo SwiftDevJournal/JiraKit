@@ -20,7 +20,7 @@ extension Paths.API.__3.Filter {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public var get: Request<JiraKit.DefaultShareScope> {
-            Request(method: "GET", url: path, id: "getDefaultShareScope")
+            Request(path: path, method: "GET", id: "getDefaultShareScope")
         }
 
         /// Set default share scope
@@ -29,7 +29,7 @@ extension Paths.API.__3.Filter {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public func put(_ body: JiraKit.DefaultShareScope) -> Request<JiraKit.DefaultShareScope> {
-            Request(method: "PUT", url: path, body: body, id: "setDefaultShareScope")
+            Request(path: path, method: "PUT", body: body, id: "setDefaultShareScope")
         }
     }
 }

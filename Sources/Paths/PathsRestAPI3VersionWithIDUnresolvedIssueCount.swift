@@ -22,7 +22,7 @@ extension Paths.API.__3.Version.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Browse projects* project permission for the project that contains the version.
         public var get: Request<JiraKit.VersionUnresolvedIssuesCount> {
-            Request(method: "GET", url: path, id: "getVersionUnresolvedIssues")
+            Request(path: path, method: "GET", id: "getVersionUnresolvedIssues")
         }
     }
 }

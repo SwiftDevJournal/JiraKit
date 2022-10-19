@@ -25,7 +25,7 @@ extension Paths.API.__3.Issue {
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func post(_ body: JiraKit.IssueList) -> Request<JiraKit.BulkIssueIsWatching> {
-            Request(method: "POST", url: path, body: body, id: "getIsWatchingIssueBulk")
+            Request(path: path, method: "POST", body: body, id: "getIsWatchingIssueBulk")
         }
     }
 }

@@ -26,7 +26,7 @@ extension Paths.API.__3.Project {
         ///  *  *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
         ///  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageBeanProject> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "searchProjects")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "searchProjects")
         }
 
         public struct GetParameters {

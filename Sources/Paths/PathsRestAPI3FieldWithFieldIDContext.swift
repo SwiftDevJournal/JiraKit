@@ -25,7 +25,7 @@ extension Paths.API.__3.Field.WithFieldID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageBeanCustomFieldContext> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getContextsForField")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getContextsForField")
         }
 
         public struct GetParameters {
@@ -62,7 +62,7 @@ extension Paths.API.__3.Field.WithFieldID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.CreateCustomFieldContext) -> Request<JiraKit.CreateCustomFieldContext> {
-            Request(method: "POST", url: path, body: body, id: "createCustomFieldContext")
+            Request(path: path, method: "POST", body: body, id: "createCustomFieldContext")
         }
     }
 }

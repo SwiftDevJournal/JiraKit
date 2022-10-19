@@ -31,7 +31,7 @@ extension Paths.API.__3 {
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         ///  *  If the comment has visibility restrictions, belongs to the group or has the role visibility is restricted to.
         public func post(_ body: JiraKit.LinkIssueRequestJSONBean) -> Request<AnyJSON> {
-            Request(method: "POST", url: path, body: body, id: "linkIssues")
+            Request(path: path, method: "POST", body: body, id: "linkIssues")
         }
     }
 }

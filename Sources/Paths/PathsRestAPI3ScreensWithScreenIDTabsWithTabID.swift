@@ -20,7 +20,7 @@ extension Paths.API.__3.Screens.WithScreenID.Tabs {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.ScreenableTab) -> Request<JiraKit.ScreenableTab> {
-            Request(method: "PUT", url: path, body: body, id: "renameScreenTab")
+            Request(path: path, method: "PUT", body: body, id: "renameScreenTab")
         }
 
         /// Delete screen tab
@@ -29,7 +29,7 @@ extension Paths.API.__3.Screens.WithScreenID.Tabs {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteScreenTab")
+            Request(path: path, method: "DELETE", id: "deleteScreenTab")
         }
     }
 }

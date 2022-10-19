@@ -20,7 +20,7 @@ extension Paths.API.__3.Field.WithFieldID.Context {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageBeanCustomFieldContextProjectMapping> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getProjectContextMapping")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getProjectContextMapping")
         }
 
         public struct GetParameters {

@@ -20,7 +20,7 @@ extension Paths.API.__3.Project.`Type`.WithProjectTypeKey {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public var get: Request<JiraKit.ProjectType> {
-            Request(method: "GET", url: path, id: "getAccessibleProjectTypeByKey")
+            Request(path: path, method: "GET", id: "getAccessibleProjectTypeByKey")
         }
     }
 }

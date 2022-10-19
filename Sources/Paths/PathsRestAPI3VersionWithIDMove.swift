@@ -22,7 +22,7 @@ extension Paths.API.__3.Version.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Browse projects* project permission for the project that contains the version.
         public func post(_ body: JiraKit.VersionMoveBean) -> Request<JiraKit.Version> {
-            Request(method: "POST", url: path, body: body, id: "moveVersion")
+            Request(path: path, method: "POST", body: body, id: "moveVersion")
         }
     }
 }

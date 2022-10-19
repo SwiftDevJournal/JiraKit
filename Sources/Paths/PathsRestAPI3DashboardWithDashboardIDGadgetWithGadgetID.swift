@@ -20,7 +20,7 @@ extension Paths.API.__3.Dashboard.WithDashboardID.Gadget {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public func put(_ body: JiraKit.DashboardGadgetUpdateRequest) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "updateGadget")
+            Request(path: path, method: "PUT", body: body, id: "updateGadget")
         }
 
         /// Remove gadget from dashboard
@@ -31,7 +31,7 @@ extension Paths.API.__3.Dashboard.WithDashboardID.Gadget {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public var delete: Request<AnyJSON> {
-            Request(method: "DELETE", url: path, id: "removeGadget")
+            Request(path: path, method: "DELETE", id: "removeGadget")
         }
     }
 }

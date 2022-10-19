@@ -28,7 +28,7 @@ extension Paths.API.__3.Filter.WithID {
         ///  *  filters shared with a public project.
         ///  *  filters shared with the public.
         public var get: Request<[JiraKit.SharePermission]> {
-            Request(method: "GET", url: path, id: "getSharePermissions")
+            Request(path: path, method: "GET", id: "getSharePermissions")
         }
 
         /// Add share permission
@@ -39,7 +39,7 @@ extension Paths.API.__3.Filter.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Share dashboards and filters* [global permission](https://confluence.atlassian.com/x/x4dKLg) and the user must own the filter.
         public func post(_ body: JiraKit.SharePermissionInputBean) -> Request<[JiraKit.SharePermission]> {
-            Request(method: "POST", url: path, body: body, id: "addSharePermission")
+            Request(path: path, method: "POST", body: body, id: "addSharePermission")
         }
     }
 }

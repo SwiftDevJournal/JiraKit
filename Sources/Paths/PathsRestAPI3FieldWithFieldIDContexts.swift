@@ -21,7 +21,7 @@ extension Paths.API.__3.Field.WithFieldID {
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         @available(*, deprecated, message: "Deprecated")
         public func get(startAt: Int64? = nil, maxResults: Int32? = nil) -> Request<JiraKit.PageBeanContext> {
-            Request(method: "GET", url: path, query: makeGetQuery(startAt, maxResults), id: "getContextsForFieldDeprecated")
+            Request(path: path, method: "GET", query: makeGetQuery(startAt, maxResults), id: "getContextsForFieldDeprecated")
         }
 
         private func makeGetQuery(_ startAt: Int64?, _ maxResults: Int32?) -> [(String, String?)] {

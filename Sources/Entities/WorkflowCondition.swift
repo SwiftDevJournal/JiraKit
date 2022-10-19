@@ -16,13 +16,17 @@ public enum WorkflowCondition: Codable {
         }
 
         let container = try decoder.singleValueContainer()
+        let discriminatorValue = try container.decode(Discriminator.self).nodeType
 
-        switch (try container.decode(Discriminator.self)).nodeType {
+        switch discriminatorValue {
         case "simple": self = .workflowSimpleCondition(try container.decode(WorkflowSimpleCondition.self))
         case "compound": self = .workflowCompoundCondition(try container.decode(WorkflowCompoundCondition.self))
 
         default:
-            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Failed to initialize `oneOf`")
+            throw DecodingError.dataCorruptedError(
+                in: container,
+                debugDescription: "Discriminator value '\(discriminatorValue)' does not match any expected values (simple, compound)."
+            )
         }
     }
 

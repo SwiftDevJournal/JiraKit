@@ -25,7 +25,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey.Properties {
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public var get: Request<JiraKit.EntityProperty> {
-            Request(method: "GET", url: path, id: "getIssueProperty")
+            Request(path: path, method: "GET", id: "getIssueProperty")
         }
 
         /// Set issue property
@@ -41,7 +41,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey.Properties {
         ///  *  *Browse projects* and *Edit issues* [project permissions](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func put(_ body: AnyJSON) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "setIssueProperty")
+            Request(path: path, method: "PUT", body: body, id: "setIssueProperty")
         }
 
         /// Delete issue property
@@ -55,7 +55,7 @@ extension Paths.API.__3.Issue.WithIssueIDOrKey.Properties {
         ///  *  *Browse projects* and *Edit issues* [project permissions](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteIssueProperty")
+            Request(path: path, method: "DELETE", id: "deleteIssueProperty")
         }
     }
 }

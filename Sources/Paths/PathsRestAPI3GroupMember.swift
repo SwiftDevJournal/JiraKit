@@ -22,7 +22,7 @@ extension Paths.API.__3.Group {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageBeanUserDetails> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getUsersFromGroup")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getUsersFromGroup")
         }
 
         public struct GetParameters {

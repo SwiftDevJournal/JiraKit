@@ -21,7 +21,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey.`Type` {
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         @available(*, deprecated, message: "Deprecated")
         public var put: Request<JiraKit.Project> {
-            Request(method: "PUT", url: path, id: "updateProjectType")
+            Request(path: path, method: "PUT", id: "updateProjectType")
         }
     }
 }

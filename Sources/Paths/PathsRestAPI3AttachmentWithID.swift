@@ -25,7 +25,7 @@ extension Paths.API.__3.Attachment {
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public var get: Request<JiraKit.AttachmentMetadata> {
-            Request(method: "GET", url: path, id: "getAttachment")
+            Request(path: path, method: "GET", id: "getAttachment")
         }
 
         /// Delete attachment
@@ -39,7 +39,7 @@ extension Paths.API.__3.Attachment {
         ///  *  *Delete own attachments* [project permission](https://confluence.atlassian.com/x/yodKLg) to delete an attachment created by the calling user.
         ///  *  *Delete all attachments* [project permission](https://confluence.atlassian.com/x/yodKLg) to delete an attachment created by any user.
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "removeAttachment")
+            Request(path: path, method: "DELETE", id: "removeAttachment")
         }
     }
 }

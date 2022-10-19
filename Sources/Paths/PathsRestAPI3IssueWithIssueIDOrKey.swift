@@ -27,7 +27,7 @@ extension Paths.API.__3.Issue {
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.IssueBean> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getIssue")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getIssue")
         }
 
         public struct GetParameters {
@@ -73,7 +73,7 @@ extension Paths.API.__3.Issue {
         ///  *  *Browse projects* and *Edit issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func put(parameters: PutParameters? = nil, _ body: JiraKit.IssueUpdateDetails) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, query: parameters?.asQuery, body: body, id: "editIssue")
+            Request(path: path, method: "PUT", query: parameters?.asQuery, body: body, id: "editIssue")
         }
 
         public struct PutParameters {
@@ -109,7 +109,7 @@ extension Paths.API.__3.Issue {
         ///  *  *Browse projects* and *Delete issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func delete(deleteSubtasks: DeleteSubtasks? = nil) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: makeDeleteQuery(deleteSubtasks), id: "deleteIssue")
+            Request(path: path, method: "DELETE", query: makeDeleteQuery(deleteSubtasks), id: "deleteIssue")
         }
 
         private func makeDeleteQuery(_ deleteSubtasks: DeleteSubtasks?) -> [(String, String?)] {

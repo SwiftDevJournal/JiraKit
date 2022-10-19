@@ -34,7 +34,7 @@ extension Paths.API.__3.User.Permission {
         ///  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), to get users for any project.
         ///  *  *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for a project, to get users for that project.
         public func get(parameters: GetParameters) -> Request<[JiraKit.User]> {
-            Request(method: "GET", url: path, query: parameters.asQuery, id: "findUsersWithAllPermissions")
+            Request(path: path, method: "GET", query: parameters.asQuery, id: "findUsersWithAllPermissions")
         }
 
         public struct GetParameters {

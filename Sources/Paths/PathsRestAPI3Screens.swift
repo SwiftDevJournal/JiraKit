@@ -20,7 +20,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageBeanScreen> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getScreens")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getScreens")
         }
 
         public struct GetParameters {
@@ -73,7 +73,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.ScreenDetails) -> Request<JiraKit.Screen> {
-            Request(method: "POST", url: path, body: body, id: "createScreen")
+            Request(path: path, method: "POST", body: body, id: "createScreen")
         }
     }
 }

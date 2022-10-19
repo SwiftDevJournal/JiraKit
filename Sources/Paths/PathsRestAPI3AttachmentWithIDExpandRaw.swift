@@ -27,7 +27,7 @@ extension Paths.API.__3.Attachment.WithID.Expand {
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public var get: Request<JiraKit.AttachmentArchiveImpl> {
-            Request(method: "GET", url: path, id: "expandAttachmentForMachines")
+            Request(path: path, method: "GET", id: "expandAttachmentForMachines")
         }
     }
 }

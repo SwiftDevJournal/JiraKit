@@ -28,7 +28,7 @@ extension Paths.API.__3.Filter.WithID {
         ///  *  filters shared with a public project.
         ///  *  filters shared with the public.
         public var get: Request<[JiraKit.ColumnItem]> {
-            Request(method: "GET", url: path, id: "getColumns")
+            Request(path: path, method: "GET", id: "getColumns")
         }
 
         /// Set columns
@@ -47,7 +47,7 @@ extension Paths.API.__3.Filter.WithID {
         ///  *  filters shared with a public project.
         ///  *  filters shared with the public.
         public func put(_ body: Data? = nil) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "setColumns")
+            Request(path: path, method: "PUT", body: body, id: "setColumns")
         }
 
         /// Reset columns
@@ -62,7 +62,7 @@ extension Paths.API.__3.Filter.WithID {
         ///  *  filters shared with a public project.
         ///  *  filters shared with the public.
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "resetColumns")
+            Request(path: path, method: "DELETE", id: "resetColumns")
         }
     }
 }

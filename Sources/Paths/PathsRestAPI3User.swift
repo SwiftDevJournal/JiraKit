@@ -22,7 +22,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.User> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getUser")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getUser")
         }
 
         public struct GetParameters {
@@ -57,7 +57,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.NewUserDetails) -> Request<JiraKit.User> {
-            Request(method: "POST", url: path, body: body, id: "createUser")
+            Request(path: path, method: "POST", body: body, id: "createUser")
         }
 
         /// Delete user
@@ -66,7 +66,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** Site administration (that is, membership of the *site-admin* [group](https://confluence.atlassian.com/x/24xjL)).
         public func delete(parameters: DeleteParameters) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: parameters.asQuery, id: "removeUser")
+            Request(path: path, method: "DELETE", query: parameters.asQuery, id: "removeUser")
         }
 
         public struct DeleteParameters {

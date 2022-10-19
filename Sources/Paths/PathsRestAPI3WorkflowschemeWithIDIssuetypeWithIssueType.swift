@@ -20,7 +20,7 @@ extension Paths.API.__3.Workflowscheme.WithID.Issuetype {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(isReturnDraftIfExists: Bool? = nil) -> Request<JiraKit.IssueTypeWorkflowMapping> {
-            Request(method: "GET", url: path, query: makeGetQuery(isReturnDraftIfExists), id: "getWorkflowSchemeIssueType")
+            Request(path: path, method: "GET", query: makeGetQuery(isReturnDraftIfExists), id: "getWorkflowSchemeIssueType")
         }
 
         private func makeGetQuery(_ isReturnDraftIfExists: Bool?) -> [(String, String?)] {
@@ -37,7 +37,7 @@ extension Paths.API.__3.Workflowscheme.WithID.Issuetype {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.IssueTypeWorkflowMapping) -> Request<JiraKit.WorkflowScheme> {
-            Request(method: "PUT", url: path, body: body, id: "setWorkflowSchemeIssueType")
+            Request(path: path, method: "PUT", body: body, id: "setWorkflowSchemeIssueType")
         }
 
         /// Delete workflow for issue type in workflow scheme
@@ -48,7 +48,7 @@ extension Paths.API.__3.Workflowscheme.WithID.Issuetype {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func delete(isUpdateDraftIfNeeded: Bool? = nil) -> Request<JiraKit.WorkflowScheme> {
-            Request(method: "DELETE", url: path, query: makeDeleteQuery(isUpdateDraftIfNeeded), id: "deleteWorkflowSchemeIssueType")
+            Request(path: path, method: "DELETE", query: makeDeleteQuery(isUpdateDraftIfNeeded), id: "deleteWorkflowSchemeIssueType")
         }
 
         private func makeDeleteQuery(_ isUpdateDraftIfNeeded: Bool?) -> [(String, String?)] {

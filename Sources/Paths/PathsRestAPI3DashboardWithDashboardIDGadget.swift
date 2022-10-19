@@ -29,7 +29,7 @@ extension Paths.API.__3.Dashboard.WithDashboardID {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.DashboardGadgetResponse> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getAllGadgets")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getAllGadgets")
         }
 
         public struct GetParameters {
@@ -58,7 +58,7 @@ extension Paths.API.__3.Dashboard.WithDashboardID {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public func post(_ body: JiraKit.DashboardGadgetSettings) -> Request<JiraKit.DashboardGadget> {
-            Request(method: "POST", url: path, body: body, id: "addGadget")
+            Request(path: path, method: "POST", body: body, id: "addGadget")
         }
     }
 }

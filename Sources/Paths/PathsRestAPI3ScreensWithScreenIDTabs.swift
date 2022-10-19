@@ -23,7 +23,7 @@ extension Paths.API.__3.Screens.WithScreenID {
         ///  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         ///  *  *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) when the project key is specified, providing that the screen is associated with the project through a Screen Scheme and Issue Type Screen Scheme.
         public func get(projectKey: String? = nil) -> Request<[JiraKit.ScreenableTab]> {
-            Request(method: "GET", url: path, query: makeGetQuery(projectKey), id: "getAllScreenTabs")
+            Request(path: path, method: "GET", query: makeGetQuery(projectKey), id: "getAllScreenTabs")
         }
 
         private func makeGetQuery(_ projectKey: String?) -> [(String, String?)] {
@@ -38,7 +38,7 @@ extension Paths.API.__3.Screens.WithScreenID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.ScreenableTab) -> Request<JiraKit.ScreenableTab> {
-            Request(method: "POST", url: path, body: body, id: "addScreenTab")
+            Request(path: path, method: "POST", body: body, id: "addScreenTab")
         }
     }
 }

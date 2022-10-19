@@ -27,7 +27,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public var get: Request<[JiraKit.FieldDetails]> {
-            Request(method: "GET", url: path, id: "getFields")
+            Request(path: path, method: "GET", id: "getFields")
         }
 
         /// Create custom field
@@ -36,7 +36,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.CustomFieldDefinitionJSONBean) -> Request<JiraKit.FieldDetails> {
-            Request(method: "POST", url: path, body: body, id: "createCustomField")
+            Request(path: path, method: "POST", body: body, id: "createCustomField")
         }
     }
 }

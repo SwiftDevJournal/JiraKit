@@ -24,7 +24,7 @@ extension Paths.API.__3.Issue {
         /// 
         /// **[Permissions](#permissions) required:** *Create issues* [project permission](https://confluence.atlassian.com/x/yodKLg) in the requested projects.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.IssueCreateMetadata> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getCreateIssueMeta")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getCreateIssueMeta")
         }
 
         public struct GetParameters {

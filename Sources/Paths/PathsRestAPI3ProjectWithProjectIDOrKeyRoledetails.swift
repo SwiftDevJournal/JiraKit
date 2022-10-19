@@ -22,7 +22,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
         public func get(isCurrentMember: Bool? = nil, excludeConnectAddons: Bool? = nil) -> Request<[JiraKit.ProjectRoleDetails]> {
-            Request(method: "GET", url: path, query: makeGetQuery(isCurrentMember, excludeConnectAddons), id: "getProjectRoleDetails")
+            Request(path: path, method: "GET", query: makeGetQuery(isCurrentMember, excludeConnectAddons), id: "getProjectRoleDetails")
         }
 
         private func makeGetQuery(_ isCurrentMember: Bool?, _ excludeConnectAddons: Bool?) -> [(String, String?)] {

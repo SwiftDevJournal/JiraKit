@@ -20,7 +20,7 @@ extension Paths.API.__3.Screens.WithScreenID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var get: Request<[JiraKit.ScreenableField]> {
-            Request(method: "GET", url: path, id: "getAvailableScreenFields")
+            Request(path: path, method: "GET", id: "getAvailableScreenFields")
         }
     }
 }

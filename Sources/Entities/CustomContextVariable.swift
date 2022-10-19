@@ -16,14 +16,18 @@ public enum CustomContextVariable: Codable {
         }
 
         let container = try decoder.singleValueContainer()
+        let discriminatorValue = try container.decode(Discriminator.self).type
 
-        switch (try container.decode(Discriminator.self)).type {
+        switch discriminatorValue {
         case "user": self = .userContextVariable(try container.decode(UserContextVariable.self))
         case "issue": self = .issueContextVariable(try container.decode(IssueContextVariable.self))
         case "json": self = .jsonContextVariable(try container.decode(JSONContextVariable.self))
 
         default:
-            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Failed to initialize `oneOf`")
+            throw DecodingError.dataCorruptedError(
+                in: container,
+                debugDescription: "Discriminator value '\(discriminatorValue)' does not match any expected values (user, issue, json)."
+            )
         }
     }
 

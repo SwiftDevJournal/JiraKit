@@ -22,7 +22,7 @@ extension Paths.API.__3.Dashboard.WithDashboardID.Items.WithItemID {
         /// 
         /// **[Permissions](#permissions) required:** The user must be the owner of the dashboard or have the dashboard shared with them. Note, users with the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) are considered owners of the System dashboard. The System dashboard is considered to be shared with all other users, and is accessible to anonymous users when Jira’s anonymous access is permitted.
         public var get: Request<JiraKit.PropertyKeys> {
-            Request(method: "GET", url: path, id: "getDashboardItemPropertyKeys")
+            Request(path: path, method: "GET", id: "getDashboardItemPropertyKeys")
         }
     }
 }

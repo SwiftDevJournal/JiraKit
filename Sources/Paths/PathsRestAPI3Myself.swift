@@ -20,7 +20,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public func get(expand: String? = nil) -> Request<JiraKit.User> {
-            Request(method: "GET", url: path, query: makeGetQuery(expand), id: "getCurrentUser")
+            Request(path: path, method: "GET", query: makeGetQuery(expand), id: "getCurrentUser")
         }
 
         private func makeGetQuery(_ expand: String?) -> [(String, String?)] {

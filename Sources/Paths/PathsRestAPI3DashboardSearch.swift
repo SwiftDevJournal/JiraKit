@@ -28,7 +28,7 @@ extension Paths.API.__3.Dashboard {
         ///  *  Dashboards shared with a public project.
         ///  *  Dashboards shared with the public.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageBeanDashboard> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getDashboardsPaginated")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getDashboardsPaginated")
         }
 
         public struct GetParameters {

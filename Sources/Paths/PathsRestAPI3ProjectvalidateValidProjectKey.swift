@@ -20,7 +20,7 @@ extension Paths.API.__3.Projectvalidate {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public func get(key: String? = nil) -> Request<String> {
-            Request(method: "GET", url: path, query: makeGetQuery(key), id: "getValidProjectKey")
+            Request(path: path, method: "GET", query: makeGetQuery(key), id: "getValidProjectKey")
         }
 
         private func makeGetQuery(_ key: String?) -> [(String, String?)] {

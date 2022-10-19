@@ -24,7 +24,7 @@ extension Paths.API.__3.Field.WithFieldID.Context.WithContextID.Project {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.ProjectIDs) -> Request<AnyJSON> {
-            Request(method: "POST", url: path, body: body, id: "removeCustomFieldContextFromProjects")
+            Request(path: path, method: "POST", body: body, id: "removeCustomFieldContextFromProjects")
         }
     }
 }

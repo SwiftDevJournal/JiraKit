@@ -27,7 +27,7 @@ extension Paths.API.__3.Attachment.Thumbnail {
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func get(parameters: GetParameters? = nil) -> Request<[String: AnyJSON]> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getAttachmentThumbnail")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getAttachmentThumbnail")
         }
 
         public struct GetParameters {

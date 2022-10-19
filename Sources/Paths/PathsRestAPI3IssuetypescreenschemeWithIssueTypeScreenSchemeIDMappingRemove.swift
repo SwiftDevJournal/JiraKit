@@ -20,7 +20,7 @@ extension Paths.API.__3.Issuetypescreenscheme.WithIssueTypeScreenSchemeID.Mappin
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.IssueTypeIDs) -> Request<AnyJSON> {
-            Request(method: "POST", url: path, body: body, id: "removeMappingsFromIssueTypeScreenScheme")
+            Request(path: path, method: "POST", body: body, id: "removeMappingsFromIssueTypeScreenScheme")
         }
     }
 }

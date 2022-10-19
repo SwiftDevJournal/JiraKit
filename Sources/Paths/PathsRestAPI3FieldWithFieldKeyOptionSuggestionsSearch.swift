@@ -22,7 +22,7 @@ extension Paths.API.__3.Field.WithFieldKey.Option.Suggestions {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageBeanIssueFieldOption> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getVisibleIssueFieldOptions")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getVisibleIssueFieldOptions")
         }
 
         public struct GetParameters {

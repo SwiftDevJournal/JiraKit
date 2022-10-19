@@ -22,7 +22,7 @@ extension Paths.API.__3.Fieldconfiguration.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(startAt: Int64? = nil, maxResults: Int32? = nil) -> Request<JiraKit.PageBeanFieldConfigurationItem> {
-            Request(method: "GET", url: path, query: makeGetQuery(startAt, maxResults), id: "getFieldConfigurationItems")
+            Request(path: path, method: "GET", query: makeGetQuery(startAt, maxResults), id: "getFieldConfigurationItems")
         }
 
         private func makeGetQuery(_ startAt: Int64?, _ maxResults: Int32?) -> [(String, String?)] {
@@ -42,7 +42,7 @@ extension Paths.API.__3.Fieldconfiguration.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.FieldConfigurationItemsDetails) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "updateFieldConfigurationItems")
+            Request(path: path, method: "PUT", body: body, id: "updateFieldConfigurationItems")
         }
     }
 }

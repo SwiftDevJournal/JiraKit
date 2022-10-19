@@ -22,7 +22,7 @@ extension Paths.API.__3.Project {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public var get: Request<[JiraKit.ProjectType]> {
-            Request(method: "GET", url: path, id: "getAllProjectTypes")
+            Request(path: path, method: "GET", id: "getAllProjectTypes")
         }
     }
 }

@@ -23,7 +23,7 @@ extension Paths.API.__3.Priority {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageBeanPriority> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "searchPriorities")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "searchPriorities")
         }
 
         public struct GetParameters {

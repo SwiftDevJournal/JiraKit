@@ -18,7 +18,7 @@ extension Paths.API.__3 {
         ///
         /// Returns a [paginated](#pagination) list of labels.
         public func get(startAt: Int64? = nil, maxResults: Int32? = nil) -> Request<JiraKit.PageBeanString> {
-            Request(method: "GET", url: path, query: makeGetQuery(startAt, maxResults), id: "getAllLabels")
+            Request(path: path, method: "GET", query: makeGetQuery(startAt, maxResults), id: "getAllLabels")
         }
 
         private func makeGetQuery(_ startAt: Int64?, _ maxResults: Int32?) -> [(String, String?)] {

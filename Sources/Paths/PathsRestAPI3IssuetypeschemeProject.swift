@@ -22,7 +22,7 @@ extension Paths.API.__3.Issuetypescheme {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(parameters: GetParameters) -> Request<JiraKit.PageBeanIssueTypeSchemeProjects> {
-            Request(method: "GET", url: path, query: parameters.asQuery, id: "getIssueTypeSchemeForProjects")
+            Request(path: path, method: "GET", query: parameters.asQuery, id: "getIssueTypeSchemeForProjects")
         }
 
         public struct GetParameters {
@@ -55,7 +55,7 @@ extension Paths.API.__3.Issuetypescheme {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.IssueTypeSchemeProjectAssociation) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "assignIssueTypeSchemeToProject")
+            Request(path: path, method: "PUT", body: body, id: "assignIssueTypeSchemeToProject")
         }
     }
 }

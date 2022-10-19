@@ -20,7 +20,7 @@ extension Paths.API.__3.Configuration {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var get: Request<JiraKit.TimeTrackingProvider> {
-            Request(method: "GET", url: path, id: "getSelectedTimeTrackingImplementation")
+            Request(path: path, method: "GET", id: "getSelectedTimeTrackingImplementation")
         }
 
         /// Select time tracking provider
@@ -29,7 +29,7 @@ extension Paths.API.__3.Configuration {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.TimeTrackingProvider) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "selectTimeTrackingImplementation")
+            Request(path: path, method: "PUT", body: body, id: "selectTimeTrackingImplementation")
         }
     }
 }

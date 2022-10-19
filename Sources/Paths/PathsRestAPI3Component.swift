@@ -22,7 +22,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project in which the component is created or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.ProjectComponent) -> Request<JiraKit.ProjectComponent> {
-            Request(method: "POST", url: path, body: body, id: "createComponent")
+            Request(path: path, method: "POST", body: body, id: "createComponent")
         }
     }
 }

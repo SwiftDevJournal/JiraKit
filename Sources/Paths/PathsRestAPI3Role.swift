@@ -35,7 +35,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var get: Request<[JiraKit.ProjectRole]> {
-            Request(method: "GET", url: path, id: "getAllProjectRoles")
+            Request(path: path, method: "GET", id: "getAllProjectRoles")
         }
 
         /// Create project role
@@ -46,7 +46,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(_ body: JiraKit.CreateUpdateRoleRequestBean) -> Request<JiraKit.ProjectRole> {
-            Request(method: "POST", url: path, body: body, id: "createProjectRole")
+            Request(path: path, method: "POST", body: body, id: "createProjectRole")
         }
     }
 }

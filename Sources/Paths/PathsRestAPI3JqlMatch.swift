@@ -23,7 +23,7 @@ extension Paths.API.__3.Jql {
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         public func post(_ body: JiraKit.IssuesAndJQLQueries) -> Request<JiraKit.IssueMatches> {
-            Request(method: "POST", url: path, body: body, id: "matchIssues")
+            Request(path: path, method: "POST", body: body, id: "matchIssues")
         }
     }
 }

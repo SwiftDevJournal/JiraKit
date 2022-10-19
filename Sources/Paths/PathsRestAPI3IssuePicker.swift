@@ -27,7 +27,7 @@ extension Paths.API.__3.Issue {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.IssuePickerSuggestions> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getIssuePickerResource")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getIssuePickerResource")
         }
 
         public struct GetParameters {

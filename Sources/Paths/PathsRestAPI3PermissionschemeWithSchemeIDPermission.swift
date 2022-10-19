@@ -20,7 +20,7 @@ extension Paths.API.__3.Permissionscheme.WithSchemeID {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public func get(expand: String? = nil) -> Request<JiraKit.PermissionGrants> {
-            Request(method: "GET", url: path, query: makeGetQuery(expand), id: "getPermissionSchemeGrants")
+            Request(path: path, method: "GET", query: makeGetQuery(expand), id: "getPermissionSchemeGrants")
         }
 
         private func makeGetQuery(_ expand: String?) -> [(String, String?)] {
@@ -35,7 +35,7 @@ extension Paths.API.__3.Permissionscheme.WithSchemeID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func post(expand: String? = nil, _ body: JiraKit.PermissionGrant) -> Request<JiraKit.PermissionGrant> {
-            Request(method: "POST", url: path, query: makePostQuery(expand), body: body, id: "createPermissionGrant")
+            Request(path: path, method: "POST", query: makePostQuery(expand), body: body, id: "createPermissionGrant")
         }
 
         private func makePostQuery(_ expand: String?) -> [(String, String?)] {

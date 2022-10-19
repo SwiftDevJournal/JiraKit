@@ -27,7 +27,7 @@ extension Paths.API.__3.CustomFieldOption {
         ///  *  if the user has the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         ///  *  if the user has the *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for at least one project the custom field is used in, and the field is visible in at least one layout the user has permission to view.
         public var get: Request<JiraKit.CustomFieldOption> {
-            Request(method: "GET", url: path, id: "getCustomFieldOption")
+            Request(path: path, method: "GET", id: "getCustomFieldOption")
         }
     }
 }

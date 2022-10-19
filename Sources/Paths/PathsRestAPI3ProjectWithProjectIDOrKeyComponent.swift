@@ -22,7 +22,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey {
         /// 
         /// **[Permissions](#permissions) required:** *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.PageBeanComponentWithIssueCount> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getProjectComponentsPaginated")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getProjectComponentsPaginated")
         }
 
         public struct GetParameters {

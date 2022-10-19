@@ -20,7 +20,7 @@ extension Paths.API.__3.Permissionscheme {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public func get(expand: String? = nil) -> Request<JiraKit.PermissionScheme> {
-            Request(method: "GET", url: path, query: makeGetQuery(expand), id: "getPermissionScheme")
+            Request(path: path, method: "GET", query: makeGetQuery(expand), id: "getPermissionScheme")
         }
 
         private func makeGetQuery(_ expand: String?) -> [(String, String?)] {
@@ -43,7 +43,7 @@ extension Paths.API.__3.Permissionscheme {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(expand: String? = nil, _ body: JiraKit.PermissionScheme) -> Request<JiraKit.PermissionScheme> {
-            Request(method: "PUT", url: path, query: makePutQuery(expand), body: body, id: "updatePermissionScheme")
+            Request(path: path, method: "PUT", query: makePutQuery(expand), body: body, id: "updatePermissionScheme")
         }
 
         private func makePutQuery(_ expand: String?) -> [(String, String?)] {
@@ -58,7 +58,7 @@ extension Paths.API.__3.Permissionscheme {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deletePermissionScheme")
+            Request(path: path, method: "DELETE", id: "deletePermissionScheme")
         }
     }
 }

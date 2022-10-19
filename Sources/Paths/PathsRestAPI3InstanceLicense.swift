@@ -20,7 +20,7 @@ extension Paths.API.__3.Instance {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public var get: Request<JiraKit.License> {
-            Request(method: "GET", url: path, id: "getLicense")
+            Request(path: path, method: "GET", id: "getLicense")
         }
     }
 }

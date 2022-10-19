@@ -20,7 +20,7 @@ extension Paths.API.__3.Workflowscheme {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(isReturnDraftIfExists: Bool? = nil) -> Request<JiraKit.WorkflowScheme> {
-            Request(method: "GET", url: path, query: makeGetQuery(isReturnDraftIfExists), id: "getWorkflowScheme")
+            Request(path: path, method: "GET", query: makeGetQuery(isReturnDraftIfExists), id: "getWorkflowScheme")
         }
 
         private func makeGetQuery(_ isReturnDraftIfExists: Bool?) -> [(String, String?)] {
@@ -35,7 +35,7 @@ extension Paths.API.__3.Workflowscheme {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.WorkflowScheme) -> Request<JiraKit.WorkflowScheme> {
-            Request(method: "PUT", url: path, body: body, id: "updateWorkflowScheme")
+            Request(path: path, method: "PUT", body: body, id: "updateWorkflowScheme")
         }
 
         /// Delete workflow scheme
@@ -44,7 +44,7 @@ extension Paths.API.__3.Workflowscheme {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var delete: Request<AnyJSON> {
-            Request(method: "DELETE", url: path, id: "deleteWorkflowScheme")
+            Request(path: path, method: "DELETE", id: "deleteWorkflowScheme")
         }
     }
 }

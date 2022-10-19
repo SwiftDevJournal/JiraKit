@@ -20,7 +20,7 @@ extension Paths.API.__3.Project.WithProjectIDOrKey {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var post: Request<JiraKit.Project> {
-            Request(method: "POST", url: path, id: "restore")
+            Request(path: path, method: "POST", id: "restore")
         }
     }
 }

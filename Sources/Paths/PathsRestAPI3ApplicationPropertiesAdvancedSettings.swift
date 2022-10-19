@@ -20,7 +20,7 @@ extension Paths.API.__3.ApplicationProperties {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var get: Request<[JiraKit.ApplicationProperty]> {
-            Request(method: "GET", url: path, id: "getAdvancedSettings")
+            Request(path: path, method: "GET", id: "getAdvancedSettings")
         }
     }
 }

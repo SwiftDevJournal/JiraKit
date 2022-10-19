@@ -26,7 +26,7 @@ extension Paths.API.__3.Comment {
         ///  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
         ///  *  If the comment has visibility restrictions, belongs to the group or has the role visibility is restricted to.
         public func post(expand: String? = nil, _ body: JiraKit.IssueCommentListRequestBean) -> Request<JiraKit.PageBeanComment> {
-            Request(method: "POST", url: path, query: makePostQuery(expand), body: body, id: "getCommentsByIds")
+            Request(path: path, method: "POST", query: makePostQuery(expand), body: body, id: "getCommentsByIds")
         }
 
         private func makePostQuery(_ expand: String?) -> [(String, String?)] {

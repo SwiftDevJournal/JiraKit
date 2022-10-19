@@ -22,7 +22,7 @@ extension Paths.API.__3.Issuetype.WithID {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public var get: Request<[JiraKit.IssueTypeDetails]> {
-            Request(method: "GET", url: path, id: "getAlternativeIssueTypes")
+            Request(path: path, method: "GET", id: "getAlternativeIssueTypes")
         }
     }
 }

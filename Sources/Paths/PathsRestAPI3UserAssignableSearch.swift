@@ -30,7 +30,7 @@ extension Paths.API.__3.User.Assignable {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public func get(parameters: GetParameters? = nil) -> Request<[JiraKit.User]> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "findAssignableUsers")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "findAssignableUsers")
         }
 
         public struct GetParameters {

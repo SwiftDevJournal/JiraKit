@@ -20,7 +20,7 @@ extension Paths.API.__3.UniversalAvatar.`Type`.WithType.Owner.WithOwningObjectID
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var delete: Request<Void> {
-            Request(method: "DELETE", url: path, id: "deleteAvatar")
+            Request(path: path, method: "DELETE", id: "deleteAvatar")
         }
     }
 }

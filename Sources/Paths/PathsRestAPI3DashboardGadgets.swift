@@ -20,7 +20,7 @@ extension Paths.API.__3.Dashboard {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public var get: Request<JiraKit.AvailableDashboardGadgetsResponse> {
-            Request(method: "GET", url: path, id: "getAllAvailableDashboardGadgets")
+            Request(path: path, method: "GET", id: "getAllAvailableDashboardGadgets")
         }
     }
 }

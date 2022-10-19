@@ -18,7 +18,7 @@ extension Paths.API.__3.User.Email {
         ///
         /// Returns a user's email address. This API is only available to apps approved by Atlassian, according to these [guidelines](https://community.developer.atlassian.com/t/guidelines-for-requesting-access-to-email-address/27603).
         public func get(accountID: [String]) -> Request<JiraKit.UnrestrictedUserEmail> {
-            Request(method: "GET", url: path, query: makeGetQuery(accountID), id: "getUserEmailBulk")
+            Request(path: path, method: "GET", query: makeGetQuery(accountID), id: "getUserEmailBulk")
         }
 
         private func makeGetQuery(_ accountID: [String]) -> [(String, String?)] {

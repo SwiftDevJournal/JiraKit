@@ -23,7 +23,7 @@ extension Paths.API.__3 {
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         @available(*, deprecated, message: "Deprecated")
         public func get(parameters: GetParameters? = nil) -> Request<JiraKit.Group> {
-            Request(method: "GET", url: path, query: parameters?.asQuery, id: "getGroup")
+            Request(path: path, method: "GET", query: parameters?.asQuery, id: "getGroup")
         }
 
         public struct GetParameters {
@@ -52,7 +52,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** Site administration (that is, member of the *site-admin* [group](https://confluence.atlassian.com/x/24xjL)).
         public func post(_ body: JiraKit.AddGroupBean) -> Request<JiraKit.Group> {
-            Request(method: "POST", url: path, body: body, id: "createGroup")
+            Request(path: path, method: "POST", body: body, id: "createGroup")
         }
 
         /// Remove group
@@ -61,7 +61,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** Site administration (that is, member of the *site-admin* strategic [group](https://confluence.atlassian.com/x/24xjL)).
         public func delete(parameters: DeleteParameters? = nil) -> Request<Void> {
-            Request(method: "DELETE", url: path, query: parameters?.asQuery, id: "removeGroup")
+            Request(path: path, method: "DELETE", query: parameters?.asQuery, id: "removeGroup")
         }
 
         public struct DeleteParameters {

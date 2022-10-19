@@ -25,7 +25,7 @@ extension Paths.API.__3.UiModifications {
         ///  *  *None* if the UI modification is created without contexts.
         ///  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for one or more projects, if the UI modification is created with contexts.
         public func put(_ body: JiraKit.UpdateUiModificationDetails) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "updateUiModification")
+            Request(path: path, method: "PUT", body: body, id: "updateUiModification")
         }
 
         /// Delete UI modification
@@ -34,7 +34,7 @@ extension Paths.API.__3.UiModifications {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public var delete: Request<AnyJSON> {
-            Request(method: "DELETE", url: path, id: "deleteUiModification")
+            Request(path: path, method: "DELETE", id: "deleteUiModification")
         }
     }
 }

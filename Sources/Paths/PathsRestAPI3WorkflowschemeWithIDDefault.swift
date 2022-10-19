@@ -20,7 +20,7 @@ extension Paths.API.__3.Workflowscheme.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func get(isReturnDraftIfExists: Bool? = nil) -> Request<JiraKit.DefaultWorkflow> {
-            Request(method: "GET", url: path, query: makeGetQuery(isReturnDraftIfExists), id: "getDefaultWorkflow")
+            Request(path: path, method: "GET", query: makeGetQuery(isReturnDraftIfExists), id: "getDefaultWorkflow")
         }
 
         private func makeGetQuery(_ isReturnDraftIfExists: Bool?) -> [(String, String?)] {
@@ -37,7 +37,7 @@ extension Paths.API.__3.Workflowscheme.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.DefaultWorkflow) -> Request<JiraKit.WorkflowScheme> {
-            Request(method: "PUT", url: path, body: body, id: "updateDefaultWorkflow")
+            Request(path: path, method: "PUT", body: body, id: "updateDefaultWorkflow")
         }
 
         /// Delete default workflow
@@ -48,7 +48,7 @@ extension Paths.API.__3.Workflowscheme.WithID {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func delete(isUpdateDraftIfNeeded: Bool? = nil) -> Request<JiraKit.WorkflowScheme> {
-            Request(method: "DELETE", url: path, query: makeDeleteQuery(isUpdateDraftIfNeeded), id: "deleteDefaultWorkflow")
+            Request(path: path, method: "DELETE", query: makeDeleteQuery(isUpdateDraftIfNeeded), id: "deleteDefaultWorkflow")
         }
 
         private func makeDeleteQuery(_ isUpdateDraftIfNeeded: Bool?) -> [(String, String?)] {

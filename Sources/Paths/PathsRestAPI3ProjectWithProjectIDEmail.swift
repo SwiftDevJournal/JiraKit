@@ -20,7 +20,7 @@ extension Paths.API.__3.Project.WithProjectID {
         /// 
         /// **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
         public var get: Request<JiraKit.ProjectEmailAddress> {
-            Request(method: "GET", url: path, id: "getProjectEmail")
+            Request(path: path, method: "GET", id: "getProjectEmail")
         }
 
         /// Set project's sender email
@@ -31,7 +31,7 @@ extension Paths.API.__3.Project.WithProjectID {
         /// 
         /// **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
         public func put(_ body: JiraKit.ProjectEmailAddress) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "updateProjectEmail")
+            Request(path: path, method: "PUT", body: body, id: "updateProjectEmail")
         }
     }
 }

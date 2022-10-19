@@ -29,7 +29,7 @@ extension Paths.API.__3 {
         ///  *  filters shared with the public.
         @available(*, deprecated, message: "Deprecated")
         public func get(expand: String? = nil) -> Request<[JiraKit.Filter]> {
-            Request(method: "GET", url: path, query: makeGetQuery(expand), id: "getFilters")
+            Request(path: path, method: "GET", query: makeGetQuery(expand), id: "getFilters")
         }
 
         private func makeGetQuery(_ expand: String?) -> [(String, String?)] {
@@ -44,7 +44,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** Permission to access Jira.
         public func post(expand: String? = nil, isOverrideSharePermissions: Bool? = nil, _ body: JiraKit.Filter) -> Request<JiraKit.Filter> {
-            Request(method: "POST", url: path, query: makePostQuery(expand, isOverrideSharePermissions), body: body, id: "createFilter")
+            Request(path: path, method: "POST", query: makePostQuery(expand, isOverrideSharePermissions), body: body, id: "createFilter")
         }
 
         private func makePostQuery(_ expand: String?, _ isOverrideSharePermissions: Bool?) -> [(String, String?)] {

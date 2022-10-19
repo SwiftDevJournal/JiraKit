@@ -20,7 +20,7 @@ extension Paths.API.__3.Issuetypescreenscheme {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.IssueTypeScreenSchemeUpdateDetails) -> Request<AnyJSON> {
-            Request(method: "PUT", url: path, body: body, id: "updateIssueTypeScreenScheme")
+            Request(path: path, method: "PUT", body: body, id: "updateIssueTypeScreenScheme")
         }
 
         /// Delete issue type screen scheme
@@ -29,7 +29,7 @@ extension Paths.API.__3.Issuetypescreenscheme {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var delete: Request<AnyJSON> {
-            Request(method: "DELETE", url: path, id: "deleteIssueTypeScreenScheme")
+            Request(path: path, method: "DELETE", id: "deleteIssueTypeScreenScheme")
         }
     }
 }

@@ -20,7 +20,7 @@ extension Paths.AtlassianConnect.__1.Addons.WithAddonKey {
         /// 
         /// **[Permissions](#permissions) required:** Only a Connect app whose key matches `addonKey` can make this request.
         public var get: Request<JiraKit.PropertyKeys> {
-            Request(method: "GET", url: path, id: "AddonPropertiesResource.getAddonProperties_get")
+            Request(path: path, method: "GET", id: "AddonPropertiesResource.getAddonProperties_get")
         }
     }
 }

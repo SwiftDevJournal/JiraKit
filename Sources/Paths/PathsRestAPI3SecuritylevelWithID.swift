@@ -24,7 +24,7 @@ extension Paths.API.__3.Securitylevel {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public var get: Request<JiraKit.SecurityLevel> {
-            Request(method: "GET", url: path, id: "getIssueSecurityLevel")
+            Request(path: path, method: "GET", id: "getIssueSecurityLevel")
         }
     }
 }

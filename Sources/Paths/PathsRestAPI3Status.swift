@@ -22,7 +22,7 @@ extension Paths.API.__3 {
         /// 
         /// **[Permissions](#permissions) required:** None.
         public var get: Request<[JiraKit.StatusDetails]> {
-            Request(method: "GET", url: path, id: "getStatuses")
+            Request(path: path, method: "GET", id: "getStatuses")
         }
     }
 }

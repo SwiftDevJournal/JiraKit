@@ -20,7 +20,7 @@ extension Paths.API.__3.Workflowscheme.WithID.Draft {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var get: Request<JiraKit.DefaultWorkflow> {
-            Request(method: "GET", url: path, id: "getDraftDefaultWorkflow")
+            Request(path: path, method: "GET", id: "getDraftDefaultWorkflow")
         }
 
         /// Update draft default workflow
@@ -29,7 +29,7 @@ extension Paths.API.__3.Workflowscheme.WithID.Draft {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public func put(_ body: JiraKit.DefaultWorkflow) -> Request<JiraKit.WorkflowScheme> {
-            Request(method: "PUT", url: path, body: body, id: "updateDraftDefaultWorkflow")
+            Request(path: path, method: "PUT", body: body, id: "updateDraftDefaultWorkflow")
         }
 
         /// Delete draft default workflow
@@ -38,7 +38,7 @@ extension Paths.API.__3.Workflowscheme.WithID.Draft {
         /// 
         /// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
         public var delete: Request<JiraKit.WorkflowScheme> {
-            Request(method: "DELETE", url: path, id: "deleteDraftDefaultWorkflow")
+            Request(path: path, method: "DELETE", id: "deleteDraftDefaultWorkflow")
         }
     }
 }
